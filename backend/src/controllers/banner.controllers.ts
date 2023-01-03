@@ -4,7 +4,7 @@ import { Banner } from "../entities/Banner";
 
 export const getBanners = async (req: Request, res: Response) => {
   try {
-    const banners = await AppDataSource.getRepository(Banner).find();
+    const banners = await AppDataSource.manager.find(Banner);
     return res.status(200).json(banners);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
@@ -14,7 +14,7 @@ export const getBanners = async (req: Request, res: Response) => {
 export const getBanner = async (req: Request, res: Response) => {
   const id: any = req.query.id;
   try {
-    const banner = await AppDataSource.getRepository(Banner).findOneBy(id);
+    const banner = await AppDataSource.manager.findOneBy(Banner, id);
     return res.status(200).json(banner);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
@@ -23,8 +23,8 @@ export const getBanner = async (req: Request, res: Response) => {
 
 export const createBanner = async (req: Request, res: Response) => {
   try {
-    const banner = AppDataSource.getRepository(Banner).create(req.body);
-    const results = await AppDataSource.getRepository(Banner).save(banner);
+    const banner = AppDataSource.manager.create(Banner, req.body);
+    const results = await AppDataSource.manager.save(Banner, banner);
     return res.status(201).json(results);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
@@ -34,9 +34,9 @@ export const createBanner = async (req: Request, res: Response) => {
 export const updateBanner = async (req: Request, res: Response) => {
   const id: any = req.query.id;
   try {
-    const banner: any = await AppDataSource.getRepository(Banner).findOneBy(id);
-    AppDataSource.getRepository(Banner).merge(banner, req.body);
-    const result = await AppDataSource.getRepository(Banner).save(banner);
+    const banner: any = await AppDataSource.manager.findOneBy(Banner, id);
+    AppDataSource.manager.merge(Banner, banner, req.body);
+    const result = await AppDataSource.manager.save(Banner, banner);
     return res.status(201).json(result);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });
@@ -45,7 +45,7 @@ export const updateBanner = async (req: Request, res: Response) => {
 
 export const deleteBanner = async (req: Request, res: Response) => {
   try {
-    const banner = await AppDataSource.getRepository(Banner).delete(req.params.id);
+    const banner = await AppDataSource.manager.delete(Banner, req.params.id);
     return res.status(200).json(banner);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

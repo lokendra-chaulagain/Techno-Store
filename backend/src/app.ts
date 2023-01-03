@@ -5,6 +5,8 @@ const app = express();
 
 import bannerRoutes from "./routes/banner.routes";
 import categoryRoutes from "./routes/category.routes";
+import productRoute from "./routes/product.routes";
+import contactRoutes from "./routes/contact.routes";
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -16,5 +18,7 @@ app.get("/api", (req: Request, res: Response) => {
 
 app.use("/api/banner", bannerRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/api/product", productRoute);
+app.use("/api/contact", contactRoutes);
 
 export default app;

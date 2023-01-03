@@ -3,13 +3,17 @@ import TableHeading from "../TableHeading";
 import AddCategoryDialog from "./AddCategoryDialog";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
+import { useDeleteCategoryMutation, useGetCategoriesQuery } from "../../redux/api/globalApi";
 
-export default function CategoryTable({ deleteCategory, categories, setIsUpdated }: any) {
+export default function CategoryTable() {
+  const { data: categories } = useGetCategoriesQuery();
+  const [deleteCategory] = useDeleteCategoryMutation();
+
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"All Categories"} />
-        <AddCategoryDialog setIsUpdated={setIsUpdated} />
+        <AddCategoryDialog  />
       </div>
 
       <div className="customCard mt-2 mb-5 ">
@@ -56,7 +60,7 @@ export default function CategoryTable({ deleteCategory, categories, setIsUpdated
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteCategory(category._id)}
+                      onClick={() => deleteCategory(category.id)}
                       aria-label="delete"
                     />
                   </td>

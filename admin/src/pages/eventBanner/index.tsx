@@ -6,45 +6,41 @@ import Api from "../../../service/Api.js";
 let CallApi = new Api();
 
 export default function EventBanner() {
-  const { deleteSuccess, somethingWentWrong } = useContext(MiscellaneousContext);
-  const [isUpdated, setIsUpdated] = useState(0);
+  // const { deleteSuccess, somethingWentWrong } = useContext(MiscellaneousContext);
+  // const [isUpdated, setIsUpdated] = useState(0);
 
-  const [eventBanners, setEventBanners] = useState([]);
-  const fetchAllEventBanner = async () => {
-    try {
-      let res = await CallApi.fetchData(`eventBanner`);
-      setEventBanners(res);
-      setIsUpdated(1);
-    } catch (error) {
-      console.log(error);
-      somethingWentWrong();
-    }
-  };
+  // const [eventBanners, setEventBanners] = useState([]);
+  // const fetchAllEventBanner = async () => {
+  //   try {
+  //     let res = await CallApi.fetchData(`eventBanner`);
+  //     setEventBanners(res);
+  //     setIsUpdated(1);
+  //   } catch (error) {
+  //     console.log(error);
+  //     somethingWentWrong();
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchAllEventBanner();
-  }, [isUpdated]);
+  // useEffect(() => {
+  //   fetchAllEventBanner();
+  // }, [isUpdated]);
 
-  const deleteEventBanner = async (id: any) => {
-    try {
-      let res = await CallApi.deleteData(`eventBanner/${id}`);
-      setIsUpdated(4);
-      deleteSuccess();
-      console.log("Delete success");
-    } catch (error) {
-      console.log(error);
-      somethingWentWrong();
-    }
-  };
+  // const deleteEventBanner = async (id: any) => {
+  //   try {
+  //     let res = await CallApi.deleteData(`eventBanner/${id}`);
+  //     setIsUpdated(4);
+  //     deleteSuccess();
+  //     console.log("Delete success");
+  //   } catch (error) {
+  //     console.log(error);
+  //     somethingWentWrong();
+  //   }
+  // };
 
   return (
     <>
       <Header pageTitle={"Banner"} />
-      <EventBannerTable
-        setIsUpdated={setIsUpdated}
-        eventBanners={eventBanners}
-        deleteEventBanner={deleteEventBanner}
-      />
+      <EventBannerTable />
     </>
   );
 }

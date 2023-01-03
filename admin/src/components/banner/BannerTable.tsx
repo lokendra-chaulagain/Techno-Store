@@ -5,13 +5,17 @@ import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import AddBannerDialog from "./AddBannerDialog";
 import Image from "next/image";
+import { useDeleteBannerMutation, useGetBannersQuery } from "../../redux/api/bannerApi";
 
-export default function BannerTable({ banners, deleteBanner, setIsUpdated }: any) {
+export default function BannerTable() {
+  const { data: banners } = useGetBannersQuery();
+  const [deleteBanner] = useDeleteBannerMutation();
+
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"All Banners"} />
-        <AddBannerDialog setIsUpdated={setIsUpdated} />
+        <AddBannerDialog />
       </div>
 
       <div className="customCard mt-2 mb-5 ">
@@ -64,7 +68,7 @@ export default function BannerTable({ banners, deleteBanner, setIsUpdated }: any
                     <div>
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteBanner(banner._id)}
+                        onClick={() => deleteBanner(banner.id)}
                         aria-label="delete"
                       />
                     </div>

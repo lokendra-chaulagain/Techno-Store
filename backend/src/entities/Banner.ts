@@ -6,13 +6,13 @@ export class Banner extends BaseEntity {
   id!: number;
 
   @Column({ type: String })
-  productName!: string;
+  name!: string;
 
   @Column({ type: String })
-  productDescription!: string;
+  description!: string;
 
-  @Column({ type: String })
-  categoryName!: string;
+  @Column({ type: Number })
+  categoryId!: number;
 
   @Column({ type: Number })
   priceNow!: number;
@@ -24,7 +24,7 @@ export class Banner extends BaseEntity {
   image!: string;
 
   @Column({ default: false, type: Boolean })
-  isActive!: boolean;
+  status!: boolean;
 
   @CreateDateColumn({ type: Date })
   createdAt!: Date;

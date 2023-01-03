@@ -88,12 +88,6 @@ const navItems = [
   },
 
   {
-    icon: <IoMdSettings />,
-    label: "CMS Settings",
-    route: "/cms",
-  },
-
-  {
     icon: <GrMail />,
     label: "Mails",
     route: "/mail",

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../db";
 import { Contact } from "../entities/Contact";
+import nodemailer from "nodemailer";
 
 export const getContacts = async (req: Request, res: Response) => {
   try {
@@ -23,6 +24,32 @@ export const getContact = async (req: Request, res: Response) => {
 
 export const createContact = async (req: Request, res: Response) => {
   try {
+    async function main() {
+      let transporter = nodemailer.createTransport({
+        service: "gmail",
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: {
+          user: "lokendrachaulagain803@gmail.com",
+          pass: "keodnnbwcunkxqmi",
+        },
+      });
+
+      let info = await transporter.sendMail({
+        from: "Techno Store",
+        to: "lokendrachaulagain803@gmail.com",
+        subject: "Message From Techno Store",
+        html: `
+           <p>Full Name : ${req.body.fullName}</p>
+           <p>Email : ${req.body.email}</p>
+           <p>Message : ${req.body.message}</p>`,
+      });
+      console.log("Message Sent");
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    }
+    main().catch(console.error);
+
     const newContact = AppDataSource.getRepository(Contact).create(req.body);
     const results = await AppDataSource.getRepository(Contact).save(newContact);
     return res.status(201).json(results);

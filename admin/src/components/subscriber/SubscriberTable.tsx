@@ -2,8 +2,12 @@ import React from "react";
 import TableHeading from "../TableHeading";
 import { MdDelete } from "react-icons/md";
 import { format } from "timeago.js";
+import { useDeleteSubscriberMutation, useGetSubscribersQuery } from "../../redux/api/globalApi";
 
-export default function SubscriberTable({ deleteSubscriber, subscribers }: any) {
+export default function SubscriberTable() {
+  const { data: subscribers } = useGetSubscribersQuery();
+  const [deleteSubscriber] = useDeleteSubscriberMutation();
+
   return (
     <>
       <div className="d-flex align-items-center  ">
@@ -33,7 +37,7 @@ export default function SubscriberTable({ deleteSubscriber, subscribers }: any) 
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteSubscriber(subscriber._id)}
+                      onClick={() => deleteSubscriber(subscriber.id)}
                       aria-label="delete"
                     />
                   </td>

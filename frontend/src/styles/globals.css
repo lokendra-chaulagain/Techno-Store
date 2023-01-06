@@ -43,3 +43,29 @@
   flex-direction: column;
   align-items: center;
 }
+
+.mixed_section {
+  background-color: #f4f5f4a2;
+}
+
+.mixed_section_product_card {
+  border: 1px solid rgba(219, 217, 217, 0.404);
+}
+
+.offer_carousel {
+  background-color: white;
+}
+
+.fz30 {
+  font-size: 30px;
+}
+
+.category_card {
+  border: 1px solid rgba(219, 217, 217, 0.404);
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.category_card:hover{
+  border: 1px solid orange;
+}

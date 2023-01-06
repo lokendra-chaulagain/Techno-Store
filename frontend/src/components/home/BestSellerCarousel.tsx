@@ -17,7 +17,7 @@ export default function BestSellerCarousel() {
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
-        slidesPerGroup={3}
+        slidesPerGroup={6}
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{

@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import NavTop from "../components/Navbar/NavTop";
 import NavMiddle from "../components/Navbar/NavMiddle";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NavTop />
       <NavMiddle/>
       <Component {...pageProps} />
+      <Footer/>
     </div>
   );
 }

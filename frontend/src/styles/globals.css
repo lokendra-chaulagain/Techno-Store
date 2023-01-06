@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .nav_dropdown_menu {
   width: calc(50rem + 20vw) !important;
   margin-left: -30vh !important;
@@ -22,6 +25,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 300ms ease-in-out;
+}
+.recant_product_card:hover{
+  border: 1px solid orange;
 }
 
 .cp {
@@ -42,6 +49,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 250ms ease-in-out;
+}
+
+.best_seller_product_card:hover{
+  border: 1px solid orange;
 }
 
 .mixed_section {
@@ -50,6 +62,11 @@
 
 .mixed_section_product_card {
   border: 1px solid rgba(219, 217, 217, 0.404);
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+.mixed_section_product_card:hover {
+  border: 1px solid orange;
 }
 
 .offer_carousel {
@@ -66,6 +83,75 @@
   cursor: pointer;
 }
 
-.category_card:hover{
+.category_card:hover {
   border: 1px solid orange;
+}
+
+.footer_icon {
+  cursor: pointer;
+  color: grey;
+  font-size: 22px;
+  transition: all 200ms ease-in-out;
+}
+.footer_icon:hover {
+  color: orange;
+}
+
+.footer_wrapper {
+  background-color: #f5f5f5;
+}
+
+.footer_app_store_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(219, 217, 217, 0.863);
+  width: 300px;
+  padding: 20px 10px;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.footer_app_store_card:hover {
+  border: 1px solid orange;
+}
+
+.bg_orange {
+  background-color: orange !important;
+}
+
+.color_white {
+  color: white !important;
+}
+
+.my_link {
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.my_link:hover {
+  color: orange !important;
+}
+
+.my_black {
+  color: rgba(37, 37, 37, 0.774);
+}
+
+.services_round {
+  border: 1px solid rgba(219, 217, 217, 0.863) !important;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.services_round:hover {
+  border: 1px solid orange !important;
+}
+
+.color_orange {
+  color: orange !important;
+}
+
+.mb_minus_5 {
+  margin-bottom: -10px !important;
 }

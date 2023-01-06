@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import {  Navigation } from "swiper";
 import demo from "../../assets/product1.jpg";
 import Image from "next/image";
 import { IoIosGitCompare } from "react-icons/io";
@@ -13,7 +13,9 @@ export default function BestSellerCarousel() {
   const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
   return (
-    <div>
+    <div className="mt-5">
+      <h4 className="my_black">Best Seller</h4>
+      <hr className="my-0 mb-4" />
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
@@ -24,7 +26,7 @@ export default function BestSellerCarousel() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[ Navigation]}
         className="mySwiper">
         {products &&
           products.map((product: any, index) => (
@@ -41,16 +43,16 @@ export default function BestSellerCarousel() {
                     height={200}
                     width={200}
                   />
-                  <div className="d-flex flex-column">
+                  <div className="d-flex  gap-2 flex-column">
                     <small className="text-muted">Laptops</small>
-                    <p className="mb-0">Apple iPad Mini G2356</p>
+                    <p className="h6 mb-0">Apple iPad Mini G2356</p>
                     <p className="h5 ">
-                      <span className="">$600.00</span> <span className="text-muted">$400</span>
+                      <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="d-flex align-items-center gap-4">
+                <div className="d-flex text-muted align-items-center gap-4">
                   <IoIosGitCompare
                     size={25}
                     className="cp"
@@ -76,16 +78,16 @@ export default function BestSellerCarousel() {
                     height={200}
                     width={200}
                   />
-                  <div className="d-flex flex-column">
+                  <div className="d-flex gap-2 flex-column">
                     <small className="text-muted">Laptops</small>
-                    <p className="mb-0">Apple iPad Mini G2356</p>
+                    <p className="h6 mb-0">Apple iPad Mini G2356</p>
                     <p className="h5 ">
-                      <span className="">$600.00</span> <span className="text-muted">$400</span>
+                      <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="d-flex align-items-center gap-4">
+                <div className="d-flex text-muted align-items-center gap-4">
                   <IoIosGitCompare
                     size={25}
                     className="cp"

@@ -1,36 +1,20 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Announcement from "../components/Announcement";
+import NavTop from "../components/Navbar/NavTop";
+import NavMiddle from "../components/Navbar/NavMiddle";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     import("bootstrap");
   }, []);
-
   return (
-    <>
-      <Navbar />
+    <div >
+      <NavTop />
+      <NavMiddle/>
       <Component {...pageProps} />
-      <Footer />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </>
+    </div>
   );
 }
 

@@ -4,7 +4,6 @@ body {
 .nav_dropdown_menu {
   width: calc(50rem + 20vw) !important;
   margin-left: -30vh !important;
-  height: 60vh !important;
 }
 
 .img_section_img_div {
@@ -133,12 +132,11 @@ body {
   color: orange !important;
 }
 
-
 .my_black {
-  color: rgba(37, 37, 37, 0.774);
+  color: rgba(37, 37, 37, 0.774) !important;
 }
 
-.para_text{
+.para_text {
   color: rgba(22, 22, 22, 0.863);
   font-size: 17.5px;
 }
@@ -180,24 +178,173 @@ body {
   user-select: none;
 }
 
-
-.my_button{
+.my_button {
   background-color: orange !important;
   color: white !important;
 }
 
-.outline_button{
+.outline_button {
   border-color: orange !important;
   font-weight: 600 !important;
   color: rgba(37, 37, 37, 0.774) !important;
 }
-.outline_button:hover{
+.outline_button:hover {
   background-color: orange !important;
   color: white !important;
 }
-.outline_button_selected{
+.outline_button_selected {
   background-color: orange !important;
   color: white !important;
   font-weight: 600 !important;
+}
 
+.register_input {
+  box-shadow: none !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+.register_button {
+  background-color: orange !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.check_box {
+  border-color: orange !important;
+}
+.check_box:checked {
+  background-color: orange !important;
+  border-color: orange !important;
+}
+
+.forgot {
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.forgot:hover {
+  color: orange;
+}
+
+.inside_input {
+  border: none !important;
+  outline: none !important;
+}
+
+.cp_hover {
+  cursor: pointer !important;
+  transition: all 200ms ease-in-out;
+}
+.cp_hover:hover {
+  color: orange !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: orange !important;
+}
+.dropdown-item:hover {
+  background-color: orange !important;
+  color: white !important;
+}
+
+.bottom_nav {
+  background-color: orange !important;
+  display: flex;
+  align-items: center;
+}
+
+.yadav {
+  border: 1px solid rgba(128, 128, 128, 0.616);
+}
+
+.form-control:focus {
+  border-color: orange !important;
+}
+
+.cat_button {
+  outline: none !important;
+  border: none !important;
+  font-weight: 600 !important;
+  color: white !important;
+  background-color: #494948 !important;
+}
+
+.color_dark {
+  color: #494948 !important;
+}
+.search_button {
+  background-color: #494948 !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.nav_circle {
+  cursor: pointer;
+  border: 1px solid #494948 !important;
+  transition: all 200ms ease-in-out;
+  color: #494948 !important;
+}
+
+.nav_circle:hover {
+  border: 1px solid #494948 !important;
+
+  background-color: #494948 !important;
+  color: white !important;
+}
+
+.nav_cat_link {
+  font-weight: 400 !important;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  color: #494948;
+  margin-bottom: 7px;
+}
+
+.nav_cat_link:hover {
+  color: orange !important;
+}
+
+.min_height_100_error_page {
+  min-height: 65vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+}
+
+.contact_input_field {
+  border: 0;
+  outline: 0;
+  border-radius: 3px !important;
+  border-bottom: 1px solid var(--color-blue);
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.contact_input_field:focus {
+  box-shadow: none !important;
+}
+
+.google_map_section {
+  margin: calc(3rem + 2vh) 0px;
+}
+
+
+.send_button{
+  border: 1px solid orange !important;
+  background-color: orange !important;
+  font-weight: 600 !important;
+  color: white ;
+  padding-top: 12px ;
+  padding-bottom: 12px;
+}
+
+.send_button:focus{
+  border: 1px solid #494948 !important;
 }

@@ -8,10 +8,10 @@ export default function NavTop() {
     <>
       <div className=" d-flex align-items-center justify-content-between">
         <div className="d-flex align-content-around gap-2 small">
-          <span>Support</span>|<span>Store Locator</span>|<span>Track Your Order</span>
+          <span className="cp_hover my_black h6">Support</span>|<span className="cp_hover my_black h6">Store Locator</span>|<span className="cp_hover my_black h6">Track Your Order</span>
         </div>
         <div>
-          <small>Call US : 9876435475</small>
+          <small className="cp_hover my_black h6">Call US : 9876435475</small>
         </div>
         <div className="d-flex align-content-around gap-3 small">
           <MyAccountDropDown />
@@ -19,7 +19,7 @@ export default function NavTop() {
           <Language />
         </div>
       </div>
-      <hr  className="my-2"/>
+      <hr className="my-2" />
     </>
   );
 }

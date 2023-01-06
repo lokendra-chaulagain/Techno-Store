@@ -6,7 +6,9 @@ export default function CategoriesSection() {
   const categories = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
   return (
-    <div>
+    <div className="mt-5">
+      <h5 className="my_black">Explore More Categories</h5>
+      <hr />
       <div className="row">
         {categories &&
           categories.map((product: any, index) => (
@@ -15,9 +17,9 @@ export default function CategoriesSection() {
               className="col-4 mb-4">
               <div className="d-flex p-3 align-items-center justify-content-between gap-4 category_card">
                 <div>
-                  <h5>Category Name</h5>
-                  <h4>This is the Product Name</h4>
-                  <h6 className="d-flex align-items-center gap-2">
+                  <h6 className="my_black text-muted">Category Name</h6>
+                  <h5 className="my_black">This is the Product Name</h5>
+                  <h6 className="d-flex align-items-center color_orange gap-2">
                     Shop More <span className="fz30">→</span>{" "}
                   </h6>
                 </div>

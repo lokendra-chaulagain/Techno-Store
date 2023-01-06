@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import {  Navigation } from "swiper";
+import { Navigation } from "swiper";
 import demo from "../../assets/product1.jpg";
 import Image from "next/image";
 import { IoIosGitCompare } from "react-icons/io";
@@ -13,7 +13,7 @@ export default function BestSellerCarousel() {
   const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
   return (
-    <div className="mt-5">
+    <div className="">
       <h4 className="my_black">Best Seller</h4>
       <hr className="my-0 mb-4" />
       <Swiper
@@ -26,7 +26,7 @@ export default function BestSellerCarousel() {
           clickable: true,
         }}
         navigation={true}
-        modules={[ Navigation]}
+        modules={[Navigation]}
         className="mySwiper">
         {products &&
           products.map((product: any, index) => (
@@ -44,8 +44,8 @@ export default function BestSellerCarousel() {
                     width={200}
                   />
                   <div className="d-flex  gap-2 flex-column">
-                    <small className="text-muted">Laptops</small>
-                    <p className="h6 mb-0">Apple iPad Mini G2356</p>
+                    <small className="text-muted ">Laptops</small>
+                    <p className="h6 my_black mb-0">Apple iPad Mini G2356</p>
                     <p className="h5 ">
                       <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
                     </p>

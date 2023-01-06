@@ -27,7 +27,7 @@ body {
   align-items: center;
   transition: all 300ms ease-in-out;
 }
-.recant_product_card:hover{
+.recant_product_card:hover {
   border: 1px solid orange;
 }
 
@@ -52,7 +52,7 @@ body {
   transition: all 250ms ease-in-out;
 }
 
-.best_seller_product_card:hover{
+.best_seller_product_card:hover {
   border: 1px solid orange;
 }
 
@@ -133,8 +133,14 @@ body {
   color: orange !important;
 }
 
+
 .my_black {
   color: rgba(37, 37, 37, 0.774);
+}
+
+.para_text{
+  color: rgba(22, 22, 22, 0.863);
+  font-size: 17.5px;
 }
 
 .services_round {
@@ -154,4 +160,44 @@ body {
 
 .mb_minus_5 {
   margin-bottom: -10px !important;
+}
+
+.single_product_right {
+  background-color: #f5f5f5;
+}
+
+.quantity_calculator {
+  border: 1px solid rgba(172, 169, 169, 0.397);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 120px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.my_button{
+  background-color: orange !important;
+  color: white !important;
+}
+
+.outline_button{
+  border-color: orange !important;
+  font-weight: 600 !important;
+  color: rgba(37, 37, 37, 0.774) !important;
+}
+.outline_button:hover{
+  background-color: orange !important;
+  color: white !important;
+}
+.outline_button_selected{
+  background-color: orange !important;
+  color: white !important;
+  font-weight: 600 !important;
+
 }

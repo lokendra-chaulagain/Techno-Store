@@ -7,9 +7,9 @@ export default function FashionDropdown() {
     <div>
       <div className="dropdown ">
         <span
-          className="my_black h6 cp"
+          className="my_black h6 no_selection cp"
           data-bs-toggle="dropdown">
-          Fashion^
+          FASHION^
         </span>
 
         <div className="dropdown-menu nav_dropdown_menu p-4  rounded-1">

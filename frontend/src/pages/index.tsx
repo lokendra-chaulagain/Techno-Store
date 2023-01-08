@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBeer } from "react-icons/fa";
+import HeroCarousel from "../components/HeroCarousel";
 import BestSellerCarousel from "../components/home/BestSellerCarousel";
 import CategoryNavTab from "../components/home/CategoryNavTab";
 import ImageSection from "../components/home/ImageSection";
@@ -10,14 +10,20 @@ import OurServices from "../components/OurServices";
 
 function Index() {
   return (
-    <div className="px-5">
+    <div className="">
+      <HeroCarousel />
       <ImageSection />
-      <ProductNavTab/>
-      <BestSellerCarousel/>
-      <CategoryNavTab/>
-      <RecentProductCarousel />
-      <MixedProductSection/>
-      <OurServices/>
+      <div className="px-2 px-sm-5">
+        <ProductNavTab />
+      </div>
+
+      <div className="px-2 px-sm-5">
+        <BestSellerCarousel />
+        <CategoryNavTab />
+        <RecentProductCarousel />
+        <MixedProductSection />
+        <OurServices />
+      </div>
     </div>
   );
 }

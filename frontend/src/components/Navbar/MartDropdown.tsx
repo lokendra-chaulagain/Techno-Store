@@ -9,7 +9,7 @@ export default function MartDropdown() {
     <div>
       <div className="dropdown ">
         <span
-          className="my_black h6 cp"
+          className="my_black h6 no_selection cp"
           data-bs-toggle="dropdown">
           MART^
         </span>

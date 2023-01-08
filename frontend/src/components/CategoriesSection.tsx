@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import tv from "../assets/kittle.png";
+import SingleProductSection from "./SingleProductSection";
 
 export default function CategoriesSection() {
   const categories = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
   return (
-    <div className="mt-5">
+    <div className="">
       <h5 className="my_black">Explore More Categories</h5>
       <hr />
       <div className="row">

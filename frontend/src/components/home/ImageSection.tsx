@@ -8,9 +8,8 @@ import image4 from "../../assets/image-section-4.jpg";
 
 export default function ImageSection() {
   return (
-    <div>
-      <div className="row">
-        <div className="col-9 d-flex flex-column gap-4 p-0">
+      <div className="row p-0">
+        <div className="col-9 p-0 d-flex flex-column gap-4 p-0">
           <div className="d-flex justify-content-between">
             <div className="img_section_img_div">
               <Image
@@ -64,6 +63,5 @@ export default function ImageSection() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

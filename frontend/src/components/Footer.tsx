@@ -15,9 +15,9 @@ import android from "../assets/android.png";
 export default function Footer() {
   return (
     <>
-      <div className="px-5 footer_wrapper py-5">
-        <div className="row  ">
-          <div className="col text-muted ">
+      <div className="px-4 px-sm-5 footer_wrapper py-5">
+        <div className="row ">
+          <div className="col-12 col-md-6 col-lg-3 text-muted px-0 ">
             <Image
               className=" no_selection cp"
               src={logo}
@@ -38,7 +38,8 @@ export default function Footer() {
               <FaFacebookF className="footer_icon" />
             </div>
           </div>
-          <div className="col text-muted">
+
+          <div className="col-12 mt-5 mt-md-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Find By Categories</h5>
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
@@ -47,7 +48,8 @@ export default function Footer() {
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
           </div>
-          <div className="col text-muted">
+
+          <div className="col-12  mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Customer Care</h5>
             <p className="my-0 mt-2 my_link">Contact Us</p>
             <p className="my-0 mt-2 my_link">My Bookmark</p>
@@ -56,7 +58,8 @@ export default function Footer() {
             <p className="my-0 mt-2 my_link">My Account.</p>
             <p className="my-0 mt-2 my_link">My Cart</p>
           </div>
-          <div className="col text-muted">
+
+          <div className="col-12 col-sm-9 mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Sign Up To New Letter</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia unde veritatis officiis pariatur dolor ipsam quae atque. Commodi, mollitia rerum. Distinctio, voluptates!</p>
 
@@ -112,39 +115,44 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="d-flex align-items-center justify-content-center mt-5 gap-5">
-          <div className="footer_app_store_card rounded-2 ">
-            <div className="d-flex align-items-center gap-4">
-              <Image
-                className=" no_selection cp"
-                src={phone}
-                objectFit="scale-down"
-                alt="img"
-              />
-              <div className="text-muted">
-                <h6 className="my-0">App Store</h6>
-                <small className="my-0">Available on the</small>
+
+        <div className="row d-flex align-items-center justify-content-center mt-5  ">
+          <div className="col-12 col-sm-6 col-lg-3 p-0 pe-0 pe-sm-2 ">
+            <div className="  footer_app_store_card rounded-2 ">
+              <div className=" d-flex align-items-center gap-4">
+                <Image
+                  className=" no_selection cp"
+                  src={phone}
+                  objectFit="scale-down"
+                  alt="img"
+                />
+                <div className="text-muted">
+                  <h6 className="my-0">App Store</h6>
+                  <small className="my-0">Available on the</small>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="footer_app_store_card rounded-2">
-            <div className="d-flex align-items-center gap-4">
-              <Image
-                className=" no_selection cp"
-                src={android}
-                objectFit="scale-down"
-                alt="img"
-              />
-              <div className="text-muted">
-                <h6 className="my-0">Google Play </h6>
-                <small className="my-0">Get in on</small>
+          <div className="col-12 col-sm-6 col-lg-3  p-0 ps-0 ps-sm-2 mt-3 mt-sm-0">
+            <div className=" footer_app_store_card rounded-2">
+              <div className="d-flex align-items-center gap-4">
+                <Image
+                  className=" no_selection cp"
+                  src={android}
+                  objectFit="scale-down"
+                  alt="img"
+                />
+                <div className="text-muted">
+                  <h6 className="my-0">Google Play </h6>
+                  <small className="my-0">Get in on</small>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <p className="small mt-4 text-muted text-center">All Right Reserved 2022 </p>
+      <p className="small mt-4 text-muted text-center">Designed & Developed By Lokendra Chaulagain . No Right Reserved , Free To Use . </p>
     </>
   );
 }

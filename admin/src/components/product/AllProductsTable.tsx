@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import TableHeading from "../TableHeading";
 import { MdDelete } from "react-icons/md";
@@ -9,6 +9,17 @@ import Image from "next/image";
 
 export default function AllProductsTable({ products, deleteProduct }: any) {
   console.log(products[12]);
+
+  
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page)
 
   return (
     <>
@@ -134,6 +145,26 @@ export default function AllProductsTable({ products, deleteProduct }: any) {
           </tbody>
         </table>
       </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+          <nav aria-label="Page navigation ">
+            <ul className="pagination">
+              <li className="page-item">
+                <a
+                  onClick={handlePrev}
+                  className="page-link rounded-0 h6 next_prev cp">
+                  Previous
+                </a>
+              </li>
+              <li className="page-item">
+                <a
+                  onClick={handleNext}
+                  className="page-link rounded-0 h6 next_prev px-4 cp">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </>
   );
 }

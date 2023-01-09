@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Banner, Category, Contact, SmallBanner, Subscriber } from "../type/type";
+import { Banner, Category, Contact, SmallBanner, Subscriber, Color, Size } from "../type/type";
 
 export const globalApi = createApi({
   reducerPath: "globalApi",
@@ -7,7 +7,7 @@ export const globalApi = createApi({
     baseUrl: "http://localhost:5000/api",
   }),
 
-  tagTypes: ["Banner", "SmallBanner", "Category", "Subscriber", "Contact"],
+  tagTypes: ["Banner", "SmallBanner", "Category", "Subscriber", "Contact", "Color", "Size"],
   endpoints: (builder) => ({
     getBanners: builder.query<Banner[], void>({
       query() {
@@ -195,11 +195,76 @@ export const globalApi = createApi({
       },
       invalidatesTags: ["Contact"],
     }),
+
+    // Color-------------------------------------------->
+    createNewColor: builder.mutation<Color, FormData>({
+      query(newColor) {
+        return {
+          url: "/color",
+          method: "POST",
+          body: newColor,
+        };
+      },
+      invalidatesTags: ["Color"],
+    }),
+
+    getColors: builder.query<Color[], void>({
+      query() {
+        return {
+          url: `/color`,
+        };
+      },
+      transformResponse: (res: Color[]) => res.sort((a: Color, b: Color) => b.id - a.id),
+      providesTags: ["Color"],
+    }),
+
+    deleteColor: builder.mutation<Color, number>({
+      query(id) {
+        return {
+          url: `/color/${id}`,
+          method: "Delete",
+        };
+      },
+      invalidatesTags: ["Color"],
+    }),
+
+    // Size-------------------------------------------------->
+    createNewSize: builder.mutation<Size, FormData>({
+      query(newSize) {
+        return {
+          url: "/size",
+          method: "POST",
+          body: newSize,
+        };
+      },
+      invalidatesTags: ["Size"],
+    }),
+
+    getSizes: builder.query<Size[], void>({
+      query() {
+        return {
+          url: `/size`,
+        };
+      },
+      transformResponse: (res: Size[]) => res.sort((a: Size, b: Size) => b.id - a.id),
+      providesTags: ["Size"],
+    }),
+
+    deleteSize: builder.mutation<Size, number>({
+      query(id) {
+        return {
+          url: `/size/${id}`,
+          method: "Delete",
+        };
+      },
+      invalidatesTags: ["Size"],
+    }),
   }),
 });
 
 export const {
   useGetBannersQuery,
+  useGetBannerQuery,
   useDeleteBannerMutation,
   useCreateNewBannerMutation,
   useUpdateBannerMutation,
@@ -219,4 +284,12 @@ export const {
   useGetContactQuery,
   useUpdateContactMutation,
   useDeleteContactMutation,
+
+  useCreateNewColorMutation,
+  useGetColorsQuery,
+  useDeleteColorMutation,
+
+  useCreateNewSizeMutation,
+  useGetSizesQuery,
+  useDeleteSizeMutation,
 } = globalApi;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeading from "../TableHeading";
 import { MdDelete } from "react-icons/md";
 import { format } from "timeago.js";
@@ -8,13 +8,23 @@ export default function SubscriberTable() {
   const { data: subscribers } = useGetSubscribersQuery();
   const [deleteSubscriber] = useDeleteSubscriberMutation();
 
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page);
+
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"All subscribers"} />
       </div>
 
-      <div className="customCard mt-2 mb-5 ">
+      <div className="customCard mt-2 ">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
@@ -45,6 +55,26 @@ export default function SubscriberTable() {
               ))}
           </tbody>
         </table>
+      </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </>
   );

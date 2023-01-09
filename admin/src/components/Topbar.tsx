@@ -1,11 +1,10 @@
 import React from "react";
-import { Grid, Typography, Toolbar, Box, AppBar, Stack, Avatar, Chip } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Grid, Toolbar, Box, AppBar, Stack, Avatar, Chip } from "@mui/material";
 import MailDialogBox from "./MailDialogBox";
 import NotificationDialogBox from "./NotificationDialogBox";
-import { MailContextProvider } from "../../context/MailContext";
 import { BiLogOut } from "react-icons/bi";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Topbar() {
   const router = useRouter();
@@ -18,52 +17,51 @@ export default function Topbar() {
   };
 
   return (
-    <MailContextProvider>
-      <AppBar
-        position="static"
-        className="customNavbar">
-        <Toolbar>
-          <Grid
-            container
-            justifyContent="space-between">
-            <div className="d-flex  align-items-center gap-3">
-              <MenuIcon className="cp" />
-              <Typography variant="h6">DASHBOARD</Typography>
-            </div>
+    <AppBar
+      position="static"
+      className="customNavbar">
+      <Toolbar>
+        <Grid
+          container
+          justifyContent="space-between">
+          <div className="d-flex  align-items-center gap-3">
+            <Link href={"/"}>
+              <h2 className="no_selection phc cp">Gadget Galaxy</h2>
+            </Link>
+          </div>
 
-            <Box>
-              <Grid
-                container
-                gap={2}>
-                <MailDialogBox />
-                <NotificationDialogBox />
-                <Stack
-                  direction="row"
-                  spacing={1}>
-                  <Chip
-                    avatar={
-                      <Avatar
-                        alt="Natacha"
-                        src="/static/images/avatar/1.jpg"
-                      />
-                    }
-                    label="Avatar"
-                    variant="outlined"
-                  />
-
-                  <div className="div ms-3">
-                    <BiLogOut
-                      onClick={logout}
-                      type="button"
-                      size={30}
+          <Box>
+            <Grid
+              container
+              gap={2}>
+              <MailDialogBox />
+              <NotificationDialogBox />
+              <Stack
+                direction="row"
+                spacing={1}>
+                <Chip
+                  avatar={
+                    <Avatar
+                      alt="Natacha"
+                      src="/static/images/avatar/1.jpg"
                     />
-                  </div>
-                </Stack>
-              </Grid>
-            </Box>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-    </MailContextProvider>
+                  }
+                  label="Avatar"
+                  variant="outlined"
+                />
+
+                <div className="div ms-3">
+                  <BiLogOut
+                    onClick={logout}
+                    type="button"
+                    size={30}
+                  />
+                </div>
+              </Stack>
+            </Grid>
+          </Box>
+        </Grid>
+      </Toolbar>
+    </AppBar>
   );
 }

@@ -7,8 +7,6 @@ function Category() {
     <>
       <Header pageTitle={"Categories"} />
       <CategoryTable />
-      {/* <ColorTable /> */}
-      {/* <SizeTable /> */}
     </>
   );
 }

@@ -6,7 +6,6 @@ import { useGetContactQuery } from "../../redux/api/globalApi";
 
 export default function EditMailTable() {
   const router = useRouter();
-  console.log(router);
   const id: any = router.query.id;
   const { data: singleMail } = useGetContactQuery(id);
 

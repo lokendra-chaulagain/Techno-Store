@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeading from "../TableHeading";
 import AddColorDialog from "./AddColorDialog";
 import { MdDelete } from "react-icons/md";
+import { useDeleteColorMutation, useGetColorsQuery } from "../../redux/api/globalApi";
 
-export default function ColorTable({ deleteColor, colors, setIsUpdated }: any) {
+export default function ColorTable() {
+  const { data: colors } = useGetColorsQuery();
+  const [deleteColor] = useDeleteColorMutation();
+  
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page)
+  
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"All Colors"} />
-        <AddColorDialog setIsUpdated={setIsUpdated} />
+        <AddColorDialog />
       </div>
 
-      <div className="customCard mt-2 mb-5 ">
+      <div className="customCard mt-2  ">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
@@ -32,7 +46,7 @@ export default function ColorTable({ deleteColor, colors, setIsUpdated }: any) {
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteColor(color._id)}
+                      onClick={() => deleteColor(color.id)}
                       aria-label="delete"
                     />
                   </td>
@@ -41,6 +55,26 @@ export default function ColorTable({ deleteColor, colors, setIsUpdated }: any) {
           </tbody>
         </table>
       </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+          <nav aria-label="Page navigation ">
+            <ul className="pagination">
+              <li className="page-item">
+                <a
+                  onClick={handlePrev}
+                  className="page-link rounded-0 h6 next_prev cp">
+                  Previous
+                </a>
+              </li>
+              <li className="page-item">
+                <a
+                  onClick={handleNext}
+                  className="page-link rounded-0 h6 next_prev px-4 cp">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </>
   );
 }

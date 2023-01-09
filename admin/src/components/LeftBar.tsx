@@ -7,19 +7,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useRouter } from "next/router";
-import { ImPriceTags } from "react-icons/im";
 import { RiProfileLine } from "react-icons/ri";
-import { ImBlogger2 } from "react-icons/im";
 import { GrMail } from "react-icons/gr";
-import { IoMdSettings } from "react-icons/io";
 import { FiGrid } from "react-icons/fi";
 import { GiVerticalBanner } from "react-icons/gi";
 import { MdOutlineCategory } from "react-icons/md";
 import { BiSitemap } from "react-icons/bi";
-import { BsPeopleFill } from "react-icons/bs";
 import { GiKnightBanner } from "react-icons/gi";
 import { MdVoicemail } from "react-icons/md";
-import { MdOutlineHomeRepairService } from "react-icons/md";
 
 const navItems = [
   {
@@ -36,9 +31,23 @@ const navItems = [
 
   {
     icon: <MdOutlineCategory />,
-    label: "Inventory",
+    label: "Category",
     route: "/category",
   },
+  {
+    icon: <MdOutlineCategory />,
+    label: "Color",
+    route: "/color",
+  },
+
+  {
+    icon: <MdOutlineCategory />,
+    label: "Size",
+    route: "/size",
+  },
+
+
+
 
   {
     icon: <BiSitemap />,
@@ -46,11 +55,6 @@ const navItems = [
     route: "/product",
   },
 
-  {
-    icon: <BsPeopleFill />,
-    label: "Partners",
-    route: "/partner",
-  },
 
   {
     icon: <GiKnightBanner />,
@@ -58,33 +62,11 @@ const navItems = [
     route: "/eventBanner",
   },
 
-  {
-    icon: <MdOutlineHomeRepairService />,
-    label: "Our Services",
-    route: "/ourServices",
-  },
-
-  {
-    icon: <ImPriceTags />,
-    label: "standard",
-    route: "/standard",
-  },
 
   {
     icon: <RiProfileLine />,
     label: "Review",
     route: "/review",
-  },
-  {
-    icon: <ImBlogger2 />,
-    label: "Blog",
-    route: "/blog",
-  },
-
-  {
-    icon: <RiProfileLine />,
-    label: "Vacancy",
-    route: "/vacancy",
   },
 
   {

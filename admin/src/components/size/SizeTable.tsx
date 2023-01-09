@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import TableHeading from "../TableHeading";
 import AddSizeDialog from "./AddSizeDialog";
 import { MdDelete } from "react-icons/md";
+import { useDeleteSizeMutation, useGetSizesQuery } from "../../redux/api/globalApi";
 
-export default function SizeTable({ deleteSize, sizes,setIsUpdated }: any) {
+export default function SizeTable() {
+  const { data: sizes } = useGetSizesQuery();
+  const [deleteSize] = useDeleteSizeMutation();
+
+  
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page)
+
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"All Sizes"} />
-        <AddSizeDialog setIsUpdated={setIsUpdated} />
+        <AddSizeDialog />
       </div>
 
-      <div className="customCard mt-2 mb-5 ">
+      <div className="customCard mt-2 ">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
@@ -33,7 +48,7 @@ export default function SizeTable({ deleteSize, sizes,setIsUpdated }: any) {
                     <div className="d-flex ">
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteSize(size._id)}
+                        onClick={() => deleteSize(size.id)}
                         aria-label="delete"
                       />
                     </div>
@@ -43,6 +58,26 @@ export default function SizeTable({ deleteSize, sizes,setIsUpdated }: any) {
           </tbody>
         </table>
       </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+          <nav aria-label="Page navigation ">
+            <ul className="pagination">
+              <li className="page-item">
+                <a
+                  onClick={handlePrev}
+                  className="page-link rounded-0 h6 next_prev cp">
+                  Previous
+                </a>
+              </li>
+              <li className="page-item">
+                <a
+                  onClick={handleNext}
+                  className="page-link rounded-0 h6 next_prev px-4 cp">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </>
   );
 }

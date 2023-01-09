@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import AddReviewDialog from "./AddReviewDialog";
-import Image from "next/image";
+import { useGetCategoriesQuery } from "../../redux/api/globalApi";
+
+export default function ReviewTable() {
+  const { data: reviews } = useGetCategoriesQuery();
+  
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page)
 
 
-export default function ReviewTable({ deleteReview, reviews, setIsUpdated }: any) {
+
   return (
     <>
-      <AddReviewDialog setIsUpdated={setIsUpdated} />
+      <AddReviewDialog />
       <div className="customCard mt-2 ">
         <table className="table  ">
           <thead>
@@ -27,23 +40,7 @@ export default function ReviewTable({ deleteReview, reviews, setIsUpdated }: any
                 <tr className="customPrimaryTxtColor custom_table_hover ">
                   <th scope="row">1</th>
                   <td>{review.name}</td>
-                  <td>
-                    <a
-                      className="d-flex "
-                      href={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${review.image}`}>
-                      ​
-                      <div className="banner_table_image_div">
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${review.image}`}
-                          quality={50}
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-1"
-                          alt="myimage"
-                        />
-                      </div>
-                    </a>
-                  </td>
+
                   <td>{review.description}</td>
 
                   <td>
@@ -56,7 +53,7 @@ export default function ReviewTable({ deleteReview, reviews, setIsUpdated }: any
 
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteReview(review._id)}
+                        // onClick={() => deleteReview(review..id)}
                         aria-label="delete"
                       />
                     </div>
@@ -66,6 +63,26 @@ export default function ReviewTable({ deleteReview, reviews, setIsUpdated }: any
           </tbody>
         </table>
       </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+          <nav aria-label="Page navigation ">
+            <ul className="pagination">
+              <li className="page-item">
+                <a
+                  onClick={handlePrev}
+                  className="page-link rounded-0 h6 next_prev cp">
+                  Previous
+                </a>
+              </li>
+              <li className="page-item">
+                <a
+                  onClick={handleNext}
+                  className="page-link rounded-0 h6 next_prev px-4 cp">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </>
   );
 }

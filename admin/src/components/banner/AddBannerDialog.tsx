@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { useCreateNewBannerMutation } from "../../redux/api/bannerApi";
+import { useCreateNewBannerMutation } from "../../redux/api/globalApi";
 
 export default function AddBannerDialog() {
   const [createNewBanner] = useCreateNewBannerMutation();

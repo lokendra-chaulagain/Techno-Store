@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { format } from "timeago.js";
 import { IoMdEye } from "react-icons/io";
@@ -7,8 +7,18 @@ import { useDeleteContactMutation, useGetContactsQuery } from "../../redux/api/g
 
 export default function MailTable() {
   const { data: mails } = useGetContactsQuery();
-  const [deleteContact]=useDeleteContactMutation()
-  
+  const [deleteContact] = useDeleteContactMutation();
+
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page);
+
   return (
     <>
       <div className="customCard mt-2 ">
@@ -54,7 +64,28 @@ export default function MailTable() {
               ))}
           </tbody>
         </table>
+
       </div>
+        <div className="d-flex justify-content-end pe-5 mt-2">
+          <nav aria-label="Page navigation ">
+            <ul className="pagination">
+              <li className="page-item">
+                <a
+                  onClick={handlePrev}
+                  className="page-link rounded-0 h6 next_prev cp">
+                  Previous
+                </a>
+              </li>
+              <li className="page-item">
+                <a
+                  onClick={handleNext}
+                  className="page-link rounded-0 h6 next_prev px-4 cp">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
     </>
   );
 }

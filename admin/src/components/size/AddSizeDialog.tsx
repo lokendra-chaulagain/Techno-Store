@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
-import axios from "axios";
 import { useForm } from "react-hook-form";
-import { MiscellaneousContext } from "../../../context/MiscellaneousContext";
+import { useCreateNewSizeMutation } from "../../redux/api/globalApi";
 
-export default function AddSizeDialog({ setIsUpdated }: any) {
-  const { createSuccess, somethingWentWrong } = useContext(MiscellaneousContext);
+export default function AddSizeDialog() {
+  const [createNewSize] = useCreateNewSizeMutation();
 
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
@@ -22,21 +21,12 @@ export default function AddSizeDialog({ setIsUpdated }: any) {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField = watch();
+  const handleAllField: any = watch();
 
   const createColor = async () => {
-    try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/size`, handleAllField);
-      // 
-      setIsUpdated(5);
-      handleClose();
-      createSuccess();
-      reset();
-      console.log("Form has been submitted");
-    } catch (error) {
-      console.log(error);
-      somethingWentWrong();
-    }
+    createNewSize(handleAllField);
+    reset();
+    handleClose();
   };
 
   return (

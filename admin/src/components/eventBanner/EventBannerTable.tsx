@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import TableHeading from "../TableHeading";
-import AddEventBannerDialog from "./AddEventBannerDialog";
-import Image from "next/image";
 import { useGetSmallBannersQuery } from "../../redux/api/globalApi";
+import AddEventBannerDialog from "./AddEventBannerDialog";
 
 export default function EventBannerTable() {
   const { data: eventBanners } = useGetSmallBannersQuery();
-  console.log(eventBanners)
+
+  const [page, setPage] = useState(0);
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrev = () => {
+    setPage(page - 1);
+  };
+  console.log(page);
 
   return (
     <>
       <div className="d-flex align-items-center  ">
         <TableHeading heading={"Event Banner"} />
-        {/* <AddEventBannerDialog setIsUpdated={setIsUpdated} /> */}
+        <AddEventBannerDialog />
       </div>
 
-      <div className="customCard mt-2 mb-5 ">
+      <div className="customCard mt-2  ">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
@@ -34,25 +42,6 @@ export default function EventBannerTable() {
                 <tr
                   key={id}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  {/* <th scope="row">{index + 1}</th> */}
-                  {/* <td>
-                    <a
-                      className="d-flex "
-                      href={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${eventBanner.image}`}>
-                      ​
-                      <div className="banner_table_image_div">
-                        <Image
-                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${eventBanner.image}`}
-                          quality={50}
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-1"
-                          alt="myimage"
-                        />
-                      </div>
-                    </a>
-                  </td> */}
-
                   <td>{eventBanner.image}</td>
                   {eventBanner.status == 1 && <td className="active_status_green_color">Active</td>}
                   {eventBanner.status == 0 && <td className="active_status_red_color">InActive</td>}
@@ -77,6 +66,26 @@ export default function EventBannerTable() {
               ))}
           </tbody>
         </table>
+      </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </>
   );

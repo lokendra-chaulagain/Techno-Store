@@ -4,7 +4,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import ClearIcon from "@mui/icons-material/Clear";
 import styles from "../../styles/modules/Topbar.module.css";
 import { Dialog, Button, DialogContent, DialogActions, Typography, Badge, Grid, Box } from "@mui/material";
-import { MailContext } from "../../context/MailContext";
+import { useGetContactsQuery } from "../redux/api/globalApi";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -16,10 +16,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 export default function MailDialogBox() {
-  const { mails, isUpdated, fetchAllMails } = React.useContext(MailContext);
-  useEffect(() => {
-    fetchAllMails();
-  }, [isUpdated]);
+  const { data: mails } = useGetContactsQuery();
 
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {

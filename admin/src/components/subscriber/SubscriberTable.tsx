@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableHeading from "../TableHeading";
 import { MdDelete } from "react-icons/md";
 import { format } from "timeago.js";
 import { useDeleteSubscriberMutation, useGetSubscribersQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function SubscriberTable() {
+  const { deleteSuccessToast } = useContext(GlobalContext);
   const { data: subscribers } = useGetSubscribersQuery();
   const [deleteSubscriber] = useDeleteSubscriberMutation();
+
+  const deleteSubscriberHandler = async (id: number) => {
+    try {
+      deleteSubscriber(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [page, setPage] = useState(0);
   const handleNext = () => {
@@ -28,7 +39,7 @@ export default function SubscriberTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Email</th>
               <th scope="col">CreatedAt</th>
               <th scope="col">Actions</th>
@@ -40,14 +51,14 @@ export default function SubscriberTable() {
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  <th scope="row">{index + 1}</th>
+                  <th scope="row">{subscriber.id}</th>
                   <td>{subscriber.email}</td>
                   <td>{format(subscriber.createdAt)}</td>
 
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteSubscriber(subscriber.id)}
+                      onClick={() => deleteSubscriberHandler(subscriber.id)}
                       aria-label="delete"
                     />
                   </td>

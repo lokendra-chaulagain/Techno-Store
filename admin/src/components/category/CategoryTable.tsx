@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableHeading from "../TableHeading";
 import AddCategoryDialog from "./AddCategoryDialog";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
 import { useDeleteCategoryMutation, useGetCategoriesQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function CategoryTable() {
+  const { deleteSuccessToast } = useContext(GlobalContext);
   const { data: categories } = useGetCategoriesQuery();
   const [deleteCategory] = useDeleteCategoryMutation();
+
+  const deleteHandler = async (id: any) => {
+    try {
+      deleteCategory(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [page, setPage] = useState(0);
   const handleNext = () => {
@@ -30,7 +41,7 @@ export default function CategoryTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Category Name</th>
               <th scope="col">Category Banner</th>
               <th scope="col">Description</th>
@@ -70,7 +81,7 @@ export default function CategoryTable() {
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteCategory(category.id)}
+                      onClick={() => deleteHandler(category.id)}
                       aria-label="delete"
                     />
                   </td>

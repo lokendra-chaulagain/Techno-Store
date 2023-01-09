@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import TableHeading from "../TableHeading";
-import { useGetSmallBannersQuery } from "../../redux/api/globalApi";
+import { useDeleteSmallBannerMutation, useGetSmallBannersQuery } from "../../redux/api/globalApi";
 import AddEventBannerDialog from "./AddEventBannerDialog";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function EventBannerTable() {
+  const { deleteSuccessToast } = useContext(GlobalContext);
   const { data: eventBanners } = useGetSmallBannersQuery();
+  const [deleteSmallBanner] = useDeleteSmallBannerMutation();
+
+  const deleteHandler = async (id: number) => {
+    try {
+      deleteSmallBanner(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [page, setPage] = useState(0);
   const handleNext = () => {
@@ -30,7 +42,7 @@ export default function EventBannerTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Event Banner</th>
               <th scope="col">Status</th>
               <th scope="col">Actions</th>
@@ -42,6 +54,7 @@ export default function EventBannerTable() {
                 <tr
                   key={id}
                   className="customPrimaryTxtColor custom_table_hover ">
+                  <td>{eventBanner.id}</td>
                   <td>{eventBanner.image}</td>
                   {eventBanner.status == 1 && <td className="active_status_green_color">Active</td>}
                   {eventBanner.status == 0 && <td className="active_status_red_color">InActive</td>}
@@ -56,7 +69,7 @@ export default function EventBannerTable() {
                       <div>
                         <MdDelete
                           className="delete_button_icon"
-                          // onClick={() => deleteEventBanner(eventBanner._id)}
+                          onClick={() => deleteHandler(eventBanner.id)}
                           aria-label="delete"
                         />
                       </div>

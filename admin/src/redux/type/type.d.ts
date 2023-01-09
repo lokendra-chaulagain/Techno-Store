@@ -50,3 +50,26 @@ export interface Size {
   id: number;
   name: string;
 }
+
+export interface Review {
+  id: number;
+  name: string;
+  name: description;
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  description: string;
+  categoryId: number;
+  priceNow: number;
+  pricePrevious: number;
+  image: string;
+  isActive: string;
+  isBestSeller: string;
+  isFeatured: string;
+  isHotSale: string;
+  isRecent: string;
+  isOutOfStock: string;
+  createdAt: Date;
+}

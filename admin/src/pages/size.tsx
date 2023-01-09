@@ -5,7 +5,7 @@ import SizeTable from "../components/size/SizeTable";
 export default function Size() {
   return (
     <div>
-          <Header pageTitle={"Sizes"} />
+      <Header pageTitle={"Sizes"} />
       <SizeTable />
     </div>
   );

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Banner, Category, Contact, SmallBanner, Subscriber, Color, Size } from "../type/type";
+import { Banner, Category, Contact, SmallBanner, Subscriber, Color, Size, Review, Product } from "../type/type";
 
 export const globalApi = createApi({
   reducerPath: "globalApi",
@@ -7,7 +7,7 @@ export const globalApi = createApi({
     baseUrl: "http://localhost:5000/api",
   }),
 
-  tagTypes: ["Banner", "SmallBanner", "Category", "Subscriber", "Contact", "Color", "Size"],
+  tagTypes: ["Banner", "SmallBanner", "Category", "Subscriber", "Contact", "Color", "Size", "Review", "Product"],
   endpoints: (builder) => ({
     getBanners: builder.query<Banner[], void>({
       query() {
@@ -65,7 +65,71 @@ export const globalApi = createApi({
       invalidatesTags: ["Banner"],
     }),
 
+    // Products
+
+    getProducts: builder.query<Product[], void>({
+      query() {
+        return {
+          url: `/product`,
+        };
+      },
+      transformResponse: (res: Product[]) => res.sort((a: Product, b: Product) => b.id - a.id),
+      providesTags: ["Product"],
+    }),
+
+    getProduct: builder.query<Product, number>({
+      query(id) {
+        return {
+          url: `/product/${id}`,
+        };
+      },
+      providesTags: ["Product"],
+    }),
+
+    createProduct: builder.mutation<Product, FormData>({
+      query(newBanner) {
+        return {
+          url: "/product",
+          method: "POST",
+          body: newBanner,
+        };
+      },
+      invalidatesTags: ["Product"],
+    }),
+
+    updateProduct: builder.mutation<Product, { id: number; updatedData: FormData }>({
+      query({ id, updatedData }) {
+        return {
+          url: `/product/${id}`,
+          method: "PATCH",
+          body: updatedData,
+        };
+      },
+      invalidatesTags: ["Product"],
+    }),
+
+    deleteProduct: builder.mutation<Product, number>({
+      query(id) {
+        return {
+          url: `/product/${id}`,
+          method: "Delete",
+        };
+      },
+      invalidatesTags: ["Product"],
+    }),
+
     // Small Banner==================================================>
+    createSmallBanner: builder.mutation<SmallBanner, FormData>({
+      query(newBanner) {
+        return {
+          url: "/smallBanner",
+          method: "POST",
+          body: newBanner,
+        };
+      },
+      invalidatesTags: ["SmallBanner"],
+    }),
+
     getSmallBanners: builder.query<SmallBanner[], void>({
       query() {
         return {
@@ -75,6 +139,16 @@ export const globalApi = createApi({
       },
       transformResponse: (res: SmallBanner[]) => res.sort((a: any, b: any) => b.id - a.id),
       providesTags: ["SmallBanner"],
+    }),
+
+    deleteSmallBanner: builder.mutation<SmallBanner, number>({
+      query(id) {
+        return {
+          url: `/smallBanner/${id}`,
+          method: "Delete",
+        };
+      },
+      invalidatesTags: ["SmallBanner"],
     }),
 
     //Category ================================================================>
@@ -259,6 +333,38 @@ export const globalApi = createApi({
       },
       invalidatesTags: ["Size"],
     }),
+
+    // Review
+    createReview: builder.mutation<Review, FormData>({
+      query(newReview) {
+        return {
+          url: "/review",
+          method: "POST",
+          body: newReview,
+        };
+      },
+      invalidatesTags: ["Review"],
+    }),
+
+    getReviews: builder.query<Review[], void>({
+      query() {
+        return {
+          url: `/review`,
+        };
+      },
+      transformResponse: (res: Review[]) => res.sort((a: Review, b: Review) => b.id - a.id),
+      providesTags: ["Review"],
+    }),
+
+    deleteReview: builder.mutation<Review, number>({
+      query(id) {
+        return {
+          url: `/review/${id}`,
+          method: "Delete",
+        };
+      },
+      invalidatesTags: ["Review"],
+    }),
   }),
 });
 
@@ -270,6 +376,9 @@ export const {
   useUpdateBannerMutation,
 
   useGetSmallBannersQuery,
+  useCreateSmallBannerMutation,
+  useDeleteSmallBannerMutation,
+
   useGetCategoriesQuery,
   useGetCategoryQuery,
 
@@ -292,4 +401,14 @@ export const {
   useCreateNewSizeMutation,
   useGetSizesQuery,
   useDeleteSizeMutation,
+
+  useCreateReviewMutation,
+  useGetReviewsQuery,
+  useDeleteReviewMutation,
+
+  useGetProductQuery,
+  useGetProductsQuery,
+  useCreateProductMutation,
+  useDeleteProductMutation,
+  useUpdateProductMutation,
 } = globalApi;

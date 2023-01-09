@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { useCreateReviewMutation } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function AddReviewDialog() {
+  const [createReview] = useCreateReviewMutation();
+  const { createSuccessToast } = useContext(GlobalContext);
   const {
     register,
     handleSubmit,
@@ -10,8 +14,7 @@ export default function AddReviewDialog() {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField = watch();
-
+  const handleAllField: any = watch();
 
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
@@ -21,10 +24,12 @@ export default function AddReviewDialog() {
     setOpen(false);
   };
 
-  
-  const createReview = async () => {
+  const createReviewHandler = async () => {
     try {
+      createReview(handleAllField);
+      createSuccessToast();
       reset();
+      handleClose();
     } catch (error) {
       console.log(error);
     }
@@ -47,12 +52,11 @@ export default function AddReviewDialog() {
         open={open}
         onClose={handleClose}>
         <form
-          onSubmit={handleSubmit(createReview)}
+          onSubmit={handleSubmit(createReviewHandler)}
           className="customCard p-3 overflow_hidden">
           <h4>Create New Review </h4>
           <p className="customPrimaryTxtColor">To subscribe to this website, please enter your email address here. We will send updates occasionally.</p>
 
-         
           <div className="row ">
             <label
               htmlFor="name"

@@ -6,7 +6,7 @@ function Product() {
   return (
     <>
       <Header pageTitle={"Product"} />
-      {/* <AllProductsTable /> */}
+      <AllProductsTable />
     </>
   );
 }

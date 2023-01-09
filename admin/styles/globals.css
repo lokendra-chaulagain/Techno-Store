@@ -22,6 +22,7 @@ body {
   background-color: #16181d !important;
   min-height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /*==Loki==========================  */
@@ -31,7 +32,7 @@ body {
 
 /* primaryHeadingColor */
 .phc {
-  color: var(--primary-heading-color);
+  color: var(--primary-heading-color) !important;
 }
 
 .customLabel {
@@ -59,7 +60,7 @@ body {
 
 /* crusor pointer */
 .cp {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .customBg {
@@ -331,4 +332,11 @@ input::-webkit-input-placeholder {
 .next_prev:hover {
   border-color: #688eb1 !important;
   background-color: #22262b !important;
+}
+
+
+.hot_toast_style {
+  border-radius: 3px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
 }

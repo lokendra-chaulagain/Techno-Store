@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableHeading from "../TableHeading";
 import Link from "next/link";
 import { AiTwotoneEdit } from "react-icons/ai";
@@ -6,10 +6,21 @@ import { MdDelete } from "react-icons/md";
 import AddBannerDialog from "./AddBannerDialog";
 import Image from "next/image";
 import { useDeleteBannerMutation, useGetBannersQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function BannerTable() {
   const { data: banners } = useGetBannersQuery();
   const [deleteBanner] = useDeleteBannerMutation();
+  const { deleteSuccessToast } = useContext(GlobalContext);
+
+  const deleteHandler = async (id: number) => {
+    try {
+      deleteBanner(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [page, setPage] = useState(0);
   const handleNext = () => {
@@ -32,7 +43,7 @@ export default function BannerTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Image</th>
               <th scope="col">name</th>
               <th scope="col">Description</th>
@@ -48,7 +59,7 @@ export default function BannerTable() {
               <tr
                 key={index}
                 className="customPrimaryTxtColor custom_table_hover ">
-                <th scope="row">{index + 1}</th>
+                <th scope="row">{banner.id}</th>
                 <td>
                   <a
                     className="d-flex "
@@ -84,7 +95,7 @@ export default function BannerTable() {
                     <div>
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteBanner(banner.id)}
+                        onClick={() => deleteHandler(banner.id)}
                         aria-label="delete"
                       />
                     </div>
@@ -95,26 +106,26 @@ export default function BannerTable() {
           </tbody>
         </table>
       </div>
-        <div className="d-flex justify-content-end pe-5  mt-2">
-          <nav aria-label="Page navigation ">
-            <ul className="pagination">
-              <li className="page-item">
-                <a
-                  onClick={handlePrev}
-                  className="page-link rounded-0 h6 next_prev cp">
-                  Previous
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  onClick={handleNext}
-                  className="page-link rounded-0 h6 next_prev px-4 cp">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div className="d-flex justify-content-end pe-5  mt-2">
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   );
 }

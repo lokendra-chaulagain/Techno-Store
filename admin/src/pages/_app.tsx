@@ -10,6 +10,7 @@ import LoginBox from "../components/LoginBox";
 import { Provider } from "react-redux";
 import { store } from "../redux/store/store";
 import { Toaster } from "react-hot-toast";
+import { GlobalContextProvider } from "../context/GlobalContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -26,23 +27,31 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Provider store={store}>
-      {accessToken ? (
-        <div className="customBg h100">
-          <Topbar />
-          <div className="row">
-            <div className=" col-2 customLeftBar">
-              <LeftAppBar />
-            </div>
+      <GlobalContextProvider>
+        {accessToken ? (
+          <div className="customBg h100">
+            <Topbar />
+            <div className="row">
+              <div className=" col-2 customLeftBar">
+                <LeftAppBar />
+              </div>
 
-            <div className="col-10 right_side_bg">
-              <Component {...pageProps} />
+              <div className="col-10 right_side_bg">
+                <Component {...pageProps} />
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <LoginBox />
-      )}
-      <Toaster />
+        ) : (
+          <LoginBox />
+        )}
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            className: "hot_toast_style",
+          }}
+        />
+      </GlobalContextProvider>
     </Provider>
   );
 }

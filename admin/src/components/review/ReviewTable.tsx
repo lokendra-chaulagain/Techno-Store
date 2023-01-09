@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import AddReviewDialog from "./AddReviewDialog";
-import { useGetCategoriesQuery } from "../../redux/api/globalApi";
+import { useDeleteReviewMutation, useGetReviewsQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function ReviewTable() {
-  const { data: reviews } = useGetCategoriesQuery();
-  
+  const { deleteSuccessToast } = useContext(GlobalContext);
+  const { data: reviews } = useGetReviewsQuery();
+  const [deleteReview] = useDeleteReviewMutation();
+
+  const deleteHandler = async (id: number) => {
+    try {
+      deleteReview(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const [page, setPage] = useState(0);
   const handleNext = () => {
     setPage(page + 1);
@@ -16,9 +28,7 @@ export default function ReviewTable() {
   const handlePrev = () => {
     setPage(page - 1);
   };
-  console.log(page)
-
-
+  console.log(page);
 
   return (
     <>
@@ -27,9 +37,8 @@ export default function ReviewTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Name </th>
-              <th scope="col">Image</th>
               <th scope="col">Description</th>
               <th scope="col">Actions</th>
             </tr>
@@ -53,7 +62,7 @@ export default function ReviewTable() {
 
                       <MdDelete
                         className="delete_button_icon"
-                        // onClick={() => deleteReview(review..id)}
+                        onClick={() => deleteHandler(review.id)}
                         aria-label="delete"
                       />
                     </div>
@@ -64,25 +73,25 @@ export default function ReviewTable() {
         </table>
       </div>
       <div className="d-flex justify-content-end pe-5 mt-2">
-          <nav aria-label="Page navigation ">
-            <ul className="pagination">
-              <li className="page-item">
-                <a
-                  onClick={handlePrev}
-                  className="page-link rounded-0 h6 next_prev cp">
-                  Previous
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  onClick={handleNext}
-                  className="page-link rounded-0 h6 next_prev px-4 cp">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   );
 }

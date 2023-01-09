@@ -40,13 +40,9 @@ export default function Topbar() {
                 direction="row"
                 spacing={1}>
                 <Chip
-                  avatar={
-                    <Avatar
-                      alt="Natacha"
-                      src="/static/images/avatar/1.jpg"
-                    />
-                  }
-                  label="Avatar"
+                className="phc cp"
+                  avatar={<Avatar alt="Natacha" />}
+                  label="Admin"
                   variant="outlined"
                 />
 

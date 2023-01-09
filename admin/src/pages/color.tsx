@@ -5,7 +5,7 @@ import Header from "../components/Header";
 export default function Color() {
   return (
     <div>
-          <Header pageTitle={"Colors"} />
+      <Header pageTitle={"Colors"} />
       <ColorTable />
     </div>
   );

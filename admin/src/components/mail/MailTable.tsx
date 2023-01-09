@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "next/link";
 import { format } from "timeago.js";
 import { IoMdEye } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { useDeleteContactMutation, useGetContactsQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function MailTable() {
+  const { deleteSuccessToast } = useContext(GlobalContext);
   const { data: mails } = useGetContactsQuery();
   const [deleteContact] = useDeleteContactMutation();
+
+  const deleteHandler = async (id: number) => {
+    try {
+      deleteContact(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const [page, setPage] = useState(0);
   const handleNext = () => {
@@ -25,7 +36,7 @@ export default function MailTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Message</th>
@@ -39,8 +50,8 @@ export default function MailTable() {
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  <th scope="row">{index + 1}</th>
-                  <td>{mail.name}</td>
+                  <th scope="row">{mail.id}</th>
+                  <td>{mail.fullName}</td>
                   <td>{mail.email}</td>
                   <td>{mail.message}</td>
                   <td>{format(mail.createdAt)}</td>
@@ -55,7 +66,7 @@ export default function MailTable() {
 
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={(e) => deleteContact(mail.id)}
+                        onClick={() => deleteHandler(mail.id)}
                         aria-label="delete"
                       />
                     </div>
@@ -64,28 +75,27 @@ export default function MailTable() {
               ))}
           </tbody>
         </table>
-
       </div>
-        <div className="d-flex justify-content-end pe-5 mt-2">
-          <nav aria-label="Page navigation ">
-            <ul className="pagination">
-              <li className="page-item">
-                <a
-                  onClick={handlePrev}
-                  className="page-link rounded-0 h6 next_prev cp">
-                  Previous
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  onClick={handleNext}
-                  className="page-link rounded-0 h6 next_prev px-4 cp">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div className="d-flex justify-content-end pe-5 mt-2">
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   );
 }

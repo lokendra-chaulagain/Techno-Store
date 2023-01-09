@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useCreateNewBannerMutation } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function AddBannerDialog() {
   const [createNewBanner] = useCreateNewBannerMutation();
+  const { createSuccessToast } = useContext(GlobalContext);
 
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
@@ -27,6 +29,7 @@ export default function AddBannerDialog() {
   const createBanner = async () => {
     createNewBanner(handleAllField);
     reset();
+    createSuccessToast();
     handleClose();
   };
 

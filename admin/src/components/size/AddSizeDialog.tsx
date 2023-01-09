@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useCreateNewSizeMutation } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function AddSizeDialog() {
+  const { createSuccessToast } = useContext(GlobalContext);
   const [createNewSize] = useCreateNewSizeMutation();
 
   const [open, setOpen] = useState(false);
@@ -24,9 +26,14 @@ export default function AddSizeDialog() {
   const handleAllField: any = watch();
 
   const createColor = async () => {
-    createNewSize(handleAllField);
-    reset();
-    handleClose();
+    try {
+      createNewSize(handleAllField);
+      createSuccessToast();
+      reset();
+      handleClose();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

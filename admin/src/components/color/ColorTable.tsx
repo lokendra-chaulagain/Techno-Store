@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TableHeading from "../TableHeading";
 import AddColorDialog from "./AddColorDialog";
 import { MdDelete } from "react-icons/md";
 import { useDeleteColorMutation, useGetColorsQuery } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function ColorTable() {
+  const { deleteSuccessToast } = useContext(GlobalContext);
   const { data: colors } = useGetColorsQuery();
   const [deleteColor] = useDeleteColorMutation();
-  
+
+  const deleteHandler = async (id: any) => {
+    try {
+      deleteColor(id);
+      deleteSuccessToast();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const [page, setPage] = useState(0);
   const handleNext = () => {
     setPage(page + 1);
@@ -16,8 +27,7 @@ export default function ColorTable() {
   const handlePrev = () => {
     setPage(page - 1);
   };
-  console.log(page)
-  
+
   return (
     <>
       <div className="d-flex align-items-center  ">
@@ -29,7 +39,7 @@ export default function ColorTable() {
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">S.N</th>
+              <th scope="col">I.D</th>
               <th scope="col">Colors Name</th>
               <th scope="col">Actions</th>
             </tr>
@@ -46,7 +56,7 @@ export default function ColorTable() {
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteColor(color.id)}
+                      onClick={() => deleteHandler(color.id)}
                       aria-label="delete"
                     />
                   </td>
@@ -56,25 +66,25 @@ export default function ColorTable() {
         </table>
       </div>
       <div className="d-flex justify-content-end pe-5 mt-2">
-          <nav aria-label="Page navigation ">
-            <ul className="pagination">
-              <li className="page-item">
-                <a
-                  onClick={handlePrev}
-                  className="page-link rounded-0 h6 next_prev cp">
-                  Previous
-                </a>
-              </li>
-              <li className="page-item">
-                <a
-                  onClick={handleNext}
-                  className="page-link rounded-0 h6 next_prev px-4 cp">
-                  Next
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav aria-label="Page navigation ">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                onClick={handlePrev}
+                className="page-link rounded-0 h6 next_prev cp">
+                Previous
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                onClick={handleNext}
+                className="page-link rounded-0 h6 next_prev px-4 cp">
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </>
   );
 }

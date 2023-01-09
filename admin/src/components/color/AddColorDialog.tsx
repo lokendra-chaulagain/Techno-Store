@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useCreateNewColorMutation } from "../../redux/api/globalApi";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function AddColorDialog() {
+  const { createSuccessToast } = useContext(GlobalContext);
   const [createNewColor] = useCreateNewColorMutation();
 
   const [open, setOpen] = useState(false);
@@ -24,9 +26,14 @@ export default function AddColorDialog() {
   const handleAllField: any = watch();
 
   const createColor = async () => {
-    createNewColor(handleAllField);
-    reset();
-    handleClose();
+    try {
+      createNewColor(handleAllField);
+      createSuccessToast()
+      reset();
+      handleClose();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

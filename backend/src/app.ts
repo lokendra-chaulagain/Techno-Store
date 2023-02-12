@@ -11,6 +11,7 @@ import contactRoutes from "./routes/contact.routes";
 import colorRoutes from "./routes/color.routes";
 import sizeRoutes from "./routes/size.routes";
 import subscriberRoute from "./routes/subscriber.routes";
+import reviewRoutes from "./routes/review.routes";
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -28,5 +29,6 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/color", colorRoutes);
 app.use("/api/size", sizeRoutes);
 app.use("/api/subscriber", subscriberRoute);
+app.use("/api/review", reviewRoutes);
 
 export default app;

@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 
 export const getContacts = async (req: Request, res: Response) => {
   try {
-    const results = await AppDataSource.getRepository(Contact).find();
+    const results = await AppDataSource.manager.find(Contact, { take: 5 });
     return res.status(200).json(results);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

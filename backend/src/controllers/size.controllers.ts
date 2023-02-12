@@ -4,7 +4,7 @@ import { Size } from "../entities/Size";
 
 export const getSizes = async (req: Request, res: Response) => {
   try {
-    const results = await AppDataSource.manager.find(Size);
+    const results = await AppDataSource.manager.find(Size,{take:5});
     return res.status(200).json(results);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

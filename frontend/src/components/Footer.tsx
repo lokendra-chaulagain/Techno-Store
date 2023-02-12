@@ -11,6 +11,7 @@ import master from "../assets/master.png";
 import american from "../assets/american.png";
 import phone from "../assets/phone.png";
 import android from "../assets/android.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -46,17 +47,27 @@ export default function Footer() {
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
             <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
           </div>
 
           <div className="col-12  mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Customer Care</h5>
-            <p className="my-0 mt-2 my_link">Contact Us</p>
-            <p className="my-0 mt-2 my_link">My Bookmark</p>
-            <p className="my-0 mt-2 my_link">Privacy Policy.</p>
-            <p className="my-0 mt-2 my_link">Terms & Conditions.</p>
-            <p className="my-0 mt-2 my_link">My Account.</p>
-            <p className="my-0 mt-2 my_link">My Cart</p>
+            <Link href={"/contact"}>
+              <p className="my-0 mt-2 my_link">Contact Us</p>
+            </Link>
+
+            <Link href={"/bookmark"}>
+              <p className="my-0 mt-2 my_link">My Bookmark</p>
+            </Link>
+            <Link href={"/privacy-policy"}>
+              <p className="my-0 mt-2 my_link">Privacy Policy.</p>
+            </Link>
+            <Link href={"/terms-conditions"}>
+              <p className="my-0 mt-2 my_link">Terms & Conditions.</p>
+            </Link>
+
+            <Link href={"/cart"}>
+              <p className="my-0 mt-2 my_link">My Cart</p>
+            </Link>
           </div>
 
           <div className="col-12 col-sm-9 mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">

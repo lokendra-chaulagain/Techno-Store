@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 
 export const getSubscribers = async (req: Request, res: Response) => {
   try {
-    const results = await AppDataSource.manager.find(Subscriber);
+    const results = await AppDataSource.manager.find(Subscriber, { take: 5 });
     return res.status(200).json(results);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

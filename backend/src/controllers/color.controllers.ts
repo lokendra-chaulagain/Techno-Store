@@ -4,7 +4,7 @@ import { Color } from "../entities/Color";
 
 export const getColors = async (req: Request, res: Response) => {
   try {
-    const results = await AppDataSource.manager.find(Color);
+    const results = await AppDataSource.manager.find(Color,{take:5});
     return res.status(200).json(results);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

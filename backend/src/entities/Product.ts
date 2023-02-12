@@ -11,7 +11,7 @@ export class Product extends BaseEntity {
   @Column({ type: String })
   description!: string;
 
-  @Column({ type: Number })
+  @Column({ type: Number,nullable: true })
   categoryId!: number;
 
   @Column({ type: Number })
@@ -23,27 +23,24 @@ export class Product extends BaseEntity {
   @Column({ type: String })
   image!: string;
 
-  @Column({ default: false, type: Boolean })
-  isActive!: boolean;
+  @Column({ type: String, nullable: true })
+  isActive!: string;
 
-  @Column({ default: false, type: Boolean })
-  isBestSeller!: boolean;
+  @Column({ type: String, nullable: true })
+  isBestSeller!: string;
 
-  @Column({ default: false, type: Boolean })
-  isFeatured!: boolean;
+  @Column({ type: String, nullable: true })
+  isFeatured!: string;
 
-  @Column({ default: false, type: Boolean })
-  isHotSale!: boolean;
+  @Column({ type: String, nullable: true })
+  isHotSale!: string;
 
-  @Column({ default: false, type: Boolean })
-  isRecent!: boolean;
+  @Column({ type: String, nullable: true })
+  isRecent!: string;
 
-  @Column({ default: false, type: Boolean })
-  isOutOfStock!: boolean;
+  @Column({ type: String, nullable: true })
+  isOutOfStock!: string;
 
   @CreateDateColumn({ type: Date })
   createdAt!: Date;
-
-  @UpdateDateColumn({ type: Date })
-  updatedAt!: Date;
 }

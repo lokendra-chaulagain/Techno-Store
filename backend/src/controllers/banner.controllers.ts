@@ -4,7 +4,7 @@ import { Banner } from "../entities/Banner";
 
 export const getBanners = async (req: Request, res: Response) => {
   try {
-    const banners = await AppDataSource.manager.find(Banner);
+    const banners = await AppDataSource.manager.find(Banner, { take: 5 });
     return res.status(200).json(banners);
   } catch (error: any) {
     return res.status(500).json({ message: error.message });

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import demo2 from "../../assets/big-size.jpg";
-import { AiOutlinePlus, AiOutlineMinus, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineGoogle, AiFillLinkedin } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus, AiOutlineShoppingCart, AiOutlineGoogle, AiFillLinkedin } from "react-icons/ai";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";

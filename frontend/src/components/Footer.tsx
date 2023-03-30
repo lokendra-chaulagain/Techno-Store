@@ -26,10 +26,10 @@ export default function Footer() {
               alt="img"
             />
             <p className="my-0 mt-3 ">Got Questions ? Call us 24/7!</p>
-            <h5 className="my-0 mt-1">Call Us: (888) 1234 56789</h5>
-            <p className="my-0 mt-1 ">PO Box CT16122 Collins Street</p>
-            <p className="my-0 mt-1 ">West, Victoria 8007,</p>
-            <p className="my-0 mt-1 ">Australia.</p>
+            <h5 className="my-0 mt-1">Call Us: 98894556426</h5>
+            <p className="my-0 mt-1 ">PO Box CT16122 New Baneshwor</p>
+            <p className="my-0 mt-1 ">Kathmandu, Ward-32 </p>
+            <p className="my-0 mt-1 ">Nepal.</p>
 
             <div className="d-flex gap-3 mt-3">
               <FaWhatsapp className="footer_icon" />
@@ -42,11 +42,24 @@ export default function Footer() {
 
           <div className="col-12 mt-5 mt-md-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Find By Categories</h5>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
-            <p className="my-0 mt-2 my_link">Lorem, ipsum.</p>
+            <Link href={"/category/smart-phones"}>
+              <p className="my-0 mt-2 my_link">Smart Phones</p>
+            </Link>
+            <Link href={"/category/games"}>
+              <p className="my-0 mt-2 my_link">Games</p>
+            </Link>
+
+            <Link href={"/category/computers"}>
+              <p className="my-0 mt-2 my_link">Computers</p>
+            </Link>
+
+            <Link href={"/category/watches"}>
+              <p className="my-0 mt-2 my_link">Watches</p>
+            </Link>
+
+            <Link href={"/category/cameras"}>
+              <p className="my-0 mt-2 my_link">Cameras</p>
+            </Link>
           </div>
 
           <div className="col-12  mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">
@@ -72,7 +85,7 @@ export default function Footer() {
 
           <div className="col-12 col-sm-9 mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0">
             <h5>Sign Up To New Letter</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia unde veritatis officiis pariatur dolor ipsam quae atque. Commodi, mollitia rerum. Distinctio, voluptates!</p>
+            <p>By signing up for our newsletter, you will be the first to know about new product launches, special promotions, and valuable insights that can help you get the most out of our offerings.</p>
 
             <div className="input-group mb-3">
               <input

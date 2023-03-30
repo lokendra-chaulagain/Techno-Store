@@ -22,8 +22,10 @@ export default function HeroCarousel() {
             <p className="text-muted para_text my-0 ">Category Name here</p>
             <h1 className="color_orange hero_h1 my-0">PRODUCT NAME </h1>
             <p className="w-50 para_text text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quod laudantium ducimus necessitatibus doloribus magni aspernatur quam earum distinctio?</p>
-            <h1 className="color_orange">$1.69</h1>
-            <h3 className="text-muted">$1.99</h3>
+            <h1 className="color_orange">NPR 4000</h1>
+            <h4 className="text-muted">
+              <s>NPR 5000</s>
+            </h4>
             <button
               type="button"
               className="btn bg_orange color_white fw-semibold mt-4 rounded-pill px-4">
@@ -45,8 +47,10 @@ export default function HeroCarousel() {
             <p className="text-muted para_text my-0 ">Category Name here</p>
             <h1 className="color_orange hero_h1 my-0">PRODUCT NAME </h1>
             <p className="w-50 para_text text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quod laudantium ducimus necessitatibus doloribus magni aspernatur quam earum distinctio?</p>
-            <h1 className="color_orange">$1.69</h1>
-            <h3 className="text-muted">$1.99</h3>
+            <h1 className="color_orange">NPR 2500</h1>
+            <h4 className="text-muted">
+              <s>NPR 3000</s>
+            </h4>
             <button
               type="button"
               className="btn bg_orange color_white fw-semibold mt-4 rounded-pill px-4">
@@ -68,8 +72,10 @@ export default function HeroCarousel() {
             <p className="text-muted para_text my-0 ">Category Name here</p>
             <h1 className="color_orange hero_h1 my-0">PRODUCT NAME </h1>
             <p className="w-50 para_text text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quod laudantium ducimus necessitatibus doloribus magni aspernatur quam earum distinctio?</p>
-            <h1 className="color_orange">$1.69</h1>
-            <h3 className="text-muted">$1.99</h3>
+            <h1 className="color_orange">NPR 2700</h1>
+            <h4 className="text-muted">
+              <s>NPR 3200</s>
+            </h4>
             <button
               type="button"
               className="btn bg_orange color_white fw-semibold mt-4 rounded-pill px-4">

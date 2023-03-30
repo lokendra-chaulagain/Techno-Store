@@ -8,7 +8,59 @@ import { useGetCategoriesQuery } from "../redux/api/globalApi";
 const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
 export default function Bookmark() {
-  const { data: categories } = useGetCategoriesQuery();
+  const categories = [
+    {
+      name: "Smart Phones",
+    },
+
+    {
+      name: "Games",
+    },
+
+    {
+      name: "Computers",
+    },
+
+    {
+      name: "Watches",
+    },
+
+    {
+      name: "Cameras",
+    },
+
+    {
+      name: "Speakers",
+    },
+
+    {
+      name: "Rice Cookers",
+    },
+
+    {
+      name: "Heaters",
+    },
+
+    {
+      name: "Fans",
+    },
+
+    {
+      name: "Electric Kettles",
+    },
+
+    {
+      name: "Hair Dryers",
+    },
+
+    {
+      name: "Drones",
+    },
+
+    {
+      name: "Accessories",
+    },
+  ];
 
   const removesSuccess = () => toast(" ✅ Delete Success");
   const addedCartSuccess = () => toast(" ✅ Added To Cart");
@@ -33,9 +85,7 @@ export default function Bookmark() {
   };
 
   return (
-    <div
-      className="container matter  d-flex align-items-center "
-      style={{ minHeight: "70vh" }}>
+    <div className="container matter  d-flex align-items-center my-5 ">
       <div className="row d-flex  justify-content-center ">
         <div className="col-3">
           <h4 className="text-center py-2 bg_dark color_white ">Categories</h4>

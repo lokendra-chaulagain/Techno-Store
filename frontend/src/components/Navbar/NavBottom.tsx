@@ -4,6 +4,59 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosGitCompare } from "react-icons/io";
 
 export default function NavBottom() {
+  const categories = [
+    {
+      name: "Smart Phones",
+    },
+
+    {
+      name: "Games",
+    },
+
+    {
+      name: "Computers",
+    },
+
+    {
+      name: "Watches",
+    },
+
+    {
+      name: "Cameras",
+    },
+
+    {
+      name: "Speakers",
+    },
+
+    {
+      name: "Rice Cookers",
+    },
+
+    {
+      name: "Heaters",
+    },
+
+    {
+      name: "Fans",
+    },
+
+    {
+      name: "Electric Kettles",
+    },
+
+    {
+      name: "Hair Dryers",
+    },
+
+    {
+      name: "Drones",
+    },
+
+    {
+      name: "Accessories",
+    },
+  ];
   return (
     <div className="bg_orange">
       <div className="bottom_nav gap-5 container py-3">
@@ -16,16 +69,12 @@ export default function NavBottom() {
             aria-expanded="false">
             Categories
           </button>
-          <ul className="dropdown-menu no_selection rounded-0">
-            <li>
-              <a className="dropdown-item cp">Action</a>
-            </li>
-            <li>
-              <a className="dropdown-item cp">Another action</a>
-            </li>
-            <li>
-              <a className="dropdown-item cp">Something else here</a>
-            </li>
+          <ul className="dropdown-menu no_selection rounded-0 " style={{width:"200px"}}>
+            {categories.map((category, index) => (
+              <li key={index}>
+                <a className="dropdown-item cp">{category.name}</a>
+              </li>
+            ))}
           </ul>
           <input
             type="text"

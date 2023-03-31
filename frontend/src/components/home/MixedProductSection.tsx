@@ -1,12 +1,155 @@
 import Image from "next/image";
 import React from "react";
-import demo from "../../assets/kittle.png";
 import demo2 from "../../assets/long.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import best1 from "../../assets/cameras/9.jpg";
+import best2 from "../../assets/computers/1.jpg";
+import best3 from "../../assets/cookers/1.jpg";
+import best4 from "../../assets/drones/1.png";
+
+import feature1 from "../../assets/fans/4.jpg";
+import feature2 from "../../assets/games/4.jpg";
+import feature3 from "../../assets/hair-dryers/4.jpg";
+import feature4 from "../../assets/heaters/4.jpg";
+
+import hot1 from "../../assets/watches/4.jpg";
+import hot2 from "../../assets/speakers/4.png";
+import hot3 from "../../assets/phone/4.jpg";
+import hot4 from "../../assets/kettles/4.jpg";
+import Link from "next/link";
+import ProductColumn from "../mixed-product/ProductColumn";
+
 export default function MixedProductSection() {
-  const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
+  const bestSellers = [
+    {
+      id: "1",
+      title: "Best Sellers",
+      category: "Best Sellers",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "100",
+      image: best1,
+    },
+
+    {
+      id: "2",
+      category: "Best Sellers",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: best2,
+    },
+
+    {
+      id: "3",
+      category: "Best Sellers",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: best3,
+    },
+
+    {
+      id: "4",
+      category: "Best Sellers",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: best4,
+    },
+  ];
+
+  const features = [
+    {
+      id: "1",
+      title: "Featured",
+      category: "Featured",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: feature3,
+    },
+
+    {
+      id: "2",
+      category: "Featured",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: feature4,
+    },
+
+    {
+      id: "3",
+      category: "Featured",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: feature1,
+    },
+
+    {
+      id: "4",
+      category: "Featured",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: feature2,
+    },
+  ];
+
+  const hotSales = [
+    {
+      id: "1",
+      title: "Hot Sales",
+      category: "Laptop",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: hot4,
+    },
+
+    {
+      id: "2",
+      category: "Ear pod",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: hot3,
+    },
+
+    {
+      id: "3",
+      category: "Headphone",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: hot2,
+    },
+
+    {
+      id: "4",
+      category: "Fridge",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: hot1,
+    },
+  ];
 
   return (
     <div className="mixed_section mt-5 p-5">
@@ -33,86 +176,9 @@ export default function MixedProductSection() {
           </div>
         </div>
 
-        <div className="col d-flex flex-column ">
-          <h5 className="my_black">Best Seller</h5>
-          <hr className="my-0 mb-4" />
-          {products &&
-            products.map((product: any, index) => (
-              <div
-                key={index}
-                className="d-flex gap-4 mb-4 px-3 py-2 align-items-center justify-content-center mixed_section_product_card">
-                <Image
-                  className=" no_selection cp"
-                  src={demo}
-                  objectFit="scale-down"
-                  alt="img"
-                  height={130}
-                  width={100}
-                />
-                <div>
-                  <p className=" h6 my-0">Apple iPad Mini %2356</p>
-                  <small>Rating here</small>
-                  <p className="h5">
-                    <span className="color_orange"> $24.00 </span> <span className="text-muted">$15.00</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
-
-        <div className="col d-flex flex-column ">
-          <h5 className="my_black ">Featured</h5>
-          <hr className="my-0 mb-4 " />
-          {products &&
-            products.map((product: any, index) => (
-              <div
-                key={index}
-                className="d-flex gap-4 mb-4 px-3 py-2 align-items-center justify-content-center mixed_section_product_card">
-                <Image
-                  className=" no_selection cp"
-                  src={demo}
-                  objectFit="scale-down"
-                  alt="img"
-                  height={130}
-                  width={100}
-                />
-                <div>
-                  <p className="h6 my-0">Apple iPad Mini %2356</p>
-                  <small>Rating here</small>
-                  <p className="h5">
-                    <span className="color_orange"> $24.00</span> <span className="text-muted">$15.00</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
-
-        <div className="col d-flex flex-column ">
-          <h5 className=" my_black">Hot Sale</h5>
-          <hr className="my-0 mb-4" />
-          {products &&
-            products.map((product: any, index) => (
-              <div
-                key={index}
-                className="d-flex gap-4 mb-4 px-3 py-2 align-items-center justify-content-center mixed_section_product_card">
-                <Image
-                  className=" no_selection cp"
-                  src={demo}
-                  objectFit="scale-down"
-                  alt="img"
-                  height={130}
-                  width={100}
-                />
-                <div>
-                  <p className="h6 my-0">Apple iPad Mini %2356</p>
-                  <small>Rating here</small>
-                  <p className="h5">
-                    <span className="color_orange"> $24.00 </span> <span className="text-muted">$15.00</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
+        <ProductColumn products={bestSellers} />
+        <ProductColumn products={features} />
+        <ProductColumn products={hotSales} />
       </div>
     </div>
   );

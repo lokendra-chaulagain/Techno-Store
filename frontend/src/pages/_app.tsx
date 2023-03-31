@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     import("bootstrap");
   }, []);
-  
+
   return (
     <Provider store={store}>
       <div className="app_min_height">

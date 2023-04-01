@@ -93,7 +93,7 @@ export default function CategoryUrl() {
       </div>
 
       <div className="px-5">
-        <h5 className="my_black h5">Category : Category Name</h5>
+        <h5 className="black_text_color h5">Category : Category Name</h5>
         <hr className="my-0 mb-4" />
         <SingleProductSection products={products} />
         <div className="my-5">

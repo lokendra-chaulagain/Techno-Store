@@ -121,7 +121,7 @@ export default function RecentProductCarousel() {
 
   return (
     <div className="mt-5">
-      <h5 className="my_black h5">Recent Products</h5>
+      <h5 className="black_text_color h5">Recent Products</h5>
       <hr className="my-0 mb-4" />
       <Swiper
         slidesPerView={6}

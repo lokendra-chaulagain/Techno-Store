@@ -6,7 +6,7 @@ export default function MyAccountDropDown() {
     <div>
       <div className="dropdown">
         <span
-          className="cp_hover my_black no_selection h6"
+          className="cp_hover black_text_color no_selection h6"
           data-bs-toggle="dropdown">
           My Account^
         </span>

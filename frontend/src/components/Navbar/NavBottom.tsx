@@ -72,7 +72,7 @@ export default function NavBottom() {
           <ul className="dropdown-menu no_selection rounded-0 " style={{width:"200px"}}>
             {categories.map((category, index) => (
               <li key={index}>
-                <a className="dropdown-item cp">{category.name}</a>
+                <a className="dropdown-item cp black_text_color">{category.name}</a>
               </li>
             ))}
           </ul>

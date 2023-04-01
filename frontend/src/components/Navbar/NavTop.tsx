@@ -16,19 +16,19 @@ export default function NavTop() {
       <div className="px-5 pt-2 d-flex align-items-center justify-content-between">
         <div className="d-flex align-content-around gap-2 small">
           <Link href={"/support"}>
-            <span className={path === "support" ? "nav_active cp_hover my_black h6" : " cp_hover my_black h6"}>Support</span>
+            <span className={path === "support" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Support</span>
           </Link>
 
           <Link href={"/our-stores"}>
-            <span className={path === "our-stores" ? "nav_active cp_hover my_black h6" : " cp_hover my_black h6"}>Store Locator</span>
+            <span className={path === "our-stores" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Store Locator</span>
           </Link>
 
           <Link href={"track-order"}>
-            <span className={path === "track-order" ? "nav_active cp_hover my_black h6" : " cp_hover my_black h6"}>Track Your Order</span>
+            <span className={path === "track-order" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Track Your Order</span>
           </Link>
         </div>
         <div>
-          <small className="cp_hover my_black h6">Call US : 9876435475</small>
+          <small className="cp_hover black_text_color h6">Call US : 9876435475</small>
         </div>
         <div className="d-flex align-content-around gap-3 small">
           <MyAccountDropDown />

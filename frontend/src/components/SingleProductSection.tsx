@@ -21,7 +21,7 @@ export default function SingleProductSection({ products }: any) {
                 width={200}
               />
               <small className="text-muted">---------- {product.category} ----------</small>
-              <p className="h6 my_black mb-0 ">{product.name}</p>
+              <p className="h6 black_text_color mb-0 ">{product.name}</p>
               <p className="h5 ">
                 <span className="color_orange">NRS{product.priceNow}</span> <span className="text-muted">NRS{product.pricePrevious}</span>
               </p>

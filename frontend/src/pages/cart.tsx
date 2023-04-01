@@ -67,7 +67,7 @@ export default function Cart() {
                     />
                     <div className="d-flex flex-column gap-1 ">
                       <small className="text-muted"> Category Name</small>
-                      <p className="h6 my_black mb-0 ">Apple iPad Mini G2356</p>
+                      <p className="h6 black_text_color mb-0 ">Apple iPad Mini G2356</p>
 
                       <p className="h5 ">
                         <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
@@ -119,8 +119,8 @@ export default function Cart() {
         {/* ------------------------------ */}
         <div className="col  col-md-6 col-xl-4 mt-5 com-md-0 p-0   ">
           <div className=" cart_payment_info py-5 rounded-3">
-            <h1 className="fw-bold my_black h1">Payment Info</h1>
-            <h5 className="h5 my_black mb-3">Choose your payemet option</h5>
+            <h1 className="fw-bold black_text_color h1">Payment Info</h1>
+            <h5 className="h5 black_text_color mb-3">Choose your payemet option</h5>
             <div className="form-check mb-2">
               <input
                 className="form-check-input select_color_input_custom "
@@ -129,7 +129,7 @@ export default function Cart() {
                 id="credit"
               />
               <label
-                className="form-check-label select_size_input_custom_label no_selection cp my_black"
+                className="form-check-label select_size_input_custom_label no_selection cp black_text_color"
                 htmlFor="credit">
                 Credit Card
               </label>
@@ -143,7 +143,7 @@ export default function Cart() {
                 id="eSewa"
               />
               <label
-                className="form-check-label select_size_input_custom_label no_selection cp my_black"
+                className="form-check-label select_size_input_custom_label no_selection cp black_text_color"
                 htmlFor="eSewa">
                 e-Sewa
               </label>
@@ -157,13 +157,13 @@ export default function Cart() {
                 id="cash"
               />
               <label
-                className="form-check-label select_size_input_custom_label no_selection cp my_black"
+                className="form-check-label select_size_input_custom_label no_selection cp black_text_color"
                 htmlFor="cash">
                 Cash On Delivery
               </label>
             </div>
 
-            <h5 className="h5 mt-4 my_black mb-3">Your Payment Details</h5>
+            <h5 className="h5 mt-4 black_text_color mb-3">Your Payment Details</h5>
             <input
               className="form-control form-control-lg rounded-1 py-3 mb-4 checkout_input"
               type="text"
@@ -201,7 +201,7 @@ export default function Cart() {
         </div>
         <hr className="mt-5" />
         <Link href={"/"}>
-          <h5 className="my_black cp_hover mb-5 pb-5">
+          <h5 className="black_text_color cp_hover mb-5 pb-5">
             {" "}
             <span className="h3">←</span> Continue Shopping
           </h5>

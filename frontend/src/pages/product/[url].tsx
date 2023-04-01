@@ -299,7 +299,7 @@ export default function ProductUrl() {
             </Swiper>
           </div>
           <div className="single_product_right p-5 rounded-1">
-            <h5 className="my_black">Watch 42 mm Smart Watches</h5>
+            <h5 className="black_text_color">Watch 42 mm Smart Watches</h5>
             <div className="small text-muted">Smart Watches</div>
             <p className="my-2">
               Review here star <span>Add Review</span>{" "}
@@ -323,13 +323,13 @@ export default function ProductUrl() {
               <div className="quantity_calculator ">
                 <AiOutlineMinus
                   onClick={handleQuantityDecrease}
-                  className="cp my_black"
+                  className="cp black_text_color"
                   size={22}
                 />
                 {quantity}
                 <AiOutlinePlus
                   onClick={handleQuantityIncrease}
-                  className="cp my_black "
+                  className="cp black_text_color "
                   size={22}
                 />
               </div>
@@ -354,7 +354,7 @@ export default function ProductUrl() {
             </div>
 
             <div className="d-flex gap-3 mt-4">
-              <h5 className="my_black">Share</h5>
+              <h5 className="black_text_color">Share</h5>
               <FaWhatsapp className="footer_icon" />
               <AiOutlineGoogle className="footer_icon" />
               <AiFillLinkedin className="footer_icon" />

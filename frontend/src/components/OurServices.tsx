@@ -17,7 +17,7 @@ export default function OurServices() {
           height={80}
           width={80}
         />
-        <h4 className="my-0 my_black mt-2">Worldwide Shipping</h4>
+        <h4 className="my-0 black_text_color mt-2">Worldwide Shipping</h4>
         <small className="text-muted">Free Shipping On Order Over $100</small>
       </div>
 
@@ -30,7 +30,7 @@ export default function OurServices() {
           height={80}
           width={80}
         />
-        <h4 className="my-0 my_black mt-2">Worldwide Shipping</h4>
+        <h4 className="my-0 black_text_color mt-2">Worldwide Shipping</h4>
         <small className="text-muted">Free Shipping On Order Over $100</small>
       </div>
 
@@ -43,7 +43,7 @@ export default function OurServices() {
           height={80}
           width={80}
         />
-        <h4 className="my-0 my_black mt-2">Worldwide Shipping</h4>
+        <h4 className="my-0 black_text_color mt-2">Worldwide Shipping</h4>
         <small className="text-muted">Free Shipping On Order Over $100</small>
       </div>
 
@@ -56,7 +56,7 @@ export default function OurServices() {
           height={80}
           width={80}
         />
-        <h4 className="my-0 my_black">Worldwide Shipping</h4>
+        <h4 className="my-0 black_text_color">Worldwide Shipping</h4>
         <small className="text-muted">Free Shipping On Order Over $100</small>
       </div>
     </div>

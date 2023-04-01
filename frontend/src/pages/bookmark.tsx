@@ -103,7 +103,7 @@ export default function Bookmark() {
         </div>
         <div className=" col">
           <div className="row ">
-            <h4 className="my_black py-2">Your Bookmarked Products (4)</h4>
+            <h4 className="black_text_color py-2">Your Bookmarked Products (4)</h4>
             {products &&
               products.map((product: any, index) => (
                 <div
@@ -120,7 +120,7 @@ export default function Bookmark() {
                     />
                     <div className="d-flex flex-column gap-1 ">
                       <small className="text-muted "> Category Name</small>
-                      <p className="h6 my_black mb-0 ">Apple iPad Mini G2356</p>
+                      <p className="h6 black_text_color mb-0 ">Apple iPad Mini G2356</p>
 
                       <p className="h5 ">
                         <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>

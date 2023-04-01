@@ -39,8 +39,8 @@ export default function Register() {
       <form
         onSubmit={handleSubmit(registerUser)}
         className="d-flex flex-column align-items-center login_form_box">
-        <h1 className="h1  mb-1 pb-2 my_black fw-bold">Create an account </h1>
-        <p className="my_black">Signup to get the most out of Falcon Traders</p>
+        <h1 className="h1  mb-1 pb-2 black_text_color fw-bold">Create an account </h1>
+        <p className="black_text_color">Signup to get the most out of Falcon Traders</p>
 
         <div className="w-25 my-2">
           <input
@@ -106,13 +106,13 @@ export default function Register() {
               id="exampleCheck1"
             />
             <label
-              className="form-check-label cp no_selection  my_black"
+              className="form-check-label cp no_selection  black_text_color"
               htmlFor="exampleCheck1">
               Accept Terms & Conditions
             </label>
           </div>
           <div className="forgot">
-            <p className="my_black forgot">Forgot Password?</p>
+            <p className="black_text_color forgot">Forgot Password?</p>
           </div>
         </div>
 

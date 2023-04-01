@@ -27,7 +27,7 @@ export default function Login() {
       <form
         onSubmit={handleSubmit(loginUser)}
         className="d-flex flex-column align-items-center login_form_box">
-        <h1 className="h1 mb-1 my_black fw-bold">Welcome back ! </h1>
+        <h1 className="h1 mb-1 black_text_color fw-bold">Welcome back ! </h1>
         <p className="para_text">Sign in to get the most out of Techno Store</p>
 
         <div className="w-25 my-2">
@@ -58,13 +58,13 @@ export default function Login() {
               id="exampleCheck1"
             />
             <label
-              className="form-check-label check_box  no_selection cp my_black "
+              className="form-check-label check_box  no_selection cp black_text_color "
               htmlFor="exampleCheck1">
               Accept Terms & Conditions
             </label>
           </div>
           <div className="">
-            <p className="forgot my_black">Forgot Password?</p>
+            <p className="forgot black_text_color">Forgot Password?</p>
           </div>
         </div>
 

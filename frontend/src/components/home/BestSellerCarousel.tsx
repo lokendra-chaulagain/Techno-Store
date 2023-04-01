@@ -11,7 +11,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 export default function BestSellerCarousel({ products }: any) {
   return (
     <div className="mb-5">
-      {products && <h4 className="my_black">{products[0].title}</h4>}
+      {products && <h4 className="black_text_color">{products[0].title}</h4>}
       <hr className="my-0 mb-4" />
       <Swiper
         slidesPerView={4}
@@ -41,7 +41,7 @@ export default function BestSellerCarousel({ products }: any) {
                   />
                   <div className="d-flex  gap-2 flex-column">
                     <small className="text-muted ">Laptops</small>
-                    <p className="h6 my_black mb-0">Apple iPad Mini G2356</p>
+                    <p className="h6 black_text_color mb-0">Apple iPad Mini G2356</p>
                     <p className="h5 ">
                       <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
                     </p>

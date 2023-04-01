@@ -156,7 +156,7 @@ export default function MixedProductSection() {
       <div className="row">
         <div className="col-3 ">
           <div className="offer_carousel d-flex flex-column align-items-center p-3">
-            <p className="h5 my_black">
+            <p className="h5 black_text_color">
               <span className="color_orange">Save $300</span> Special Offer
             </p>
 
@@ -169,7 +169,7 @@ export default function MixedProductSection() {
               width={100}
             />
 
-            <p className="my-0 h5 my_black">Product Name</p>
+            <p className="my-0 h5 black_text_color">Product Name</p>
             <p className="h5 mt-2">
               <span className="color_orange">$1250.00</span> <span className="text-muted"> $2998.0</span>
             </p>

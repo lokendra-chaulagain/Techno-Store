@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProductColumn({ products }: any) {
   return (
     <div className="col d-flex flex-column ">
-      <h5 className="my_black ">{products[0].title}</h5>
+      <h5 className="black_text_color ">{products[0].title}</h5>
       <hr className="my-0 mb-4 " />
       {products &&
         products.map((product: any, id: any) => (

@@ -17,7 +17,7 @@ function Index() {
         <ProductNavTab />
       </div>
 
-      <div className="px-2 px-sm-5">
+      <div className="">
         <BestSellerCarousel />
         <CategoryNavTab />
         <RecentProductCarousel />

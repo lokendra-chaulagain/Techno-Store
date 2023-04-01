@@ -7,7 +7,7 @@ import change from "../assets/return.png";
 
 export default function OurServices() {
   return (
-    <div className="row d-flex align-items-center justify-content-between my-5 py-4">
+    <div className="row d-flex align-items-center justify-content-between my-5 py-4 no_selection">
       <div className="col-12 col-sm-6 col-xl-3 d-flex flex-column align-items-center justify-content-center">
         <Image
          className=" no_selection  services_round  p-2 "

@@ -4,6 +4,20 @@ import demo2 from "../../assets/long.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+import demo1 from "../assets/banner1.png";
+import demo3 from "../assets/banner4.png";
+import long2 from "../assets/image-section-5.jpg";
+
+import carousel1 from "../../assets/cameras/9.jpg";
+import carousel2 from "../../assets/cameras/9.jpg";
+import carousel3 from "../../assets/computers/1.jpg";
+import carousel4 from "../../assets/cookers/1.jpg";
+import carousel5 from "../../assets/drones/1.png";
+
 import best1 from "../../assets/cameras/9.jpg";
 import best2 from "../../assets/computers/1.jpg";
 import best3 from "../../assets/cookers/1.jpg";
@@ -20,6 +34,7 @@ import hot3 from "../../assets/phone/4.jpg";
 import hot4 from "../../assets/kettles/4.jpg";
 import Link from "next/link";
 import ProductColumn from "../mixed-product/ProductColumn";
+import HotSale from "../mixed-product/HotSale";
 
 export default function MixedProductSection() {
   const bestSellers = [
@@ -151,34 +166,89 @@ export default function MixedProductSection() {
     },
   ];
 
+  const products = [
+    {
+      id: "1",
+      title: "Hot Sales",
+      category: "Laptop",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: carousel4,
+    },
+
+    {
+      id: "2",
+      category: "Ear pod",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: carousel3,
+    },
+
+    {
+      id: "3",
+      category: "Headphone",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: carousel2,
+    },
+
+    {
+      id: "4",
+      category: "Fridge",
+      name: "Lorem Ipsum is simply dummy ",
+      slug: "Lorem-Ipsum-is-simply-dummy ",
+      priceNow: "700",
+      pricePrevious: "900",
+      image: carousel1,
+    },
+  ];
+
   return (
     <div className="mixed_section mt-5 p-5">
       <div className="row">
-        <div className="col-3 ">
-          <div className="offer_carousel d-flex flex-column align-items-center p-3">
-            <p className="h5 black_text_color">
-              <span className="color_orange">Save $300</span> Special Offer
-            </p>
+        <div className="col-12 col-md-6 ">
+          <Swiper
+            pagination={true}
+            loop={true}
+            modules={[Pagination]}
+            className="mySwiper ">
+            {bestSellers.map((product: any, id: any) => (
+              <SwiperSlide
+                key={id}
+                className="">
+                <div
+                  className="offer_carousel d-flex flex-column align-items-center p-3"
+                  style={{ height: "90vh" }}>
+                  <p className="h5 black_text_color">
+                    <span className="color_orange">Save $300</span> Special Offer
+                  </p>
 
-            <Image
-              className=" no_selection cp"
-              src={demo2}
-              objectFit="scale-down"
-              alt="img"
-              height={510}
-              width={100}
-            />
+                  <Image
+                    className=" no_selection cp"
+                    src={product.image}
+                    objectFit="scale-down"
+                    alt="img"
+                  />
 
-            <p className="my-0 h5 black_text_color">Product Name</p>
-            <p className="h5 mt-2">
-              <span className="color_orange">$1250.00</span> <span className="text-muted"> $2998.0</span>
-            </p>
-          </div>
+                  <p className="my-0 h5 black_text_color">Product Name</p>
+                  <p className="h5 mt-2">
+                    <span className="color_orange">$1250.00</span> <span className="text-muted"> $2998.0</span>
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         <ProductColumn products={bestSellers} />
         <ProductColumn products={features} />
-        <ProductColumn products={hotSales} />
+        <HotSale products={hotSales} />
       </div>
     </div>
   );

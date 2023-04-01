@@ -375,7 +375,8 @@ p {
 }
 
 .hero_carousel {
-  height: 55vh;
+  height: 60vh;
+  overflow: hidden ;
 }
 
 .hero_h1 {
@@ -518,3 +519,5 @@ p {
 .ant-steps-item-icon {
   background-color: rgba(192, 241, 192, 0.753) !important;
 }
+
+

@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import { Provider } from "react-redux";
 import { store } from "../redux/store/store";
 import Navbar from "../components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -19,6 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
       </div>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </Provider>
   );
 }

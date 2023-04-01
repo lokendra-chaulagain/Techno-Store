@@ -4,6 +4,8 @@ body {
 
 :root {
   --color-text-black: rgba(37, 37, 37, 0.774);
+  --bg-white: #fefffe;
+  --bg-grey: #f4f4f5;
 }
 
 p {
@@ -13,6 +15,14 @@ p {
 
 .black_text_color {
   color: var(--color-text-black) !important;
+}
+
+.bg_white {
+  background-color: var(--bg-white);
+}
+
+.bg_grey {
+  background-color: var(--bg-grey);
 }
 
 .nav_dropdown_menu {
@@ -364,9 +374,6 @@ p {
   border: 1px solid #494948 !important;
 }
 
-.bg_grey {
-  background-color: #f4f5f4 !important;
-}
 .hero_carousel {
   height: 55vh;
 }
@@ -488,6 +495,26 @@ p {
   transform: translateY(-2px);
 }
 
-.bg_white {
-  background-color: white;
+.ant-steps-item-process .ant-steps-item-icon {
+  background-color: orange !important;
+  border-color: orange !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+  color: green !important;
+  font-weight: 500 !important;
+}
+
+.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+  color: orange !important;
+  font-weight: 500 !important;
+}
+
+.ant-steps .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 500 !important;
+}
+
+.ant-steps-item-icon {
+  background-color: rgba(192, 241, 192, 0.753) !important;
 }

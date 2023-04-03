@@ -1,13 +1,12 @@
 import { Pagination } from "swiper";
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import demo1 from "../../assets/banner1.png";
-import demo2 from "../../assets/banner2.png";
-import demo3 from "../../assets/banner4.png";
-import long2 from "../../assets/image-section-5.jpg";
+import demo2 from "../../assets/banner-2.png";
+import demo3 from "../../assets/banner-4.png";
 import CategoriesSection from "../../components/CategoriesSection";
 import SingleProductSection from "../../components/SingleProductSection";
 

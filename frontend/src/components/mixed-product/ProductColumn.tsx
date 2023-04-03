@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Rating } from "react-simple-star-rating";
 
 export default function ProductColumn({ products }: any) {
   return (
@@ -22,11 +23,17 @@ export default function ProductColumn({ products }: any) {
                 width={100}
               />
               <div>
-                <p className="h6 my-0">{product.name}</p>
-                <small>Rating here</small>
+                <p className="fz_18 black_text_color my-0">{product.name}</p>
+
+                <Rating
+                  readonly
+                  initialValue={4}
+                  size={16}
+                />
+
                 <div className="d-flex align-items-center gap-2">
-                  <p className="color_orange h5">NPR{product.priceNow} </p>
-                  <p className="text-muted h6">
+                  <p className="color_orange ">NPR{product.priceNow} </p>
+                  <p className="text-muted ">
                     <s>NPR{product.pricePrevious}</s>
                   </p>
                 </div>

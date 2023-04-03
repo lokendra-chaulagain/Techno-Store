@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosGitCompare } from "react-icons/io";
+import { Rating } from "react-simple-star-rating";
 
 export default function SingleProductSection({ products }: any) {
   return (
@@ -10,8 +11,8 @@ export default function SingleProductSection({ products }: any) {
         products.map((product: any, index: any) => (
           <div
             key={index}
-            className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 ">
-            <div className="recant_product_card  mb-4 gap-2 pb-3 ">
+            className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2  ">
+            <div className="recant_product_card  mb-4  pb-3 d-flex flex-column align-items-center justify-content-center border ">
               <Image
                 className=" no_selection cp"
                 src={product.image}
@@ -20,29 +21,41 @@ export default function SingleProductSection({ products }: any) {
                 height={200}
                 width={200}
               />
+
               <small className="text-muted">---------- {product.category} ----------</small>
-              <p className="h6 black_text_color mb-0 ">{product.name}</p>
-              <p className="h5 ">
-                <span className="color_orange">NRS{product.priceNow}</span> <span className="text-muted">NRS{product.pricePrevious}</span>
+              <p className="fz_18 black_text_color black_text_color mb-0 ">{product.name}</p>
+
+              <p className=" ">
+                <span className="color_orange">NRS{product.priceNow}</span>{" "}
+                <span className="text-muted">
+                  <s>NRS{product.pricePrevious}</s>
+                </span>
               </p>
+
+              <Rating
+                readonly
+                initialValue={4}
+                size={16}
+              />
+
               <div className="d-flex align-items-center text-muted gap-4">
                 <div className="single_product_icon">
                   <IoIosGitCompare
-                    size={25}
+                    size={20}
                     className="cp"
                   />
                 </div>
 
                 <div className="single_product_icon">
                   <AiOutlineHeart
-                    size={25}
+                    size={20}
                     className="cp"
                   />
                 </div>
 
                 <div className="single_product_icon">
                   <AiOutlineShoppingCart
-                    size={25}
+                    size={20}
                     className="cp"
                   />
                 </div>

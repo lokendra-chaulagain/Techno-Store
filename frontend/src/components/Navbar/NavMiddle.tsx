@@ -7,6 +7,7 @@ import PhoneAndWatchDrop from "./PhoneAndWatchDrop";
 import HeaterAndFanDrop from "./HeaterAndFanDrop";
 import ComputerAndLaptopDown from "./ComputerAndLaptopDown";
 import AccessoriesDown from "./AccessoriesDown";
+import NavMiddleOffCanvas from "./NavMiddleOffCanvas";
 
 // import phone1 from "../../assets/phone/1.jpg";
 // import watch1 from "../../assets/watches/1.jpg";
@@ -95,7 +96,7 @@ export default function NavMiddle() {
   };
 
   return (
-    <div className="d-flex px-5 py-3 align-items-center justify-content-between position-relative">
+    <div className="d-flex container-fluid py-3 align-items-center justify-content-between position-relative">
       <div>
         <Link href={"/"}>
           <Image
@@ -107,42 +108,40 @@ export default function NavMiddle() {
         </Link>
       </div>
 
-      <div className="d-flex align-items-center  gap-5 h6">
-        <Link href={"/"}>
-          <h6 className={path === "" ? "nav_active my-0 black_text_color cp no_selection" : "my-0 black_text_color cp no_selection"}>HOME</h6>
-        </Link>
-        <p
-          data-bs-toggle="offcanvas"
-          data-bs-target="#phoneOffcanvasTop"
-          aria-controls="phoneOffcanvasTop"
-          className="black_text_color  no_selection cp">
-          Phones & Watches^
-        </p>
-        <p
-          data-bs-toggle="offcanvas"
-          data-bs-target="#heaterOffcanvasTop"
-          aria-controls="heaterOffcanvasTop"
-          className="black_text_color  no_selection cp">
-          Heaters & Fans^
-        </p>
-        <p
-          data-bs-toggle="offcanvas"
-          data-bs-target="#heaterOffcanvasTop"
-          aria-controls="computerOffcanvasTop"
-          className="black_text_color  no_selection cp">
-          Computers & Laptops^
-        </p>
-        <p
-          data-bs-toggle="offcanvas"
-          data-bs-target="#heaterOffcanvasTop"
-          aria-controls="accessoriesOffcanvasTop"
-          className="black_text_color no_selection cp">
-          Accessories^
-        </p>
-
-        <Link href={"/contact"}>
-          <p className={path === "contact" ? "nav_active black_text_color cp no_selection" : " black_text_color cp no_selection"}>CONTACT</p>
-        </Link>
+      <div className="d-none d-lg-block">
+        <div className="d-flex align-items-center  gap-3 ">
+          <Link href={"/"}>
+            <h6 className={path === "" ? "nav_active my-0 black_text_color cp no_selection" : "my-0 black_text_color cp no_selection"}>HOME</h6>
+          </Link>
+          <p
+            data-bs-toggle="offcanvas"
+            data-bs-target="#phoneOffcanvasTop"
+            aria-controls="phoneOffcanvasTop"
+            className="black_text_color  no_selection cp h6">
+            Phones & Watches^
+          </p>
+          <p
+            data-bs-toggle="offcanvas"
+            data-bs-target="#heaterOffcanvasTop"
+            aria-controls="heaterOffcanvasTop"
+            className="black_text_color  no_selection cp h6">
+            Heaters & Fans^
+          </p>
+          <p
+            data-bs-toggle="offcanvas"
+            data-bs-target="#heaterOffcanvasTop"
+            aria-controls="computerOffcanvasTop"
+            className="black_text_color  no_selection cp h6">
+            Computers & Laptops^
+          </p>
+          <p
+            data-bs-toggle="offcanvas"
+            data-bs-target="#heaterOffcanvasTop"
+            aria-controls="accessoriesOffcanvasTop"
+            className="black_text_color no_selection cp h6">
+            Accessories^
+          </p>
+        </div>
       </div>
 
       <div
@@ -172,7 +171,9 @@ export default function NavMiddle() {
         <AccessoriesDown />
       </div>
 
-      <div className="d-flex align-items-center gap-3"></div>
+      <div className="d-flex align-items-center gap-3">
+        <NavMiddleOffCanvas />
+      </div>
     </div>
   );
 }

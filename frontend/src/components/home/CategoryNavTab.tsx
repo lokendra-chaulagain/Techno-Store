@@ -157,6 +157,7 @@ import dryer9 from "../../assets/hair-dryers/9.jpg";
 import dryer10 from "../../assets/hair-dryers/10.jpg";
 import dryer11 from "../../assets/hair-dryers/11.jpg";
 import dryer12 from "../../assets/hair-dryers/12.jpg";
+import SingleProductSection from "../SingleProductSection";
 
 export default function CategoryNavTab() {
   const phones = [
@@ -1645,9 +1646,11 @@ export default function CategoryNavTab() {
 
   console.log(numSelected);
 
+  const [category, setCategory] = useState("");
+
   return (
     <div className="mt-5 ">
-      <div className="d-flex align-items-center  ">
+      {/* <div className="d-flex align-items-center  ">
         <button
           onClick={selectSmartPhones}
           type="button"
@@ -1736,46 +1739,21 @@ export default function CategoryNavTab() {
           className={numSelected === 15 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
           Accessories
         </button>
-      </div>
+      </div> */}
+
+      <select
+        className="form-select shadow-none rounded-1 cp w-25"
+        aria-label="Category select"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}>
+        <option selected>Select Category</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
       <hr className="my-0 mb-4 mt-2" />
-      <div className="row d-flex">
-        {products &&
-          products.map((product: any, index) => (
-            <div
-              key={index}
-              className="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2 ">
-              <div className="recant_product_card mb-4 gap-2 pb-3">
-                <Image
-                  className=" no_selection cp"
-                  src={product.image}
-                  objectFit="scale-down"
-                  alt="img"
-                  height={200}
-                  width={200}
-                />
-                <small className="text-muted">---------- {product.category} ----------</small>
-                <p className="h6 mb-0 ">{product.name}</p>
-                <p className="h5 ">
-                  <span className="color_orange">NRS{product.priceNow}</span> <span className="text-muted">NRS{product.pricePrevious}</span>
-                </p>
-                <div className="d-flex align-items-center text-muted gap-4">
-                  <IoIosGitCompare
-                    size={25}
-                    className="cp"
-                  />
-                  <AiOutlineHeart
-                    size={25}
-                    className="cp"
-                  />
-                  <AiOutlineShoppingCart
-                    size={25}
-                    className="cp"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
+
+      <SingleProductSection products={products} />
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import Image from "next/image";
-import watch from "../assets/banner1.png";
-import kettle from "../assets/banner2.png";
-import headphone from "../assets/banner4.png";
-import long2 from "../assets/image-section-5.jpg";
+import watch from "../assets/banner-3.jpg";
+import kettle from "../assets/banner-2.png";
+import headphone from "../assets/banner-1.png";
+import phone from "../assets/banner-4.png";
 
 export default function HeroCarousel() {
   const products = [
@@ -35,46 +35,59 @@ export default function HeroCarousel() {
       id: "3",
       category: "Speaker and Headphones",
       name: "Sony WF-1000XM3",
-      desc: "Experience high-quality audio and immerse yourself in your favorite music with headphones. Shop for wired or wireless options, noise-cancelling features, and comfortable designs online.",
+      desc: "Experience high-quality audio and immerse yourself in your favorite music with headphones. Shop for wired or wireless options, noise-cancelling features.",
       priceNow: "6800",
       pricePrevious: "7400",
       image: headphone,
     },
+
+    {
+      id: "4",
+      category: "Phones and Watches",
+      name: "Apple  Iphone-6 ",
+      desc: "Experience high-quality audio and immerse yourself in your favorite music with headphones. Shop for wired or wireless options, noise-cancelling features.",
+      priceNow: "63000",
+      pricePrevious: "67000",
+      image: phone,
+    },
   ];
 
   return (
-    <div className="hero_carousel">
+    <div className="">
       <Swiper
-        pagination={true}
         loop={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
         modules={[Pagination]}
-        className="mySwiper ">
+        className="mySwiper">
         {products.map((product: any, id: any) => (
-          <SwiperSlide
-            key={id}
-            className="d-flex align-items-center bg_grey p-5">
-            <div>
-              <p className="text-muted para_text my-0 ">{product.category}</p>
-              <h1 className="color_orange hero_h1 my-0">{product.name} </h1>
-              <p className="w-50 para_text text-muted">{product.desc}</p>
-              <h1 className="color_orange">NPR {product.priceNow}</h1>
-              <h4 className="text-muted">
-                <s>NPR {product.pricePrevious}</s>
-              </h4>
-              <button
-                type="button"
-                className="btn bg_orange color_white fw-semibold mt-4 rounded-pill px-4">
-                Shop Now{" "}
-              </button>
-            </div>
-            <div>
-              <Image
-                className=" "
-                src={product.image}
-                objectFit="scale-down"
-                alt="img"
-                width={400}
-              />
+          <SwiperSlide key={id}>
+            <div className="row d-flex align-items-center bg_grey  py-5 px-2 px-md-5">
+              <div className="col-12 col-lg-6">
+                <p className="text-muted para_text my-0 ">{product.category}</p>
+                <h1 className="color_orange h1 my-0">{product.name} </h1>
+                <p className="w-75 d-none d-xl-block para_text text-muted">{product.desc.substring(0, 300)}</p>
+                <p className="w-100 d-block d-xl-none  para_text text-muted ">{product.desc.substring(0, 150)}</p>
+                <p className="h2 mt-2 color_orange">NPR {product.priceNow}</p>
+                <h4 className="text-muted">
+                  <s>NPR {product.pricePrevious}</s>
+                </h4>
+                <button
+                  type="button"
+                  className="btn bg_orange color_white fw-semibold mt-4 rounded-pill px-4">
+                  Shop Now{" "}
+                </button>
+              </div>
+
+              <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                <Image
+                  src={product.image}
+                  objectFit="scale-down"
+                  alt="img"
+                  width={400}
+                />
+              </div>
             </div>
           </SwiperSlide>
         ))}

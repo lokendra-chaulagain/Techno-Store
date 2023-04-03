@@ -13,6 +13,33 @@ p {
   padding: 0px !important;
 }
 
+.fz_15{
+  font-size: 15px;
+}
+
+.fz_16{
+  font-size: 16px;
+}
+
+
+.fz_17{
+  font-size: 17px;
+}
+
+.fz_18{
+  font-size: 18px !important;
+}
+
+.fz_19{
+  font-size: 19px !important;
+}
+
+
+.fz_20{
+  font-size: 20px !important;
+}
+
+
 .black_text_color {
   color: var(--color-text-black) !important;
 }
@@ -42,17 +69,7 @@ p {
   width: 100%;
 }
 
-.recant_product_card {
-  border: 1px solid rgb(219, 217, 217);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 300ms ease-in-out;
-}
-.recant_product_card:hover {
-  border: 1px solid orange;
-}
+
 
 .cp {
   cursor: pointer !important;
@@ -374,11 +391,6 @@ p {
   border: 1px solid #494948 !important;
 }
 
-.hero_carousel {
-  height: 60vh;
-  overflow: hidden ;
-}
-
 .hero_h1 {
   font-size: 60px !important;
   font-weight: normal !important;
@@ -483,17 +495,12 @@ p {
   color: white;
 }
 
-.single_product_icon {
-  background-color: #49494815;
-  border-radius: 50%;
-  padding: 5px;
-  transition: all 150ms ease-in-out;
+.single_product_icon{
+  transition: all .2s ease-in-out;
 }
 
 .single_product_icon:hover {
-  background-color: orange;
-  color: white !important;
-  transform: translateY(-2px);
+ color: orange;
 }
 
 .ant-steps-item-process .ant-steps-item-icon {
@@ -518,6 +525,20 @@ p {
 
 .ant-steps-item-icon {
   background-color: rgba(192, 241, 192, 0.753) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: orange !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px !important;
+  color: orange !important;
+}
+
+.crusor_hand{
+  cursor: grab !important;
 }
 
 

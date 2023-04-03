@@ -10,7 +10,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function BestSellerCarousel({ products }: any) {
   return (
-    <div className="mb-5">
+    <div className="px-5 mb-5">
       {products && <h4 className="black_text_color">{products[0].title}</h4>}
       <hr className="my-0 mb-4" />
       <Swiper
@@ -28,9 +28,9 @@ export default function BestSellerCarousel({ products }: any) {
           products.map((product: any, id: any) => (
             <SwiperSlide
               key={id}
-              className="d-flex flex-column gap-4">
-              <div className="best_seller_product_card pb-3">
-                <div className="d-flex align-items-center ">
+              className="d-flex flex-column gap-4 border" >
+              <div className=" p-3 d-flex flex-column align-items-center justify-content-center ">
+                <div className="d-flex gap-3 align-items-center ">
                   <Image
                     className=" no_selection cp"
                     src={product.image}
@@ -48,18 +48,18 @@ export default function BestSellerCarousel({ products }: any) {
                   </div>
                 </div>
 
-                <div className="d-flex text-muted align-items-center gap-4">
+                <div className="d-flex text-muted align-items-center justify-content-center gap-4 mt-3">
                   <IoIosGitCompare
-                    size={25}
-                    className="cp"
+                    size={20}
+                    className="cp single_product_icon"
                   />
                   <AiOutlineHeart
-                    size={25}
-                    className="cp"
+                    size={20}
+                    className="cp single_product_icon"
                   />
                   <AiOutlineShoppingCart
-                    size={25}
-                    className="cp"
+                    size={20}
+                    className="cp single_product_icon"
                   />
                 </div>
               </div>

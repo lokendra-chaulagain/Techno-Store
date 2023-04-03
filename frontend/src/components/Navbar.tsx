@@ -4,9 +4,9 @@ import NavTop from './Navbar/NavTop'
 
 export default function Navbar() {
   return (
-    <div>
+    <div className=''>
         <NavTop />
-        <NavBottom />
+        {/* <NavBottom /> */}
     </div>
   )
 }

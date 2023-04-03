@@ -36,12 +36,12 @@ export default function Support() {
   ];
 
   return (
-    <div className="mb-5">
+    <div className="container mb-5">
       <p className="h4 text-center my-4 black_text_color">Answers to Your Questions</p>
 
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center ">
         <div
-          className="w-75 accordion d-flex flex-column gap-3 accordion-flush "
+          className="accordion d-flex flex-column gap-3 accordion-flush w-100 "
           id="accordionFlushExample">
           {datas &&
             datas.map((data: any, id: any) => (
@@ -50,7 +50,7 @@ export default function Support() {
                 className={`${styles.accordion_item} accordion-item`}>
                 <h2 className="accordion-header">
                   <button
-                    className={`${styles.accordion_button} fw-semibold text-muted   accordion-button collapsed`}
+                    className={`${styles.accordion_button} p text-muted   accordion-button collapsed`}
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse-${id}`}

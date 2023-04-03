@@ -178,9 +178,9 @@ export default function Stores() {
 
   return (
     <div>
-      <div className="d-flex align-items-center justify-content-center">
-        <div className="row w-75">
-          <div className="col-3 p-0  border">
+      <div className="container d-flex align-items-center justify-content-center">
+        <div className="row  w-100">
+          <div className="col-12 col-md-3 p-0  border">
             <p className="text-center h5  bg_dark color_white py-3">Our Locations</p>
 
             <p
@@ -261,7 +261,8 @@ export default function Stores() {
               Turkey
             </p>
           </div>
-          <div className="col-9">
+
+          <div className="col-12 col-md-9 p-0 ">
             <iframe
               className="google_map"
               src={locationSelected.map}
@@ -272,14 +273,13 @@ export default function Stores() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            <div className="row black_text_color mt-3">
-              <div className="col">
-                <p className="h5  my-2">Country : {locationSelected.name}</p>
-
+            <div className="row black_text_color mt-3 px-0 px-md-3">
+              <div className="col-12 col-sm-6">
+                <p className="h5 mb-2">Country : {locationSelected.name}</p>
                 <p className="h6  mb-2">Address</p>
                 <p className="w-50">{locationSelected.address}</p>
               </div>
-              <div className="col">
+              <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                 <p className="h6">Email</p>
                 <p>{locationSelected.email}</p>
 

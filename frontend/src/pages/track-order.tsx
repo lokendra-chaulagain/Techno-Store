@@ -23,14 +23,15 @@ export default function Orders() {
     }
   };
   return (
-    <div className="bg_grey d-flex justify-content-center">
-      <div className="bg_white d-flex flex-column black_text_color align-items-center w-75 py-5">
+    <div className="bg_grey  d-flex justify-content-center">
+      <div className="bg_white container d-flex flex-column black_text_color align-items-center  py-5 ">
         <p className="h5  ">Track Your Order</p>
-        <p className="w-50 my-2 text-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our courier's website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
+        <p className="w-100 d-block d-lg-none my-2 text-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our courier's website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
+        <p className="w-75 d-none d-lg-block my-2 text-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our courier's website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
 
         <form
           onSubmit={handleSubmit(loginUser)}
-          className="w-25">
+          className="">
           <div className=" my-2">
             <input
               type="number"
@@ -48,7 +49,7 @@ export default function Orders() {
           </button>
         </form>
 
-        <div className="mt-5  ">
+        <div className="mt-5 ">
           <Steps
             current={trackId}
             direction="vertical"

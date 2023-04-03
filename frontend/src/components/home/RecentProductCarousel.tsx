@@ -120,7 +120,7 @@ export default function RecentProductCarousel() {
   ];
 
   return (
-    <div className="mt-5">
+    <div className="px-5 mt-5">
       <h5 className="black_text_color h5">Recent Products</h5>
       <hr className="my-0 mb-4" />
       <Swiper
@@ -138,9 +138,9 @@ export default function RecentProductCarousel() {
           products.map((product: any, index) => (
             <SwiperSlide
               key={index}
-              className="recant_product_card gap-2 pb-3 ">
+              className="d-flex flex-column align-items-center justify-content-center gap-2 pb-3 border no_selection crusor_hand">
               <Image
-                className=" no_selection cp"
+                className=" "
                 src={product.image}
                 objectFit="scale-down"
                 alt="img"
@@ -148,22 +148,25 @@ export default function RecentProductCarousel() {
                 width={200}
               />
               <small className="text-muted">---------- {product.category} ----------</small>
-              <p className="h6 mb-0 ">{product.name}</p>
-              <p className="h5 ">
-                <span className="color_orange">NRS{product.priceNow}</span> <span className="text-muted">NRS{product.pricePrevious}</span>
+              <p className="mb-0 black_text_color fz_18 ">{product.name}</p>
+              <p className=" ">
+                <span className="color_orange">NRS{product.priceNow}</span>{" "}
+                <span className="text-muted">
+                  <s>NRS{product.pricePrevious}</s>
+                </span>
               </p>
               <div className="d-flex align-items-center text-muted gap-4">
                 <IoIosGitCompare
-                  size={25}
-                  className="cp"
+                  size={20}
+                  className="cp single_product_icon"
                 />
                 <AiOutlineHeart
-                  size={25}
-                  className="cp"
+                  size={20}
+                  className="cp single_product_icon"
                 />
                 <AiOutlineShoppingCart
-                  size={25}
-                  className="cp"
+                  size={20}
+                  className="cp single_product_icon"
                 />
               </div>
             </SwiperSlide>

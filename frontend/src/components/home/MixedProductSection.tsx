@@ -13,10 +13,8 @@ import demo3 from "../assets/banner4.png";
 import long2 from "../assets/image-section-5.jpg";
 
 import carousel1 from "../../assets/cameras/9.jpg";
-import carousel2 from "../../assets/cameras/9.jpg";
 import carousel3 from "../../assets/computers/1.jpg";
 import carousel4 from "../../assets/cookers/1.jpg";
-import carousel5 from "../../assets/drones/1.png";
 
 import best1 from "../../assets/cameras/9.jpg";
 import best2 from "../../assets/computers/1.jpg";
@@ -32,7 +30,6 @@ import hot1 from "../../assets/watches/4.jpg";
 import hot2 from "../../assets/speakers/4.png";
 import hot3 from "../../assets/phone/4.jpg";
 import hot4 from "../../assets/kettles/4.jpg";
-import Link from "next/link";
 import ProductColumn from "../mixed-product/ProductColumn";
 import HotSale from "../mixed-product/HotSale";
 
@@ -189,16 +186,6 @@ export default function MixedProductSection() {
     },
 
     {
-      id: "3",
-      category: "Headphone",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: carousel2,
-    },
-
-    {
       id: "4",
       category: "Fridge",
       name: "Lorem Ipsum is simply dummy ",
@@ -218,7 +205,7 @@ export default function MixedProductSection() {
             loop={true}
             modules={[Pagination]}
             className="mySwiper ">
-            {bestSellers.map((product: any, id: any) => (
+            {products.map((product: any, id: any) => (
               <SwiperSlide
                 key={id}
                 className="">
@@ -226,7 +213,7 @@ export default function MixedProductSection() {
                   className="offer_carousel d-flex flex-column align-items-center p-3"
                   style={{ height: "90vh" }}>
                   <p className="h5 black_text_color">
-                    <span className="color_orange">Save $300</span> Special Offer
+                    <span className="color_orange">Save NPR 3000</span> Special Offer
                   </p>
 
                   <Image
@@ -238,7 +225,10 @@ export default function MixedProductSection() {
 
                   <p className="my-0 h5 black_text_color">Product Name</p>
                   <p className="h5 mt-2">
-                    <span className="color_orange">$1250.00</span> <span className="text-muted"> $2998.0</span>
+                    <span className="color_orange">NRP 4500</span>{" "}
+                    <span className="text-muted">
+                      <s>NRP 3450</s>
+                    </span>
                   </p>
                 </div>
               </SwiperSlide>

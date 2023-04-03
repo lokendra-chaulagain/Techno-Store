@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdDeleteOutline, MdOutlineClear } from "react-icons/md";
-import demo from "../assets/banner2.png";
-import { useGetCategoriesQuery } from "../redux/api/globalApi";
+import demo from "../assets/camera.jpg";
 import { IoMdAdd } from "react-icons/io";
 import { AiOutlineMinus } from "react-icons/ai";
 
@@ -43,81 +42,77 @@ export default function Cart() {
   };
 
   return (
-    <div
-      className="px-5 matter   d-flex align-items-center "
-      style={{ minHeight: "70vh" }}>
-      <div className="row d-flex  align-items-center justify-content-center ">
-        <div className="col-8 p-0">
-          <div className="row ">
-            <h4 className="text_color">All Cart Products (4)</h4>
-            <hr className="my-0 mb-4 mt-2" />
-            {products &&
-              products.map((product: any, index) => (
-                <div
-                  key={index}
-                  className="col-12 col-xl-6 p-0">
-                  <div className=" d-flex gap-4 mb-4 py-2 p-0 align-items-center  card_product_card">
-                    <Image
-                      className=" no_selection cp"
-                      src={demo}
-                      objectFit="scale-down"
-                      alt="img"
-                      height={180}
-                      width={170}
-                    />
-                    <div className="d-flex flex-column gap-1 ">
-                      <small className="text-muted"> Category Name</small>
-                      <p className="h6 black_text_color mb-0 ">Apple iPad Mini G2356</p>
+    <div className="container">
+      <h4 className="black_text_color">All Cart Products (4)</h4>
+      <hr className="my-0 mb-4 mt-2" />
+      <div className="row">
+        {products &&
+          products.map((product: any, index) => (
+            <div
+              key={index}
+              className="col-12 col-md-6 col-lg-4 p-0">
+              <div className=" d-flex gap-4 mb-4 py-2 p-0 align-items-center  card_product_card">
+                <Image
+                  className=" no_selection cp"
+                  src={demo}
+                  objectFit="scale-down"
+                  alt="img"
+                  height={70}
+                  width={70}
+                />
+                <div className="d-flex flex-column gap-1 ">
+                  <small className="text-muted"> Category Name</small>
+                  <p className="p  black_text_color mb-0 ">Apple iPad Mini G2356</p>
 
-                      <p className="h5 ">
-                        <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
-                      </p>
-                      <div className="d-flex align-items-center text-muted gap-4 mt-2">
-                        <div className="border px-3 py-1 d-flex gap-2 align-items-center  no_selection">
-                          <AiOutlineMinus
-                            onClick={quantityDec}
-                            size={24}
-                            className="cp"
-                          />
-                          {quantity}
-                          <IoMdAdd
-                            onClick={quantityInc}
-                            size={24}
-                            className="cp"
-                          />
-                        </div>
+                  <p className="">
+                    <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
+                  </p>
+                  <div className="d-flex align-items-center text-muted gap-4 mt-2">
+                    <div className="border px-3 py-1 d-flex gap-2 align-items-center  no_selection">
+                      <AiOutlineMinus
+                        onClick={quantityDec}
+                        size={24}
+                        className="cp"
+                      />
+                      {quantity}
+                      <IoMdAdd
+                        onClick={quantityInc}
+                        size={24}
+                        className="cp"
+                      />
+                    </div>
 
-                        <div className="icon_bg_div p-1 rounded-circle">
-                          <MdDeleteOutline
-                            onClick={handleRemove}
-                            size={24}
-                            className="cp"
-                          />
-                        </div>
-                        <div className="icon_bg_div p-1 rounded-circle">
-                          <AiOutlineShoppingCart
-                            onClick={handleAddToCart}
-                            size={23}
-                            className="cp"
-                          />
-                        </div>
-                      </div>
+                    <div className="icon_bg_div p-1 rounded-circle">
+                      <MdDeleteOutline
+                        onClick={handleRemove}
+                        size={24}
+                        className="cp"
+                      />
+                    </div>
+                    <div className="icon_bg_div p-1 rounded-circle">
+                      <AiOutlineShoppingCart
+                        onClick={handleAddToCart}
+                        size={23}
+                        className="cp"
+                      />
                     </div>
                   </div>
                 </div>
-              ))}
-          </div>
-          <hr />
-          <div className="d-flex flex-column ">
+              </div>
+            </div>
+          ))}
+      </div>
+
+      {/* <hr /> */}
+      {/* <div className="d-flex flex-column ">
             <h6 className="text_color">Delivery :Nrs 43 </h6>
             <h6 className="mt-2 text_color">Product : Nrs 5657.75</h6>
             <hr className="w-25 text_color" />
             <h5 className="text_color">Total : Nrs 5657.75</h5>
-          </div>
-        </div>
+          </div> */}
 
-        {/* ------------------------------ */}
-        <div className="col  col-md-6 col-xl-4 mt-5 com-md-0 p-0   ">
+      {/* ------------------------------ */}
+      {/* <div className="col  col-md-6 col-xl-4 mt-5 com-md-0 p-0   ">
           <div className=" cart_payment_info py-5 rounded-3">
             <h1 className="fw-bold black_text_color h1">Payment Info</h1>
             <h5 className="h5 black_text_color mb-3">Choose your payemet option</h5>
@@ -198,15 +193,15 @@ export default function Cart() {
               Confirm
             </button>
           </div>
-        </div>
-        <hr className="mt-5" />
-        <Link href={"/"}>
+        </div> */}
+
+      {/* <hr className="mt-5" /> */}
+      {/* <Link href={"/"}>
           <h5 className="black_text_color cp_hover mb-5 pb-5">
             {" "}
             <span className="h3">←</span> Continue Shopping
           </h5>
-        </Link>
-      </div>
+        </Link> */}
     </div>
   );
 }

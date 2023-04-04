@@ -7,10 +7,11 @@ import { Navigation } from "swiper";
 import Image from "next/image";
 import { IoIosGitCompare } from "react-icons/io";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
+import { Rating } from "react-simple-star-rating";
 
 export default function BestSellerCarousel({ products }: any) {
   return (
-    <div className="mb-5">
+    <div className="my-5 px-5">
       {products && <h4 className="black_text_color">{products[0].title}</h4>}
       <hr className="my-0 mb-4" />
       <Swiper
@@ -21,6 +22,23 @@ export default function BestSellerCarousel({ products }: any) {
         pagination={{
           clickable: true,
         }}
+        // breakpoints={{
+        //   1650: {
+        //     slidesPerView: 4,
+        //     spaceBetween: 5,
+        //   },
+        //   1300: {
+        //     slidesPerView: 3,
+        //     spaceBetween: 10,
+        //   },
+        //   700: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 10,
+        //   },
+        //   500: {
+        //     slidesPerView: 1,
+        //   },
+        // }}
         navigation={true}
         modules={[Navigation]}
         className="mySwiper">
@@ -28,7 +46,7 @@ export default function BestSellerCarousel({ products }: any) {
           products.map((product: any, id: any) => (
             <SwiperSlide
               key={id}
-              className="d-flex flex-column gap-4 border" >
+              className="d-flex flex-column gap-4 border">
               <div className=" p-3 d-flex flex-column align-items-center justify-content-center ">
                 <div className="d-flex gap-3 align-items-center ">
                   <Image
@@ -36,14 +54,21 @@ export default function BestSellerCarousel({ products }: any) {
                     src={product.image}
                     objectFit="scale-down"
                     alt="img"
-                    height={200}
-                    width={200}
+                    height={150}
+                    width={150}
                   />
-                  <div className="d-flex  gap-2 flex-column">
-                    <small className="text-muted ">Laptops</small>
-                    <p className="h6 black_text_color mb-0">Apple iPad Mini G2356</p>
-                    <p className="h5 ">
-                      <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
+                  <div className="d-flex flex-column">
+                    <Rating
+                      readonly
+                      initialValue={product.rating}
+                      size={16}
+                    />
+                    <p className="p black_text_color mb-0">{product.name.substring(0, 15)}</p>
+                    <p className="small ">
+                      <span className="color_orange">{product.priceNow}</span>{" "}
+                      <span className="text-muted">
+                        <s>{product.pricePrevious}</s>
+                      </span>
                     </p>
                   </div>
                 </div>

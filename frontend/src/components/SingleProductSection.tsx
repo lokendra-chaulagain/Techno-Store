@@ -21,14 +21,14 @@ export default function SingleProductSection({ products }: any) {
                 src={product.image}
                 objectFit="scale-down"
                 alt="img"
-                height={200}
-                width={200}
+                height={110}
+                width={110}
               />
 
               <small className="text-muted">---------- {product.category} ----------</small>
-              <p className="fz_18 black_text_color black_text_color mb-0 ">{product.name}</p>
+              <p className="black_text_color black_text_color mb-0 ">{product.name.substring(0,22)}</p>
 
-              <p className=" ">
+              <p className="small ">
                 <span className="color_orange">NRS{product.priceNow}</span>{" "}
                 <span className="text-muted">
                   <s>NRS{product.pricePrevious}</s>

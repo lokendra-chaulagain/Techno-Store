@@ -451,6 +451,7 @@ p {
   cursor: pointer;
 }
 
+
 .select_color_input_custom:focus {
   background-color: orange !important;
   border-color: orange !important;

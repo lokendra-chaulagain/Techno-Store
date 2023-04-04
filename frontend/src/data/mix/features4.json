@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Xiaomi Mi 12",
+        "category": "smart phones",
+        "title": "Featured Products",
+        "pricePrevious": "799.99",
+        "priceNow": "699.99",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/headphone-1_doupzi.jpg"
+    },
+    {
+        "name": "Sony Xperia 1 III",
+        "category": "smart phones",
+        "pricePrevious": "1,299.99",
+        "priceNow": "1,199.99",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/gopro_szfcyw.jpg"
+    },
+    {
+        "name": "Asus ROG Phone 5",
+        "category": "smart phones",
+        "pricePrevious": "999.99",
+        "priceNow": "899.99",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/headphone_q7j4uu.jpg"
+    }
+    
+]

@@ -1,0 +1,99 @@
+[
+    {
+        "name": "Samsung Galaxy S21 Ultra",
+        "title":"Best Sellings",
+        "category": "smart phones",
+        "pricePrevious": "1,199.99",
+        "priceNow": "999.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578960/Techno-Store/product-small/monitor_xnfexo.jpg"
+    },
+    {
+        "name": "Apple iPhone 13 Pro Max",
+        "category": "smart phones",
+        "pricePrevious": "1,099.00",
+        "priceNow": "1,099.00",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/mini-fridge_nrajks.jpg"
+    },
+    {
+        "name": "Google Pixel 6 Pro",
+        "category": "smart phones",
+        "pricePrevious": "1,099.99",
+        "priceNow": "899.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/laptop_tdfjrv.jpg"
+    },
+    {
+        "name": "OnePlus 10 Pro",
+        "category": "smart phones",
+        "pricePrevious": "999.99",
+        "priceNow": "899.99",
+        "rating": 2,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/laptop-2_qcesii.jpg"
+    },
+    {
+        "name": "Xiaomi Mi 12",
+        "category": "smart phones",
+        "pricePrevious": "799.99",
+        "priceNow": "699.99",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/headphone-1_doupzi.jpg"
+    },
+    {
+        "name": "Sony Xperia 1 III",
+        "category": "smart phones",
+        "pricePrevious": "1,299.99",
+        "priceNow": "1,199.99",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/gopro_szfcyw.jpg"
+    },
+    {
+        "name": "Asus ROG Phone 5",
+        "category": "smart phones",
+        "pricePrevious": "999.99",
+        "priceNow": "899.99",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/headphone_q7j4uu.jpg"
+    },
+    {
+        "name": "Samsung Galaxy Z Fold3 5G",
+        "category": "smart phones",
+        "pricePrevious": "1,799.99",
+        "priceNow": "1,599.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578960/Techno-Store/product-small/printer_dox87q.jpg"
+    },
+    {
+        "name": "Apple iPhone 12 Mini",
+        "category": "smart phones",
+        "pricePrevious": "699.00",
+        "priceNow": "599.00",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/earepod_nzwokc.jpg"
+    },
+    {
+        "name": "Google Pixel 5a",
+        "category": "smart phones",
+        "pricePrevious": "499.99",
+        "priceNow": "449.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578958/Techno-Store/product-small/charger_damugl.jpg"
+    },
+    {
+        "name": "OnePlus Nord 2",
+        "category": "smart phones",
+        "pricePrevious": "449.99",
+        "priceNow": "399.99",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578958/Techno-Store/product-small/drone_uvmjwf.jpg"
+    },
+    {
+        "name": "Xiaomi Redmi Note 11 Pro",
+        "category": "smart phones",
+        "pricePrevious": "399.99",
+        "priceNow": "349.99",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578958/Techno-Store/product-small/camera_xnnuhx.jpg"
+    }
+]

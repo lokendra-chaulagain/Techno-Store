@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Apple iPhone 12 Mini",
+        "category": "smart phones",
+        "title": "Hot Sales",
+        "pricePrevious": "699.00",
+        "priceNow": "599.00",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/earepod_nzwokc.jpg"
+    },
+    {
+        "name": "Google Pixel 5a",
+        "category": "smart phones",
+        "pricePrevious": "499.99",
+        "priceNow": "449.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578958/Techno-Store/product-small/charger_damugl.jpg"
+    },
+    {
+        "name": "OnePlus Nord 2",
+        "category": "smart phones",
+        "pricePrevious": "449.99",
+        "priceNow": "399.99",
+        "rating": 5,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578958/Techno-Store/product-small/drone_uvmjwf.jpg"
+    }
+    
+]

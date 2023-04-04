@@ -1649,7 +1649,7 @@ export default function CategoryNavTab() {
   const [category, setCategory] = useState("");
 
   return (
-    <div className="mt-5 ">
+    <div className="mt-5 px-5">
       {/* <div className="d-flex align-items-center  ">
         <button
           onClick={selectSmartPhones}

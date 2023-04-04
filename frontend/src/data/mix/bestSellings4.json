@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Samsung Galaxy S21 Ultra",
+        "title": "Best Sellings",
+        "category": "smart phones",
+        "pricePrevious": "1,199.99",
+        "priceNow": "999.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578960/Techno-Store/product-small/monitor_xnfexo.jpg"
+    },
+    {
+        "name": "Apple iPhone 13 Pro Max",
+        "category": "smart phones",
+        "pricePrevious": "1,099.00",
+        "priceNow": "1,099.00",
+        "rating": 4,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/mini-fridge_nrajks.jpg"
+    },
+    {
+        "name": "Google Pixel 6 Pro",
+        "category": "smart phones",
+        "pricePrevious": "1,099.99",
+        "priceNow": "899.99",
+        "rating": 3,
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680578959/Techno-Store/product-small/laptop_tdfjrv.jpg"
+    }
+]

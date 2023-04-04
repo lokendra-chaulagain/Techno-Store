@@ -11,7 +11,6 @@ import games from "../../data/category/games.json";
 export default function CategoryUrl() {
   const router = useRouter();
   const location = router.query.url;
-  console.log(location);
 
   return (
     <>

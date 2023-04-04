@@ -27,7 +27,6 @@ import hot1 from "../../assets/watches/4.jpg";
 import hot2 from "../../assets/speakers/4.png";
 import hot3 from "../../assets/phone/4.jpg";
 import hot4 from "../../assets/kettles/4.jpg";
-import Link from "next/link";
 
 
 

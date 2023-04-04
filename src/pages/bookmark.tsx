@@ -4,7 +4,6 @@ import { toast } from "react-hot-toast";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
 import demo from "../assets/banner-2.png";
-import { useGetCategoriesQuery } from "../redux/api/globalApi";
 const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
 
 export default function Bookmark() {

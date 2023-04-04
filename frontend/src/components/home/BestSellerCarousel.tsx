@@ -10,7 +10,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function BestSellerCarousel({ products }: any) {
   return (
-    <div className="px-5 mb-5">
+    <div className="mb-5">
       {products && <h4 className="black_text_color">{products[0].title}</h4>}
       <hr className="my-0 mb-4" />
       <Swiper

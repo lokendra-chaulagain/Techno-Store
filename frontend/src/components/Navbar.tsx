@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className=''>
         <NavTop />
-        {/* <NavBottom /> */}
+        <NavBottom />
     </div>
   )
 }

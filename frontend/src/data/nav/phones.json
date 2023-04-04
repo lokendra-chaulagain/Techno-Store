@@ -1,0 +1,28 @@
+[
+    {
+        "name": "iPhone 13",
+        "category": "Phones and Watches",
+        "categorySlug": "phones-and-watches"
+    },
+    {
+        "name": "Galaxy S21"
+    },
+    {
+        "name": "Pixel 6"
+    },
+    {
+        "name": "OnePlus 9 Pro"
+    },
+    {
+        "name": "Xperia 1 III"
+    },
+    {
+        "name": "Mi 11"
+    },
+    {
+        "name": "Zenfone 8"
+    },
+    {
+        "name": "ROG Phone 5"
+    }
+]

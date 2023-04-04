@@ -1,67 +1,51 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import image1 from "../../assets/image-section-1.jpg";
-import phone1 from "../../assets/phone/1.jpg";
 
-export default function PhoneAndWatchDrop({ leftItems, rightItems, imagesLeft, ImagesRight }: any) {
+export default function PhoneAndWatchDrop({ leftItems, rightItems, image }: any) {
   return (
     <div className="bg_white shadow-lg p-4 ">
       <div className="row">
-        <div className="col-4 d-flex  justify-content-between">
+        <div className="col-6 d-flex  justify-content-between">
           <div className="col">
-            <h5>Smart Phones</h5>
+            <h5>{leftItems[0].category}</h5>
             {leftItems.map((item: any, index: any) => (
-              <p
+              <Link
                 key={index}
-                className="nav_cat_link">
-                {item.name}
-              </p>
+                href={`/product/${leftItems[0].categorySlug}`}>
+                <p
+                  data-bs-dismiss="offcanvas"
+                  className="nav_cat_link">
+                  {item.name}
+                </p>
+              </Link>
             ))}
           </div>
 
           <div className="col">
-            <h5>Watches</h5>
+            <h5>{rightItems[0].category}</h5>
             {rightItems.map((item: any, index: any) => (
-              <p
+              <Link
                 key={index}
-                className="nav_cat_link">
-                {item.name}
-              </p>
+                href={`/product/${leftItems[0].categorySlug}`}>
+                <p
+                  data-bs-dismiss="offcanvas"
+                  className="nav_cat_link">
+                  {item.name}
+                </p>
+              </Link>
             ))}
           </div>
         </div>
 
-        <div className="col-4 d-flex flex-wrap flex-column gap-4 justify-content-between ">
+        <div className="col-6 d-flex flex-wrap gap-2   ">
           <Image
-            className=" "
-            src={phone1}
+            className="cp "
+            src={image}
             objectFit="scale-down"
+            alt="img"
             height={200}
-            width={500}
-            alt="img"
-          />
-
-          <Image
-            className=" "
-            src={image1}
-            objectFit="scale-down"
-            alt="img"
-          />
-        </div>
-
-        <div className="col-4 d-flex flex-column gap-4 justify-content-between ">
-          <Image
-            className=" "
-            src={image1}
-            objectFit="scale-down"
-            alt="img"
-          />
-
-          <Image
-            className=" "
-            src={image1}
-            objectFit="scale-down"
-            alt="img"
+            width={1000}
           />
         </div>
       </div>

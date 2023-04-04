@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosGitCompare } from "react-icons/io";
 import { Rating } from "react-simple-star-rating";
 
 export default function SingleProductSection({ products }: any) {
+  const router = useRouter();
+  const location = router.query.url;
   return (
     <div className="row d-flex">
       {products &&
@@ -34,7 +37,7 @@ export default function SingleProductSection({ products }: any) {
 
               <Rating
                 readonly
-                initialValue={4}
+                initialValue={product.rating}
                 size={16}
               />
 

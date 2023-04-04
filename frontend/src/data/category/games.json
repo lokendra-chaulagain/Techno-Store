@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Assassin's Creed Valhalla",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$59.99",
+        "priceNow": "$39.99",
+        "rating": 4
+    },
+    {
+        "name": "Marvel's Spider-Man: Miles Morales",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$49.99",
+        "priceNow": "$29.99",
+        "rating": 5
+    },
+    {
+        "name": "FIFA 22",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$69.99",
+        "priceNow": "$49.99",
+        "rating": 4
+    },
+    {
+        "name": "Call of Duty: Vanguard",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$59.99",
+        "priceNow": "$39.99",
+        "rating": 4
+    },
+    {
+        "name": "Super Mario Party",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$59.99",
+        "priceNow": "$49.99",
+        "rating": 5
+    },
+    {
+        "name": "Halo Infinite",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$69.99",
+        "priceNow": "$59.99",
+        "rating": 4
+    },
+    {
+        "name": "Resident Evil Village",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$59.99",
+        "priceNow": "$39.99",
+        "rating": 5
+    },
+    {
+        "name": "Forza Horizon 5",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$79.99",
+        "priceNow": "$59.99",
+        "rating": 4
+    },
+    {
+        "name": "Deathloop",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$59.99",
+        "priceNow": "$49.99",
+        "rating": 4
+    },
+    {
+        "name": "Far Cry 6",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$69.99",
+        "priceNow": "$59.99",
+        "rating": 5
+    },
+    {
+        "name": "Ratchet & Clank: Rift Apart",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$69.99",
+        "priceNow": "$49.99",
+        "rating": 5
+    },
+    {
+        "name": "Returnal",
+        "category": "games",
+       "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680575467/Techno-Store/category/smart-phones/11_li3ibv.png",
+        "pricePrevious": "$79.99",
+        "priceNow": "$69.99",
+        "rating": 4
+    }
+]

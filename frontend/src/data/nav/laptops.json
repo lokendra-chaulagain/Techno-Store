@@ -1,0 +1,28 @@
+[
+    {
+      "name": "MacBook Air M1",
+      "category": "Computers and Laptops",
+      "categorySlug": "computers-and-laptops"
+    },
+    {
+      "name": "HP Spectre x360"
+    },
+    {
+      "name": "Dell XPS 13"
+    },
+    {
+      "name": "Lenovo ThinkPad X1"
+    },
+    {
+      "name": "Asus ZenBook 14"
+    },
+    {
+      "name": "Acer Swift 3"
+    },
+    {
+      "name": "Microsoft Surface Laptop"
+    },
+    {
+      "name": "Razer Blade Stealth"
+    }
+  ]

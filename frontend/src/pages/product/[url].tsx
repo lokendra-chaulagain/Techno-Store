@@ -275,11 +275,13 @@ export default function ProductUrl() {
   ];
 
   return (
-    <div className="px-5 ">
+    <div className="px-5">
       <div className="row">
+
         <div className="col-3">
           <h5>Categories</h5>
         </div>
+        
         <div className="col-9 d-flex">
           <div className="col-4">
             <Swiper
@@ -394,7 +396,6 @@ export default function ProductUrl() {
       <BestSellerCarousel products={bestSellers} />
       <BestSellerCarousel products={features} />
       <BestSellerCarousel products={hotSellers} />
-
       <CategoriesSection categories={categories} />
     </div>
   );

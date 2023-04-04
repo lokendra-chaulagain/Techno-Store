@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Apple Mac Mini",
+        "category": "Computers and Laptops",
+        "categorySlug": "Computers-and-Laptops",
+        "banner": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680569274/Techno-Store/Nav/watch-nav_rapfz7.jpg"
+    },
+    {
+        "name": "Intel NUC"
+    },
+    {
+        "name": "ASUS VivoMini"
+    },
+    {
+        "name": "Lenovo ThinkCentre M920 "
+    },
+    {
+        "name": "HP Elite Slice"
+    },
+    {
+        "name": "Dell OptiPlex 7070 "
+    },
+    {
+        "name": "Intel Compute Stick"
+    },
+    {
+        "name": "Acer Chromebox CXI3"
+    }
+]

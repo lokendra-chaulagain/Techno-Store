@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Smart Phones",
+        "slug": "smart-phones"
+    },
+    {
+        "name": "Games",
+        "slug": "games"
+    },
+    {
+        "name": "Computers",
+        "slug": "computers"
+    },
+    {
+        "name": "Watches",
+        "slug": "watches"
+    },
+    {
+        "name": "Cameras",
+        "slug": "cameras"
+    },
+    {
+        "name": "Speakers",
+        "slug": "speakers"
+    },
+    {
+        "name": "Rice Cookers",
+        "slug": "rice-cookers"
+    },
+    {
+        "name": "Heaters",
+        "slug": "heaters"
+    },
+    {
+        "name": "Fans",
+        "slug": "fans"
+    },
+    {
+        "name": "Electric Kettles",
+        "slug": "electric-kettles"
+    },
+    {
+        "name": "Hair Dryers",
+        "slug": "hair-dryers"
+    },
+    {
+        "name": "Drones",
+        "slug": "drones"
+    },
+    {
+        "name": "Accessories",
+        "slug": "accessories"
+    }
+]

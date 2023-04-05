@@ -26,7 +26,7 @@ export default function OfferItem() {
 
         <p className="text-muted color-black my-0 mt-2 ">Laptops</p>
         <p className="color-orange  h2 my-0">MackBook Air 2020 </p>
-        <p className=" color-black text-muted">The MacBook Air 2020 is a sleek and powerful laptop with a stunning Retina display, fast performance, and long battery life. It's perfect for work, school, or everyday use.</p>
+        <p className=" color-black text-muted">The MacBook Air 2020 is a sleek and powerful laptop with a stunning Retina display, fast performance, and long battery life. Its perfect for work, school, or everyday use.</p>
 
         <Link href={"/product/offer-laptop-mack-book-2020"}>
         <button

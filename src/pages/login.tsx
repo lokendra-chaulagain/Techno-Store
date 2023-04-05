@@ -1,10 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/router.js";
+import toast from "react-hot-toast";
 
 export default function Login() {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -16,6 +15,8 @@ export default function Login() {
 
   const loginUser = async () => {
     try {
+      toast.success("Login Success");
+      console.log(handleAllField);
       reset();
     } catch (error) {
       console.log(error);
@@ -23,34 +24,36 @@ export default function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="container d-flex align-items-center justify-content-center my-5">
       <form
         onSubmit={handleSubmit(loginUser)}
-        className="d-flex flex-column align-items-center  ">
-        <h1 className="h1 mb-1 color-black fw-bold">Welcome back ! </h1>
-        <p className="para_text">Sign in to get the most out of Techno Store</p>
+        className="col-12 col-md-8 col-lg-6 col-xl-4 d-flex gap-2 flex-column align-items-center  ">
+        <div>
+          <p className="h3 mb-1 color-black fw-bold">Welcome back ! </p>
+          <p className="small">Sign in to get the most out of Techno Store</p>
+        </div>
 
-        <div className="my-2 w-100">
+        <div className=" w-100">
           <input
             type="email"
-            className="form-control register_input  rounded-1  "
+            className="form-control   rounded-1  "
             placeholder="Email"
             {...register("email", { required: true })}
           />
-          {errors.email && <span className="text-danger ">Email is required</span>}
+          {errors.email && <span className="text-danger fz_14 ">Email is required</span>}
         </div>
 
-        <div className=" my-2 w-100">
+        <div className="  w-100">
           <input
             type="password"
-            className="form-control register_input rounded-1  "
+            className="form-control  rounded-1  "
             placeholder="Password"
             {...register("password", { required: true, minLength: 6 })}
           />
-          {errors.password && <span className="text-danger ">Password is required of Length 6</span>}
+          {errors.password && <span className="text-danger fz_14 ">Password is required of Length 6</span>}
         </div>
 
-        <div className="w-100 d-flex my-2 align-items-center justify-content-between ">
+        <div className="w-100 d-flex  align-items-center justify-content-between ">
           <div className=" form-check ">
             <input
               type="checkbox"
@@ -58,23 +61,23 @@ export default function Login() {
               id="exampleCheck1"
             />
             <label
-              className="form-check-label check_box small  no-selection cursor-pointer color-black "
+              className="form-check-label check_box  fz_14  no-selection cursor-pointer color-black "
               htmlFor="exampleCheck1">
               Accept Terms & Conditions
             </label>
           </div>
-          <p className="forgot small color-black">Forgot Password?</p>
+          <p className="forgot fz_12 text-decoration-underline color-black">Forgot Password?</p>
         </div>
 
         <button
           type="submit"
-          className="btn w-100 register_button rounded-1">
+          className="btn w-100 bg-orange color-white rounded-1">
           Login
         </button>
-        <small className="pb-2 pt-3 text-muted">
+        <small className=" text-muted">
           Do not have an account ?
           <Link href={"/register"}>
-            <span className="forgot"> Register</span>
+            <span className="forgot text-decoration-underline"> Register</span>
           </Link>
         </small>
       </form>

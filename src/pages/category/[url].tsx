@@ -16,7 +16,9 @@ export default function CategoryUrl() {
     <>
       <HeroCarousel />
       <div className="">
-        <h5 className="color-black h5 px-2 mt-3">Category : {location}</h5>
+        <h5 className="color-black h5 px-2 mt-3">
+          Category : <span className="text-uppercase"> {location}</span>{" "}
+        </h5>
         <hr className="my-0 mb-4" />
         <SingleProductSection products={products} />
 

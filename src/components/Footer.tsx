@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import logo from "../assets/kogo.png";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillLinkedin, AiOutlineGoogle } from "react-icons/ai";
 import { FaWhatsapp } from "react-icons/fa";
@@ -33,13 +32,13 @@ export default function Footer() {
 
   return (
     <>
-      <div className="px-4 px-sm-5 footer_wrapper py-5">
+      <div className="px-4 px-sm-5 bg-custom-grey py-5">
         <div className="row ">
           <div className="col-12 col-md-6 col-lg-3 text-muted px-0 ">
             <Link href={"/"}>
               <div className="d-flex align-items-center gap-1 cursor-pointer no-selection">
                 <p className="color-orange h2">Techno</p>
-                <p className="color-dark h3">store</p>{" "}
+                <p className="color-black h3">store</p>{" "}
               </div>
             </Link>
             <p className="my-0 mt-3 ">Got Questions ? Call us 24/7!</p>
@@ -234,7 +233,7 @@ export default function Footer() {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className={styles.custom_orange_link}
+          className="custom_orange_link"
           href="https://lokendra-portfolio.vercel.app">
           Lokendra Chaulagain
         </a>

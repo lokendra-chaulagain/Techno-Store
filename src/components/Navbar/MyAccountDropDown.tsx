@@ -6,7 +6,7 @@ export default function MyAccountDropDown() {
     <div>
       <div className="dropdown small ">
         <span
-          className="cursor-pointer_hover color-black no-selection  fw-semibold  "
+          className="cursor-pointer-hover color-black no-selection  fw-semibold  "
           data-bs-toggle="dropdown">
           My Account^
         </span>
@@ -33,7 +33,7 @@ export default function MyAccountDropDown() {
           </li>
 
           <li>
-            <Link href={"/track-order"}>
+            <Link href={"/order"}>
               <a className="dropdown-item fw-semibold">Track My Orders</a>
             </Link>
           </li>

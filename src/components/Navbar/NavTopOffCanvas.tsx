@@ -38,7 +38,7 @@ export default function NavTopOffCanvas() {
             </p>
           </Link>
 
-          <Link href={"/track-order"}>
+          <Link href={"/order"}>
             <p
               className="cursor-pointer"
               data-bs-dismiss="offcanvas">
@@ -123,9 +123,14 @@ export default function NavTopOffCanvas() {
           <hr />
 
           <select
+            defaultValue={"Select"}
             className="form-select shadow-none rounded-1"
             aria-label="Language select ">
-            <option selected>Select Language</option>
+            <option
+              value="Select"
+              >
+              Select Language
+            </option>
             <option value="nepali">Nepali</option>
             <option value="english">English</option>
           </select>

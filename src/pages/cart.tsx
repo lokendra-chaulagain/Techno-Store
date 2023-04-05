@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { MdDeleteOutline } from "react-icons/md";
-import demo from "../assets/cameras/11.jpg";
 import Link from "next/link";
 import products from "../data/carts.json"
 
@@ -157,7 +156,7 @@ export default function Cart() {
         </div>
 
         <Link href={"/"}>
-          <p className="color-black cursor-pointer_hover mb-5 ">
+          <p className="color-black cursor-pointer-hover mb-5 ">
             <span className="h3">←</span> Continue Shopping
           </p>
         </Link>

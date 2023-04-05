@@ -8,6 +8,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 export default function BestSellerCarousel({ products }: any) {
   return (
@@ -46,7 +47,7 @@ export default function BestSellerCarousel({ products }: any) {
         {products &&
           products.map((product: any, id: any) => (
             <SwiperSlide key={id}>
-              <div className="d-flex flex-column gap-4 border">
+              <div className="product_wrapper d-flex flex-column gap-4 border">
                 <div className=" p-3 d-flex flex-column align-items-center justify-content-center ">
                   <div className="d-flex gap-3 align-items-center ">
                     <Image
@@ -63,7 +64,9 @@ export default function BestSellerCarousel({ products }: any) {
                         initialValue={product.rating}
                         size={16}
                       />
-                      <p className=" fz_13 color-black mb-0">{product.name.substring(0, 15)}</p>
+                      <Link href={`/product/${product.slug}`}>
+                        <p className="product_name fz_13 color-black mb-0">{product.name.substring(0, 15)}</p>
+                      </Link>
                       <div className="fz_12 d-flex align-items-center gap-1 ">
                         <p className="color-orange">NPR.{product.priceNow}</p>
                         <p className="text-muted">

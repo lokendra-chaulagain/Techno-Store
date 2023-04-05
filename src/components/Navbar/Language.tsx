@@ -5,7 +5,7 @@ export default function Language() {
     <div>
       <div className="dropdown ">
         <span
-          className=" cursor-pointer_hover color-black no-selection small fw-semibold"
+          className=" cursor-pointer-hover color-black no-selection small fw-semibold"
           data-bs-toggle="dropdown">
           Language^
         </span>

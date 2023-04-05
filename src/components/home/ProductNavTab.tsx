@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SingleProductSection from "../SingleProductSection";
 import newArrivals from "../../data/category/arrivals.json";
 import featured from "../../data/category/features.json";
-import topSelling from "../../data/category/sellings.json";
+import topSelling from "../../data/category/sellings.json"
 
 export default function ProductNavTab() {
   const [products, setProducts] = useState(newArrivals);

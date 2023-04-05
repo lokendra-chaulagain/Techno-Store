@@ -9,12 +9,13 @@ import { Pagination } from "swiper";
 import ProductColumn from "../mixed-product/ProductColumn";
 import banners from "../../data/category/specialOffers.json";
 import bestSellers from "../../data/mix/bestSellings4.json";
+import Link from "next/link";
 
 export default function MixedProductSection() {
   return (
     <div className="bg-custom-grey mt-5 py-3 ">
       <div className="row">
-        <div className="col-12 col-md-7 col-lg-8 col-xl-9 mb-4 mb-md-0">
+        <div className="product_wrapper col-12 col-md-7 col-lg-8 col-xl-9 mb-4 mb-md-0">
           <Swiper
             pagination={true}
             loop={true}
@@ -39,11 +40,13 @@ export default function MixedProductSection() {
                   />
 
                   <div>
-                    <p className="my-0 h5 color-black">Product Name</p>
+                    <Link href={`/product/${product.slug}`}>
+                      <p className="my-0 h5 color-black product_name">{product.name}</p>
+                    </Link>
                     <p className="p fw-semibold mt-2">
-                      <span className="color-orange">NRP 4500</span>{" "}
+                      <span className="color-orange">NRP.{product.priceNow}</span>{" "}
                       <span className="text-muted">
-                        <s>NRP 3450</s>
+                        <s>NRP {product.pricePrevious}</s>
                       </span>
                     </p>
                   </div>

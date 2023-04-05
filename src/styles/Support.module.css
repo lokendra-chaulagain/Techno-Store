@@ -12,3 +12,14 @@
 .accordion_item {
   border: none !important;
 }
+
+.location_name:hover {
+  background-color: orange;
+  color: whitesmoke !important;
+  font-weight: 500;
+}
+
+
+.custom_orange_link {
+  color: orange !important;
+}

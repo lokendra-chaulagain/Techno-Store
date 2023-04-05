@@ -6,7 +6,7 @@ export default function NavMiddleOffCanvas() {
   return (
     <div className="d-block d-lg-none">
       <BiCategoryAlt
-        className="cursor-pointer"
+        className="cursor-pointer fw-normal hover_underline"
         size={24}
         data-bs-toggle="offcanvas"
         data-bs-target="#navMiddleOffCanvas"
@@ -32,7 +32,7 @@ export default function NavMiddleOffCanvas() {
         <hr />
         <div className="offcanvas-body d-flex flex-column gap-2 color-black fz_15 h6">
           <p
-            className="cursor-pointer h5 mt-3"
+            className="  h5 mt-3"
             data-bs-dismiss="offcanvas">
             QUICK LINKS
           </p>
@@ -40,15 +40,15 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Home
             </p>
           </Link>
 
-          <Link href={"/track-order"}>
+          <Link href={"/order"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Track Your Order
             </p>
@@ -56,7 +56,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/support"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Support Center
             </p>
@@ -64,7 +64,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Store Locator
             </p>
@@ -72,7 +72,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/register"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Login
             </p>
@@ -80,7 +80,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/cart"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               My Cart
             </p>
@@ -88,109 +88,109 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/bookmark"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Bookmark
             </p>
           </Link>
 
           <p
-            className="cursor-pointer h5 mt-3"
+            className="l h5 mt-3"
             data-bs-dismiss="offcanvas">
             CATEGORIES
           </p>
           <hr className="m-0 mb-1" />
 
-          <Link href={"/track-order"}>
+          <Link href={"/category/laptops-and-computers"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Laptops and Computers
             </p>
           </Link>
 
-          <Link href={"/support"}>
+          <Link href={"/category/phone-and-watches"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Phone and Watches
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/heaters-and-fans"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Heaters and Fans
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/speakers"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Speakers
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/rice-cookers"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Rice Cookers
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/electric-kettles"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
-              HElectric Kettles
+              Electric Kettles
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/hair-dryers"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Hair Dryers
             </p>
           </Link>
 
-          <Link href={"/our-stores"}>
+          <Link href={"/category/drones"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Drones
             </p>
           </Link>
 
-          <Link href={"/login"}>
+          <Link href={"/category/cameras"}>
             <p
-              className="cursor-pointer"
-              data-bs-dismiss="offcanvas">
-              Accessories
-            </p>
-          </Link>
-
-          <Link href={"/register"}>
-            <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Cameras
             </p>
           </Link>
 
-          <Link href={"/cart"}>
+          <Link href={"/category/games"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Games
             </p>
           </Link>
 
+          <Link href={"/category/accessories"}>
+            <p
+              className="cursor-pointer fw-normal hover_underline"
+              data-bs-dismiss="offcanvas">
+              Accessories
+            </p>
+          </Link>
+
           <p
-            className="cursor-pointer h5 mt-3"
+            className=" h5 mt-3"
             data-bs-dismiss="offcanvas">
             OTHERS
           </p>
@@ -198,7 +198,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/terms-conditions"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Terms and Conditions
             </p>
@@ -206,7 +206,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/privacy-policy"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Privacy Policy
             </p>
@@ -214,7 +214,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/contact"}>
             <p
-              className="cursor-pointer"
+              className="cursor-pointer fw-normal hover_underline"
               data-bs-dismiss="offcanvas">
               Contact Us
             </p>

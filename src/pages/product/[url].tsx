@@ -12,35 +12,9 @@ import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import TechnicalSpecs from "../../components/TechnicalSpecs";
 import ProductRating from "../../components/ProductRating";
 
-import best1 from "../../assets/cameras/9.jpg";
-import best2 from "../../assets/computers/1.jpg";
-import best3 from "../../assets/cookers/1.jpg";
-import best4 from "../../assets/drones/1.png";
-
-import feature1 from "../../assets/fans/4.jpg";
-import feature2 from "../../assets/games/4.jpg";
-import feature3 from "../../assets/hair-dryers/4.jpg";
-import feature4 from "../../assets/heaters/4.jpg";
-
-import hot1 from "../../assets/watches/4.jpg";
-import hot2 from "../../assets/speakers/4.png";
-import hot3 from "../../assets/phone/4.jpg";
-import hot4 from "../../assets/kettles/4.jpg";
-
-import phone from "../../assets/phone/1.jpg";
-import game from "../../assets/games/1.png";
-import computer from "../../assets/computers/1.jpg";
-import watch from "../../assets/watches/1.jpg";
-import camera from "../../assets/cameras/1.jpg";
-import speaker from "../../assets/speakers/1.jpg";
-import cooker from "../../assets/cookers/1.jpg";
-import fan from "../../assets/fans/1.jpg";
-import heater from "../../assets/heaters/1.jpg";
-import kettle from "../../assets/kettles/1.jpg";
-import dryer from "../../assets/hair-dryers/1.jpg";
-import drone from "../../assets/drones/1.png";
 import { Navigation } from "swiper";
 import { Rating } from "react-simple-star-rating";
+import products from "../../data/category/arrivals.json";
 
 export default function ProductUrl() {
   const [quantity, setQuantity] = useState(1);
@@ -55,9 +29,6 @@ export default function ProductUrl() {
     setTotalPrice(128 * quantity);
   };
 
-  console.log(totalPrice);
-  console.log(quantity);
-
   const [numSelected, setNumSelected] = useState(1);
   const selectOneHandler = () => {
     setNumSelected(1);
@@ -68,203 +39,6 @@ export default function ProductUrl() {
   const selectThreeHandler = () => {
     setNumSelected(3);
   };
-  console.log(numSelected);
-
-  const bestSellers = [
-    {
-      id: "1",
-      title: "Best Selling ",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "100",
-      image: best1,
-    },
-
-    {
-      id: "2",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: best2,
-    },
-
-    {
-      id: "3",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: best3,
-    },
-
-    {
-      id: "4",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: best4,
-    },
-  ];
-
-  const features = [
-    {
-      id: "1",
-      title: "Featured Products",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "100",
-      image: feature1,
-    },
-
-    {
-      id: "2",
-      category: "Featured Products",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: feature2,
-    },
-
-    {
-      id: "3",
-      category: "feature Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: feature3,
-    },
-
-    {
-      id: "4",
-      category: "feature Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: feature4,
-    },
-  ];
-
-  const hotSellers = [
-    {
-      id: "1",
-      title: "Hot Selling Products",
-      category: "Best Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "100",
-      image: hot1,
-    },
-
-    {
-      id: "2",
-      category: "hot Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: hot2,
-    },
-
-    {
-      id: "3",
-      category: "hot Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: hot3,
-    },
-
-    {
-      id: "4",
-      category: "hot Sellers",
-      name: "Lorem Ipsum is simply dummy ",
-      slug: "Lorem-Ipsum-is-simply-dummy ",
-      priceNow: "700",
-      pricePrevious: "900",
-      image: hot4,
-    },
-  ];
-
-  const categories = [
-    {
-      name: "Smart Phones",
-      image: phone,
-    },
-
-    {
-      name: "Games",
-      image: game,
-    },
-
-    {
-      name: "Computers",
-      image: computer,
-    },
-
-    {
-      name: "Watches",
-      image: watch,
-    },
-
-    {
-      name: "Cameras",
-      image: camera,
-    },
-
-    {
-      name: "Speakers",
-      image: speaker,
-    },
-
-    {
-      name: "Rice Cookers",
-      image: cooker,
-    },
-
-    {
-      name: "Heaters",
-      image: heater,
-    },
-
-    {
-      name: "Fans",
-      image: fan,
-    },
-
-    {
-      name: "Electric Kettles",
-      image: kettle,
-    },
-
-    {
-      name: "Hair Dryers",
-      image: dryer,
-    },
-
-    {
-      name: "Drones",
-      image: drone,
-    },
-
-    {
-      name: "Accessories",
-      image: hot1,
-    },
-  ];
 
   return (
     <div className="container">
@@ -291,7 +65,7 @@ export default function ProductUrl() {
           </Swiper>
         </div>
 
-        <div className="col-12 col-lg-6 single_product_right py-3 pt-md-5 rounded-1 color-black">
+        <div className="col-12 col-lg-6 bg-custom-grey py-3 pt-md-5 rounded-1 color-black">
           <p className="color-black h5">Watch 42 mm Smart Watches</p>
           <p className="fz_12 text-muted">Smart Watches</p>
           <Rating
@@ -306,9 +80,14 @@ export default function ProductUrl() {
           <div className="d-flex gap-5 mt-1">
             <div>
               <select
+                defaultValue={"Select"}
                 className="form-select rounded-0 shadow-none"
                 aria-label="Default select ">
-                <option selected>Select Color</option>
+                <option
+                  value="Select"
+                  selected>
+                  Select Color
+                </option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
@@ -385,7 +164,7 @@ export default function ProductUrl() {
       {numSelected === 2 && <TechnicalSpecs />}
       {numSelected === 3 && <ProductRating />}
 
-      <BestSellerCarousel products={bestSellers} />
+      <BestSellerCarousel products={products} />
     </div>
   );
 }

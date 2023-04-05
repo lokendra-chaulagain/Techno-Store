@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { useRouter } from "next/router.js";
-import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import toast from "react-hot-toast";
 
 export default function Register() {
-  const router = useRouter();
-
   const {
     register,
     handleSubmit,
@@ -19,86 +16,54 @@ export default function Register() {
 
   const registerUser = async () => {
     try {
+      toast.success("Register Success");
       reset();
     } catch (error) {
       console.log(error);
     }
   };
 
-  const [visible, setVisible] = useState(false);
-  const showPassword = () => {
-    setVisible(true);
-  };
-
-  const hidePassword = () => {
-    setVisible(false);
-  };
-
   return (
-    <div className="login_wrapper my-5 py-5">
+    <div className="container d-flex  align-items-center justify-content-center my-5 ">
       <form
         onSubmit={handleSubmit(registerUser)}
-        className="d-flex flex-column align-items-center login_form_box">
-        <h1 className="h1  mb-1 pb-2 color-black fw-bold">Create an account </h1>
-        <p className="color-black">Signup to get the most out of Falcon Traders</p>
+        className="col-12 col-md-8 col-lg-6 col-xl-4 d-flex gap-2 flex-column align-items-center login_form_box">
+        <div className="">
+          <p className="h3 mb-1 color-black fw-bold">Create an account. </p>
+          <p className="small">Sign ip to get the most out of Techno Store</p>
+        </div>
 
-        <div className="w-25 my-2">
+        <div className="w-100 mt-3">
           <input
             type="text"
-            className="form-control register_input rounded-1 py-3 "
+            className="form-control  rounded-1  "
             placeholder="Full Name"
             {...register("fullName", { required: true })}
           />
-          {errors.fullName && <span className="text-danger fw-semibold">Full Name is required</span>}
+          {errors.fullName && <span className="text-danger fz_14">Full Name is required</span>}
         </div>
 
-        <div className="w-25 my-2">
+        <div className="w-100">
           <input
             type="email"
-            className="form-control register_input rounded-1 py-3 "
+            className="form-control  rounded-1  "
             placeholder="Email"
             {...register("email", { required: true, minLength: 6 })}
           />
-          {errors.email && <span className="text-danger fw-semibold">Email is required of Length 6</span>}
+          {errors.email && <span className="text-danger fz_14">Email is required of Length 6</span>}
         </div>
 
-        <div className="w-25 d-flex align-items-center justify-content-between my-2 form-control register_input rounded-1 py-3">
+        <div className="w-100">
           <input
-            type={visible ? "text" : "password"}
-            className=" w-100 inside_input "
-            placeholder="Password"
+            type="password"
+            className="form-control  rounded-1  "
+            placeholder=" Password"
             {...register("password", { required: true })}
           />
-          <div>
-            {visible ? (
-              <AiOutlineEye
-                onClick={hidePassword}
-                size={24}
-                className="cursor-pointer"
-              />
-            ) : (
-              <AiOutlineEyeInvisible
-                onClick={showPassword}
-                size={24}
-                className="cursor-pointer"
-              />
-            )}
-          </div>
-          {errors.email && <span className="text-danger fw-semibold">Email is required</span>}
+          {errors.password && <span className="text-danger fz_14"> Password is required</span>}
         </div>
 
-        <div className="w-25 my-2">
-          <input
-            type={visible ? "text" : "password"}
-            className="form-control register_input rounded-1 py-3 "
-            placeholder="Confirm Password"
-            {...register("confirmPassword", { required: true })}
-          />
-          {errors.confirmPassword && <span className="text-danger fw-semibold">Confirm Password is required</span>}
-          {handleAllField.password && handleAllField.confirmPassword && handleAllField.password != handleAllField.confirmPassword && <span className="text-danger fw-semibold">Password does not match !</span>}
-        </div>
-
-        <div className="w-25 d-flex my-2 justify-content-between ">
+        <div className="w-100 d-flex justify-content-between ">
           <div className=" form-check">
             <input
               type="checkbox"
@@ -106,25 +71,22 @@ export default function Register() {
               id="exampleCheck1"
             />
             <label
-              className="form-check-label cursor-pointer no-selection  color-black"
+              className="form-check-label fz_14 cursor-pointer no-selection  color-black"
               htmlFor="exampleCheck1">
               Accept Terms & Conditions
             </label>
-          </div>
-          <div className="forgot">
-            <p className="color-black forgot">Forgot Password?</p>
           </div>
         </div>
 
         <button
           type="submit"
-          className="btn  w-25 register_button rounded-1">
+          className="btn w-100 bg-orange color-white rounded-1">
           Login
         </button>
-        <small className="pb-2 pt-3 text-muted">
+        <small className="pb-2 pt-2 text-muted">
           Already have an account ?{" "}
           <Link href={"login"}>
-            <span className="forgot">Login</span>
+            <span className="forgot text-decoration-underline">Login</span>
           </Link>
         </small>
       </form>

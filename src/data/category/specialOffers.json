@@ -1,6 +1,7 @@
 [
     {
         "name": "Samsung Galaxy S21 Ultra",
+        "slug": "Samsung-Galaxy-S21-Ultra",
         "category": "smart phones",
         "pricePrevious": "1,199.99",
         "priceNow": "999.99",
@@ -9,6 +10,7 @@
     },
     {
         "name": "OnePlus 10 Pro",
+        "slug": "OnePlus-10-Pro",
         "category": "smart phones",
         "pricePrevious": "999.99",
         "priceNow": "899.99",
@@ -17,6 +19,7 @@
     },
     {
         "name": "Xiaomi Mi 12",
+        "slug": "Xiaomi-Mi-12",
         "category": "smart phones",
         "pricePrevious": "799.99",
         "priceNow": "699.99",
@@ -25,6 +28,7 @@
     },
     {
         "name": "Asus ROG Phone 5",
+        "slug": "Asus-ROG-Phone-5",
         "category": "smart phones",
         "pricePrevious": "999.99",
         "priceNow": "899.99",
@@ -33,6 +37,7 @@
     },
     {
         "name": "Xiaomi Redmi Note 11 Pro",
+        "slug": "Xiaomi-Redmi-Note-11-Pro",
         "category": "smart phones",
         "pricePrevious": "399.99",
         "priceNow": "349.99",

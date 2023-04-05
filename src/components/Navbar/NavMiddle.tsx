@@ -44,7 +44,7 @@ export default function NavMiddle() {
         <div className="d-flex align-items-center gap-1 cursor-pointer no-selection">
           {" "}
           <p className="color-orange h4">Techno</p>
-          <p className="color-dark h5">store</p>{" "}
+          <p className="color-black h5">store</p>{" "}
         </div>
       </Link>
 

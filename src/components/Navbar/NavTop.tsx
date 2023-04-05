@@ -17,21 +17,21 @@ export default function NavTop() {
         <div className="d-none d-sm-block">
           <div className="d-flex align-content-around gap-2 small ">
             <Link href={"/support"}>
-              <p className={path === "support" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Support</p>
+              <p className={path === "support" ? "nav_active cursor-pointer-hover color-black small fw-semibold" : " cursor-pointer-hover color-black small fw-semibold"}>Support</p>
             </Link>
 
             <Link href={"/our-stores"}>
-              <p className={path === "our-stores" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Store Locator</p>
+              <p className={path === "our-stores" ? "nav_active cursor-pointer-hover color-black small fw-semibold" : " cursor-pointer-hover color-black small fw-semibold"}>Store Locator</p>
             </Link>
 
-            <Link href={"track-order"}>
-              <p className={path === "track-order" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Track Your Order</p>
+            <Link href={"/order"}>
+              <p className={path === "order" ? "nav_active cursor-pointer-hover color-black small fw-semibold" : " cursor-pointer-hover color-black small fw-semibold"}>Track Your Order</p>
             </Link>
           </div>
         </div>
 
         <div className="small">
-          <p className="cursor-pointer_hover color-black small fw-semibold">Call US : 9876435475</p>
+          <p className="cursor-pointer-hover color-black small fw-semibold">Call US : 9876435475</p>
         </div>
 
         <div className="d-none d-lg-block">

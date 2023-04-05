@@ -31,6 +31,12 @@ export default function MyAccountDropDown() {
               <a className="dropdown-item fw-semibold">Register</a>
             </Link>
           </li>
+
+          <li>
+            <Link href={"/track-order"}>
+              <a className="dropdown-item fw-semibold">Track My Orders</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

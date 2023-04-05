@@ -1,14 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { MdDeleteOutline, MdOutlineClear } from "react-icons/md";
-import demo from "../assets/camera.jpg";
-import { IoMdAdd } from "react-icons/io";
-import { AiOutlineMinus } from "react-icons/ai";
-
-const products = [{ name: "loki" }, { name: "loki" }, { name: "loki" }, { name: "loki" }];
+import { MdDeleteOutline } from "react-icons/md";
+import demo from "../assets/cameras/11.jpg";
+import Link from "next/link";
+import products from "../data/carts.json"
 
 export default function Cart() {
   const removesSuccess = () => toast(" ✅ Delete Success");
@@ -42,80 +38,39 @@ export default function Cart() {
   };
 
   return (
-    <div className="container">
-      <h4 className="color-black">All Cart Products (4)</h4>
-      <hr className="my-0 mb-4 mt-2" />
-      <div className="row">
-        {products &&
-          products.map((product: any, index) => (
-            <div
-              key={index}
-              className="col-12 col-md-6 col-lg-4 p-0">
-              <div className=" d-flex gap-4 mb-4 py-2 p-0 align-items-center  card_product_card">
-                <Image
-                  className=" no-selection cursor-pointer"
-                  src={demo}
-                  objectFit="scale-down"
-                  alt="img"
-                  height={70}
-                  width={70}
-                />
-                <div className="d-flex flex-column gap-1 ">
-                  <small className="text-muted"> Category Name</small>
-                  <p className="p  color-black mb-0 ">Apple iPad Mini G2356</p>
-
-                  <p className="">
-                    <span className="color-orange">$600.00</span> <span className="text-muted">$400</span>
-                  </p>
-                  <div className="d-flex align-items-center text-muted gap-4 mt-2">
-                    <div className="border px-3 py-1 d-flex gap-2 align-items-center  no-selection">
-                      <AiOutlineMinus
-                        onClick={quantityDec}
-                        size={24}
-                        className="cursor-pointer"
-                      />
-                      {quantity}
-                      <IoMdAdd
-                        onClick={quantityInc}
-                        size={24}
-                        className="cursor-pointer"
-                      />
-                    </div>
-
-                    <div className="icon_bg_div p-1 rounded-circle">
-                      <MdDeleteOutline
-                        onClick={handleRemove}
-                        size={24}
-                        className="cursor-pointer"
-                      />
-                    </div>
-                    <div className="icon_bg_div p-1 rounded-circle">
-                      <AiOutlineShoppingCart
-                        onClick={handleAddToCart}
-                        size={23}
-                        className="cursor-pointer"
-                      />
-                    </div>
-                  </div>
+    <div className="">
+      <p className="px-2 h6 color-black mt-2">All Cart Items (4)</p>
+      <hr className="my-0 mb-2 mt-2" />
+      <div className="container">
+        <div className="row mb-2">
+          <div className="col-12 col-lg-6 d-flex flex-wrap">
+            {products &&
+              products.map((product: any, index) => (
+                <div
+                  key={index}
+                  className="col-6 col-lg-4  border d-flex flex-column align-items-center justify-content-center py-3 ">
+                  <Image
+                    className=" no-selection cursor-pointer"
+                    src={product.image}
+                    objectFit="scale-down"
+                    alt="img"
+                    height={110}
+                    width={110}
+                  />
+                  <p className="color-black fz_13">Apple iPad Mini G2356</p>
+                  <p className="color-orange fz_12">NPR. 15300</p>{" "}
+                  <MdDeleteOutline
+                    onClick={handleRemove}
+                    size={18}
+                    className="cursor-pointer mt-1 color-black"
+                  />
                 </div>
-              </div>
-            </div>
-          ))}
-      </div>
+              ))}
+          </div>
 
-      {/* <hr /> */}
-      {/* <div className="d-flex flex-column ">
-            <h6 className="text_color">Delivery :NPR 43 </h6>
-            <h6 className="mt-2 text_color">Product : NPR 5657.75</h6>
-            <hr className="w-25 text_color" />
-            <h5 className="text_color">Total : NPR 5657.75</h5>
-          </div> */}
-
-      {/* ------------------------------ */}
-      {/* <div className="col  col-md-6 col-xl-4 mt-5 com-md-0 p-0   ">
-          <div className=" cart_payment_info py-5 rounded-3">
-            <h1 className="fw-bold color-black h1">Payment Info</h1>
-            <h5 className="h5 color-black mb-3">Choose your payemet option</h5>
+          <div className="col-12 col-lg-6 bg-custom-grey py-3 mt-4 mt-lg-0">
+            <p className=" h4 color-black h1">Payment Info</p>
+            <p className="small color-black mb-3">Choose your payemet option</p>
             <div className="form-check mb-2">
               <input
                 className="form-check-input select_color_input_custom "
@@ -124,7 +79,7 @@ export default function Cart() {
                 id="credit"
               />
               <label
-                className="form-check-label select_size_input_custom_label no-selection cursor-pointer color-black"
+                className="form-check-label small  select_size_input_custom_label no-selection cursor-pointer color-black"
                 htmlFor="credit">
                 Credit Card
               </label>
@@ -138,7 +93,7 @@ export default function Cart() {
                 id="eSewa"
               />
               <label
-                className="form-check-label select_size_input_custom_label no-selection cursor-pointer color-black"
+                className="form-check-label small select_size_input_custom_label no-selection cursor-pointer color-black"
                 htmlFor="eSewa">
                 e-Sewa
               </label>
@@ -152,21 +107,21 @@ export default function Cart() {
                 id="cash"
               />
               <label
-                className="form-check-label select_size_input_custom_label no-selection cursor-pointer color-black"
+                className="form-check-label small select_size_input_custom_label no-selection cursor-pointer color-black"
                 htmlFor="cash">
                 Cash On Delivery
               </label>
             </div>
 
-            <h5 className="h5 mt-4 color-black mb-3">Your Payment Details</h5>
+            <p className="mt-4 color-black mb-3">Your Payment Details</p>
             <input
-              className="form-control form-control-lg rounded-1 py-3 mb-4 checkout_input"
+              className="form-control form-control-lg rounded-1  mb-2 "
               type="text"
               placeholder="Full Name"
             />
 
             <input
-              className="form-control form-control-lg rounded-1 py-3 mb-4 checkout_input"
+              className="form-control form-control-lg rounded-1  mb-2 "
               type="text"
               placeholder="Card Number"
             />
@@ -174,14 +129,14 @@ export default function Cart() {
             <div className="row">
               <div className="col">
                 <input
-                  className="form-control form-control-lg rounded-1 py-3 mb-4 checkout_input"
+                  className="form-control form-control-lg rounded-1  mb-2 "
                   type="text"
                   placeholder="Exp Date"
                 />
               </div>
               <div className="col">
                 <input
-                  className="form-control form-control-lg rounded-1 py-3 mb-4 checkout_input"
+                  className="form-control form-control-lg rounded-1  mb-2 "
                   type="text"
                   placeholder="CVV"
                 />
@@ -189,19 +144,24 @@ export default function Cart() {
             </div>
             <button
               type="button"
-              className="btn checkout_button py-3 fw-semibold w-100 rounded-1">
+              className="btn checkout_button  fw-semibold w-100 rounded-1">
               Confirm
             </button>
           </div>
-        </div> */}
+        </div>
+        <hr />
+        <div className="d-flex flex-column mb-3 color-black">
+          <p className="small">Delivery :NPR 43 </p>
+          <p className="small  ">Product : NPR 5657.75</p>
+          <p className="h6">Total : NPR 5657.75</p>
+        </div>
 
-      {/* <hr className="mt-5" /> */}
-      {/* <Link href={"/"}>
-          <h5 className="color-black cursor-pointer_hover mb-5 pb-5">
-            {" "}
+        <Link href={"/"}>
+          <p className="color-black cursor-pointer_hover mb-5 ">
             <span className="h3">←</span> Continue Shopping
-          </h5>
-        </Link> */}
+          </p>
+        </Link>
+      </div>
     </div>
   );
 }

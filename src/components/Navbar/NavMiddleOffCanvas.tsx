@@ -21,7 +21,7 @@ export default function NavMiddleOffCanvas() {
           <h5
             className="offcanvas-title"
             id="navMiddleOffCanvasLabel">
-            Categories
+            MENU
           </h5>
           <button
             type="button"
@@ -30,8 +30,76 @@ export default function NavMiddleOffCanvas() {
             aria-label="Close"></button>
         </div>
         <hr />
-        <div className="offcanvas-body d-flex flex-column gap-2 h6">
-         
+        <div className="offcanvas-body d-flex flex-column gap-2 color-black fz_15 h6">
+          <p
+            className="cursor-pointer h5 mt-3"
+            data-bs-dismiss="offcanvas">
+            QUICK LINKS
+          </p>
+          <hr className="m-0 mb-1" />
+
+          <Link href={"/"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Home
+            </p>
+          </Link>
+
+          <Link href={"/track-order"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Track Your Order
+            </p>
+          </Link>
+
+          <Link href={"/support"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Support Center
+            </p>
+          </Link>
+
+          <Link href={"/our-stores"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Store Locator
+            </p>
+          </Link>
+
+          <Link href={"/register"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Login
+            </p>
+          </Link>
+
+          <Link href={"/cart"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              My Cart
+            </p>
+          </Link>
+
+          <Link href={"/bookmark"}>
+            <p
+              className="cursor-pointer"
+              data-bs-dismiss="offcanvas">
+              Bookmark
+            </p>
+          </Link>
+
+          <p
+            className="cursor-pointer h5 mt-3"
+            data-bs-dismiss="offcanvas">
+            CATEGORIES
+          </p>
+          <hr className="m-0 mb-1" />
 
           <Link href={"/track-order"}>
             <p
@@ -121,22 +189,18 @@ export default function NavMiddleOffCanvas() {
             </p>
           </Link>
 
-          <hr className="" />
+          <p
+            className="cursor-pointer h5 mt-3"
+            data-bs-dismiss="offcanvas">
+            OTHERS
+          </p>
+          <hr className="m-0 mb-1" />
 
-          <Link href={"/"}>
+          <Link href={"/terms-conditions"}>
             <p
               className="cursor-pointer"
               data-bs-dismiss="offcanvas">
-              Home
-            </p>
-          </Link>
-          
-
-          <Link href={"/contact"}>
-            <p
-              className="cursor-pointer"
-              data-bs-dismiss="offcanvas">
-              Contact Us
+              Terms and Conditions
             </p>
           </Link>
 
@@ -148,23 +212,25 @@ export default function NavMiddleOffCanvas() {
             </p>
           </Link>
 
-          <Link href={"/terms-conditions"}>
+          <Link href={"/contact"}>
             <p
               className="cursor-pointer"
               data-bs-dismiss="offcanvas">
-              Terms and Conditions
+              Contact Us
             </p>
           </Link>
 
-          <hr />
-
-          <select
-            className="form-select shadow-none rounded-1"
-            aria-label="Language select ">
-            <option selected>Select Language</option>
-            <option value="nepali">Nepali</option>
-            <option value="english">English</option>
-          </select>
+          <p className="fz_13 mt-4 mb-1 text-muted text-center">
+            Designed & Developed By{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className=""
+              href="https://lokendra-portfolio.vercel.app">
+              Lokendra Chaulagain
+            </a>{" "}
+            . No Right Reserved , Free To Use .
+          </p>
         </div>
       </div>
     </div>

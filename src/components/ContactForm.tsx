@@ -63,7 +63,7 @@ const ContactForm = () => {
             placeholder="Name"
             {...register("name", { required: "Name is required" })}
           />
-          {errors.name && <p className="text-danger fw-semibold">{`${errors.name.message}`}</p>}
+          {errors.name && <p className="text-danger">{`${errors.name.message}`}</p>}
         </div>
 
         <div>
@@ -75,7 +75,7 @@ const ContactForm = () => {
             aria-label=".form-control-lg example"
             {...register("email", { required: "Email is required" })}
           />
-          {errors.email && <p className="text-danger fw-semibold">{`${errors.email.message}`}</p>}
+          {errors.email && <p className="text-danger">{`${errors.email.message}`}</p>}
         </div>
 
         <div>
@@ -87,17 +87,17 @@ const ContactForm = () => {
             aria-label=".form-control-lg example"
             {...register("phone", { required: "Phone is required" })}
           />
-          {errors.phone && <p className="text-danger fw-semibold">{`${errors.phone.message}`}</p>}
+          {errors.phone && <p className="text-danger">{`${errors.phone.message}`}</p>}
         </div>
 
         <div>
           <textarea
-            className="contact_input_field form-control form-control-lg px-2"
+            className="contact_input_field  form-control form-control-lg px-2"
             placeholder="Message"
             aria-label=".form-control-lg example"
             {...register("message", { required: "Message is required" })}
           />
-          {errors.message && <p className="text-danger fw-semibold">{`${errors.message.message}`}</p>}
+          {errors.message && <p className="text-danger">{`${errors.message.message}`}</p>}
         </div>
 
         <div className="d-flex align-items-center justify-content-end mt-4">
@@ -116,7 +116,7 @@ const ContactForm = () => {
 
           <iframe
             className="google_map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28264.142367895714!2d85.30715908700091!3d27.685844849236144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1837725d4d59%3A0x9814faeae42622df!2sGem%20Plasticrafts%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1668755430995!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31397712412!2d85.3261328!3d27.708960349999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1680332874377!5m2!1sen!2snp"
             width="100%"
             height="450"
             style={{ border: "6" }}

@@ -24,10 +24,10 @@ export default function Orders() {
   };
   return (
     <div className="bg-custom-grey  d-flex justify-content-center">
-      <div className="bg-white container d-flex flex-column color-black align-items-center  py-5 ">
+      <div className="bg-white container d-flex flex-column color-black align-items-center py-3 py-md-5 ">
         <p className="h5  ">Track Your Order</p>
-        <p className="w-100 d-block d-lg-none my-2 text-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our couriers website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
-        <p className="w-75 d-none d-lg-block my-2 text-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our couriers website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
+        <p className="w-100 d-block d-lg-none my-2 text-md-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our couriers website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
+        <p className="w-75 d-none d-lg-block my-2 text-md-center">Keep tabs on your delivery with our Track Your Order feature! Simply enter your tracking number or order details on our couriers website to get real-time updates on its location and delivery status. Enjoy peace of mind and stay in control of your delivery at all times.</p>
 
         <form
           onSubmit={handleSubmit(loginUser)}

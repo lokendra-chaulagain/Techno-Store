@@ -177,120 +177,122 @@ export default function Stores() {
   console.log(locationSelected);
 
   return (
-    <div>
-      <div className="container d-flex align-items-center justify-content-center">
-        <div className="row  w-100">
-          <div className="col-12 col-md-3 p-0  border">
-            <p className="text-center h5  bg_dark color-white py-3">Our Locations</p>
+    <>
+      <div className="bg-custom-grey">
+        <div className=" container pt-2 pt-md-4 pb-5">
+          <div className="row bg-white  shadow-sm">
+            <div className="col-12 col-lg-6 p-0">
+              <p className="text-center h5 bg_dark color-white py-3">Our Locations</p>
 
-            <p
-              onClick={selectNepal}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Kathmandu-Nepal
-            </p>
+              <p
+                onClick={selectNepal}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Kathmandu-Nepal
+              </p>
 
-            <p
-              onClick={selectIndia}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              India
-            </p>
+              <p
+                onClick={selectIndia}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                India
+              </p>
 
-            <p
-              onClick={selectPakistan}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Pakistan
-            </p>
+              <p
+                onClick={selectPakistan}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Pakistan
+              </p>
 
-            <p
-              onClick={selectUsa}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              USA
-            </p>
+              <p
+                onClick={selectUsa}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                USA
+              </p>
 
-            <p
-              onClick={selectAustralia}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Australia
-            </p>
+              <p
+                onClick={selectAustralia}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Australia
+              </p>
 
-            <p
-              onClick={selectCanada}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Canada
-            </p>
+              <p
+                onClick={selectCanada}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Canada
+              </p>
 
-            <p
-              onClick={selectBangladesh}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Bangladesh
-            </p>
+              <p
+                onClick={selectBangladesh}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Bangladesh
+              </p>
 
-            <p
-              onClick={selectUk}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              United Kingdom
-            </p>
+              <p
+                onClick={selectUk}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                United Kingdom
+              </p>
 
-            <p
-              onClick={selectFrance}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              France
-            </p>
+              <p
+                onClick={selectFrance}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                France
+              </p>
 
-            <p
-              onClick={selectRussia}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Russia
-            </p>
+              <p
+                onClick={selectRussia}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Russia
+              </p>
 
-            <p
-              onClick={selectIreland}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Ireland
-            </p>
+              <p
+                onClick={selectIreland}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Ireland
+              </p>
 
-            <p
-              onClick={selectSingapore}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Singapore
-            </p>
+              <p
+                onClick={selectSingapore}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Singapore
+              </p>
 
-            <p
-              onClick={selectTurkey}
-              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
-              Turkey
-            </p>
-          </div>
+              <p
+                onClick={selectTurkey}
+                className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
+                Turkey
+              </p>
+            </div>
 
-          <div className="col-12 col-md-9 p-0 ">
-            <iframe
-              className="google_map"
-              src={locationSelected.map}
-              width="100%"
-              height="400"
-              style={{ border: "6" }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <div className="col-12 col-lg-6 p-0">
+              <iframe
+                className="google_map"
+                src={locationSelected.map}
+                width="100%"
+                height="400"
+                style={{ border: "6" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
 
-            <div className="row color-black mt-3 px-0 px-md-3">
-              <div className="col-12 col-sm-6">
-                <p className="h5 mb-2">Country : {locationSelected.name}</p>
-                <p className="h6  mb-2">Address</p>
-                <p className="w-50">{locationSelected.address}</p>
-              </div>
-              <div className="col-12 col-sm-6 mt-3 mt-sm-0">
-                <p className="h6">Email</p>
-                <p>{locationSelected.email}</p>
+              <div className="row color-black mt-3 px-3 pb-3">
+                <div className="col-12 col-sm-6">
+                  <p className="h5 mb-2">Country : {locationSelected.name}</p>
+                  <p className="h6  mb-2">Address</p>
+                  <p className="w-50">{locationSelected.address}</p>
+                </div>
+                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
+                  <p className="h6">Email</p>
+                  <p>{locationSelected.email}</p>
 
-                <p className="h6 mt-2">phone</p>
-                <p>{locationSelected.phone}</p>
+                  <p className="h6 mt-2">phone</p>
+                  <p>{locationSelected.phone}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <OurServices />
-    </div>
+    </>
   );
 }

@@ -449,13 +449,13 @@ input::placeholder {
 }
 
 .select_size_input_custom_label {
-  font-size: 20px !important;
+  /* font-size: px !important; */
   padding-left: 7px;
   padding-right: 15px;
 }
 
 .select_color_input_custom {
-  padding: 10px !important;
+  padding: 6px !important;
   background-color: var(--color-white) !important;
   box-shadow: none !important;
   border-color: none !important;
@@ -471,18 +471,18 @@ input::placeholder {
   border-color: orange !important;
 }
 
-.select_size_input_custom_label {
-  font-size: 20px !important;
-  padding-left: 7px;
-  padding-right: 15px;
-}
+/* .select_size_input_custom_label { */
+  /* font-size: 20px !important; */
+  /* padding-left: 7px; */
+  /* padding-right: 15px; */
+/* } */
 
-.checkout_input {
+/* .checkout_input {
   box-shadow: none !important;
 }
 .checkout_input:focus {
   border-color: orange !important;
-}
+} */
 
 .checkout_button {
   color: var(--color-white) !important;

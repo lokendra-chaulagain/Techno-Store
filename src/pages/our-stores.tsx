@@ -181,83 +181,83 @@ export default function Stores() {
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row  w-100">
           <div className="col-12 col-md-3 p-0  border">
-            <p className="text-center h5  bg_dark color_white py-3">Our Locations</p>
+            <p className="text-center h5  bg_dark color-white py-3">Our Locations</p>
 
             <p
               onClick={selectNepal}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Kathmandu-Nepal
             </p>
 
             <p
               onClick={selectIndia}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               India
             </p>
 
             <p
               onClick={selectPakistan}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Pakistan
             </p>
 
             <p
               onClick={selectUsa}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               USA
             </p>
 
             <p
               onClick={selectAustralia}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Australia
             </p>
 
             <p
               onClick={selectCanada}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Canada
             </p>
 
             <p
               onClick={selectBangladesh}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Bangladesh
             </p>
 
             <p
               onClick={selectUk}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               United Kingdom
             </p>
 
             <p
               onClick={selectFrance}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               France
             </p>
 
             <p
               onClick={selectRussia}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Russia
             </p>
 
             <p
               onClick={selectIreland}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Ireland
             </p>
 
             <p
               onClick={selectSingapore}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Singapore
             </p>
 
             <p
               onClick={selectTurkey}
-              className={`${styles.location_name} cp py-2 px-2 no_selection black_text_color`}>
+              className={`${styles.location_name} cursor-pointer py-2 px-2 no-selection color-black`}>
               Turkey
             </p>
           </div>
@@ -273,7 +273,7 @@ export default function Stores() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            <div className="row black_text_color mt-3 px-0 px-md-3">
+            <div className="row color-black mt-3 px-0 px-md-3">
               <div className="col-12 col-sm-6">
                 <p className="h5 mb-2">Country : {locationSelected.name}</p>
                 <p className="h6  mb-2">Address</p>

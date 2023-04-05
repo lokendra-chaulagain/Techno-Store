@@ -39,8 +39,8 @@ export default function Register() {
       <form
         onSubmit={handleSubmit(registerUser)}
         className="d-flex flex-column align-items-center login_form_box">
-        <h1 className="h1  mb-1 pb-2 black_text_color fw-bold">Create an account </h1>
-        <p className="black_text_color">Signup to get the most out of Falcon Traders</p>
+        <h1 className="h1  mb-1 pb-2 color-black fw-bold">Create an account </h1>
+        <p className="color-black">Signup to get the most out of Falcon Traders</p>
 
         <div className="w-25 my-2">
           <input
@@ -74,13 +74,13 @@ export default function Register() {
               <AiOutlineEye
                 onClick={hidePassword}
                 size={24}
-                className="cp"
+                className="cursor-pointer"
               />
             ) : (
               <AiOutlineEyeInvisible
                 onClick={showPassword}
                 size={24}
-                className="cp"
+                className="cursor-pointer"
               />
             )}
           </div>
@@ -102,17 +102,17 @@ export default function Register() {
           <div className=" form-check">
             <input
               type="checkbox"
-              className="form-check-input check_box shadow-none rounded-0 cp"
+              className="form-check-input check_box shadow-none rounded-0 cursor-pointer"
               id="exampleCheck1"
             />
             <label
-              className="form-check-label cp no_selection  black_text_color"
+              className="form-check-label cursor-pointer no-selection  color-black"
               htmlFor="exampleCheck1">
               Accept Terms & Conditions
             </label>
           </div>
           <div className="forgot">
-            <p className="black_text_color forgot">Forgot Password?</p>
+            <p className="color-black forgot">Forgot Password?</p>
           </div>
         </div>
 

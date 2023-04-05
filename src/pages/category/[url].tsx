@@ -16,7 +16,7 @@ export default function CategoryUrl() {
     <>
       <HeroCarousel />
       <div className="px-5">
-        <h5 className="black_text_color h5">Category : {location}</h5>
+        <h5 className="color-black h5">Category : {location}</h5>
         <hr className="my-0 mb-4" />
         <SingleProductSection products={location == "smart-phones" ? phones : games} />
 

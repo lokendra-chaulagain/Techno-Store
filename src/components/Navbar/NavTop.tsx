@@ -13,25 +13,27 @@ export default function NavTop() {
 
   return (
     <>
-      <div className="container-fluid pt-2 d-flex align-items-center justify-content-between">
+      <div className="container-fluid  d-flex align-items-center justify-content-between">
         <div className="d-none d-sm-block">
           <div className="d-flex align-content-around gap-2 small ">
             <Link href={"/support"}>
-              <p className={path === "support" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Support</p>
+              <p className={path === "support" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Support</p>
             </Link>
 
             <Link href={"/our-stores"}>
-              <p className={path === "our-stores" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Store Locator</p>
+              <p className={path === "our-stores" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Store Locator</p>
             </Link>
 
             <Link href={"track-order"}>
-              <p className={path === "track-order" ? "nav_active cp_hover black_text_color h6" : " cp_hover black_text_color h6"}>Track Your Order</p>
+              <p className={path === "track-order" ? "nav_active cursor-pointer_hover color-black small fw-semibold" : " cursor-pointer_hover color-black small fw-semibold"}>Track Your Order</p>
             </Link>
           </div>
         </div>
-        <div>
-          <p className="cp_hover black_text_color h6">Call US : 9876435475</p>
+
+        <div className="small">
+          <p className="cursor-pointer_hover color-black small fw-semibold">Call US : 9876435475</p>
         </div>
+
         <div className="d-none d-lg-block">
           <div className="d-flex align-content-around gap-3 small ">
             <MyAccountDropDown />
@@ -42,7 +44,7 @@ export default function NavTop() {
 
         <NavTopOffCanvas />
       </div>
-      <hr className="my-2" />
+      <hr className="m-0" />
       <NavMiddle />
     </>
   );

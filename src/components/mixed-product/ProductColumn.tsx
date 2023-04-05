@@ -5,17 +5,17 @@ import { Rating } from "react-simple-star-rating";
 
 export default function ProductColumn({ products }: any) {
   return (
-    <div className="col-12 col-md-6    d-flex flex-column  " >
-      <h5 className="black_text_color ">{products[0].title}</h5>
+    <div className=" d-flex flex-column ">
+      <h5 className="color-black px-2 ">{products[0].title}</h5>
       <hr className="my-0 mb-4 " />
       {products &&
         products.map((product: any, id: any) => (
           <Link
             key={id}
             href={`/product/${product.slug}`}>
-            <div className="d-flex gap-4 mb-4 px-3 py-2 bg_white align-items-center justify-content-center mixed_section_product_card">
+            <div className="d-flex gap-1 mb-1  py-1 px-2  bg-white align-items-center justify-content-center ">
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={product.image}
                 objectFit="scale-down"
                 alt="img"
@@ -23,7 +23,7 @@ export default function ProductColumn({ products }: any) {
                 width={100}
               />
               <div>
-                <p className="fz_18 black_text_color my-0">{product.name}</p>
+                <p className="fz_13 color-black my-0">{product.name}</p>
 
                 <Rating
                   readonly
@@ -31,10 +31,10 @@ export default function ProductColumn({ products }: any) {
                   size={16}
                 />
 
-                <div className="d-flex align-items-center gap-2">
-                  <p className="color_orange ">NPR{product.priceNow} </p>
+                <div className="d-flex align-items-center fz_13 gap-2">
+                  <p className="color-orange ">NPR. {product.priceNow} </p>
                   <p className="text-muted ">
-                    <s>NPR{product.pricePrevious}</s>
+                    <s>{product.pricePrevious}</s>
                   </p>
                 </div>
               </div>

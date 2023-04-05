@@ -289,7 +289,7 @@ export default function ProductUrl() {
               className="mySwiper">
               <SwiperSlide className="d-flex align-items-center justify-content-center">
                 <Image
-                  className=" no_selection cp"
+                  className=" no-selection cursor-pointer"
                   src={demo2}
                   objectFit="scale-down"
                   alt="img"
@@ -300,13 +300,13 @@ export default function ProductUrl() {
             </Swiper>
           </div>
           <div className="single_product_right p-5 rounded-1">
-            <h5 className="black_text_color">Watch 42 mm Smart Watches</h5>
+            <h5 className="color-black">Watch 42 mm Smart Watches</h5>
             <div className="small text-muted">Smart Watches</div>
             <p className="my-2">
               Review here star <span>Add Review</span>{" "}
             </p>
             <p className="text-muted my-1">$75.00</p>
-            <h4 className="color_orange ">${totalPrice}</h4>
+            <h4 className="color-orange ">${totalPrice}</h4>
             <p className="para_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed molestiae ab est et vitae incidunt sapiente, autem odit repellat excepturi. Quasi, fugiat.</p>
 
             <div className="d-flex gap-5">
@@ -324,13 +324,13 @@ export default function ProductUrl() {
               <div className="quantity_calculator ">
                 <AiOutlineMinus
                   onClick={handleQuantityDecrease}
-                  className="cp black_text_color"
+                  className="cursor-pointer color-black"
                   size={22}
                 />
                 {quantity}
                 <AiOutlinePlus
                   onClick={handleQuantityIncrease}
-                  className="cp black_text_color "
+                  className="cursor-pointer color-black "
                   size={22}
                 />
               </div>
@@ -345,17 +345,17 @@ export default function ProductUrl() {
 
               <IoIosGitCompare
                 size={25}
-                className="cp"
+                className="cursor-pointer"
               />
 
               <AiOutlineShoppingCart
                 size={25}
-                className="cp"
+                className="cursor-pointer"
               />
             </div>
 
             <div className="d-flex gap-3 mt-4">
-              <h5 className="black_text_color">Share</h5>
+              <h5 className="color-black">Share</h5>
               <FaWhatsapp className="footer_icon" />
               <AiOutlineGoogle className="footer_icon" />
               <AiFillLinkedin className="footer_icon" />
@@ -370,20 +370,20 @@ export default function ProductUrl() {
         <button
           onClick={selectOneHandler}
           type="button"
-          className={numSelected === 1 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 1 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           Product Details
         </button>
         <button
           onClick={selectTwoHandler}
           type="button"
-          className={numSelected === 2 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 2 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           Technical Specs
         </button>
 
         <button
           onClick={selectThreeHandler}
           type="button"
-          className={numSelected === 3 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 3 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           Ratings
         </button>
       </div>

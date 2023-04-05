@@ -8,7 +8,7 @@ export default function ProductRating() {
           <div className="mb-3">
             <label
               htmlFor="name"
-              className="form-label h6 black_text_color mb-2">
+              className="form-label h6 color-black mb-2">
               Name
             </label>
             <input
@@ -21,7 +21,7 @@ export default function ProductRating() {
           <div className="mb-3">
             <label
               htmlFor="review"
-              className="form-label h6 black_text_color mb-2">
+              className="form-label h6 color-black mb-2">
               Review
             </label>
             <textarea

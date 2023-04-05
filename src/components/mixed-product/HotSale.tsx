@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HotSale({ products }: any) {
   return (
     <div className="d-block d-xl-none col-12 col-md-6 col-xl-3   d-flex flex-column ">
-      <h5 className="black_text_color ">{products[0].title}</h5>
+      <h5 className="color-black ">{products[0].title}</h5>
       <hr className="my-0 mb-4 " />
       {products &&
         products.map((product: any, id: any) => (
@@ -14,7 +14,7 @@ export default function HotSale({ products }: any) {
             href={`/product/${product.slug}`}>
             <div className="d-flex gap-4 mb-4 px-3 py-2 align-items-center justify-content-center mixed_section_product_card">
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={product.image}
                 objectFit="scale-down"
                 alt="img"
@@ -25,7 +25,7 @@ export default function HotSale({ products }: any) {
                 <p className="h6 my-0">{product.name}</p>
                 <small>Rating here</small>
                 <div className="d-flex align-items-center gap-2">
-                  <p className="color_orange h5">NPR{product.priceNow} </p>
+                  <p className="color-orange h5">NPR{product.priceNow} </p>
                   <p className="text-muted h6">
                     <s>NPR{product.pricePrevious}</s>
                   </p>

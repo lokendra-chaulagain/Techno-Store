@@ -125,7 +125,7 @@ export default function search() {
   ];
   return (
     <div>
-        <p className="black_text_color py-3 fw-semibold text-center">Similar product that you searched for </p>
+        <p className="color-black py-3 fw-semibold text-center">Similar product that you searched for </p>
       <SingleProductSection products={products} />
     </div>
   );

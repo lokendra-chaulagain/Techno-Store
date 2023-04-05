@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "category": "Kitchen and Utensils",
+        "name": "Hamilton Electric Kettle",
+        "desc": "Quickly heat water for beverages or cooking with an electric kettle. Shop for capacity, material, and design online, and look for added features like automatic shut-off and temperature control.",
+        "priceNow": "3200",
+        "pricePrevious": "3750",
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680661236/Techno-Store/banners/banner-2_rpj7zg.png"
+    },
+    {
+        "id": "2",
+        "category": "Watches and Bands",
+        "name": "Apple Watch Series 7",
+        "desc": "Stay connected and track your fitness goals with a smartwatch. Shop online for features like heart rate monitoring, GPS tracking, and customizable watch faces.",
+        "priceNow": "8700",
+        "pricePrevious": "8900",
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680661235/Techno-Store/banners/banner-3_rvgzys.jpg"
+    },
+    {
+        "id": "3",
+        "category": "Speaker and Headphones",
+        "name": "Sony WF-1000XM3",
+        "desc": "Experience high-quality audio and immerse yourself in your favorite music with headphones. Shop for wired or wireless options, noise-cancelling features.",
+        "priceNow": "6800",
+        "pricePrevious": "7400",
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680661236/Techno-Store/banners/banner-1_kdhzqy.png"
+    },
+    {
+        "id": "4",
+        "category": "Phones and Watches",
+        "name": "Apple  Iphone-6 ",
+        "desc": "Experience high-quality audio and immerse yourself in your favorite music with headphones. Shop for wired or wireless options, noise-cancelling features.",
+        "priceNow": "63000",
+        "pricePrevious": "67000",
+        "image": "https://res.cloudinary.com/dyof6o0ul/image/upload/v1680661236/Techno-Store/banners/banner-4_ryxtml.png"
+    }
+]

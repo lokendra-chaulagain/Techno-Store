@@ -26,20 +26,20 @@ export default function ProductNavTab() {
         <button
           onClick={selectOneHandler}
           type="button"
-          className={numSelected === 1 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 1 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           New Arrivals
         </button>
         <button
           onClick={selectTwoHandler}
           type="button"
-          className={numSelected === 2 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 2 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           Featured
         </button>
 
         <button
           onClick={selectThreeHandler}
           type="button"
-          className={numSelected === 3 ? "btn outline_button_selected rounded-0 bg_orange" : "btn outline_button rounded-0"}>
+          className={numSelected === 3 ? "btn outline_button_selected rounded-0 bg-orange" : "btn outline_button rounded-0"}>
           Top Selling
         </button>
       </div>

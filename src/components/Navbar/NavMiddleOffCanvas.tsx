@@ -6,7 +6,7 @@ export default function NavMiddleOffCanvas() {
   return (
     <div className="d-block d-lg-none">
       <BiCategoryAlt
-        className="cp"
+        className="cursor-pointer"
         size={24}
         data-bs-toggle="offcanvas"
         data-bs-target="#navMiddleOffCanvas"
@@ -35,7 +35,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/track-order"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Laptops and Computers
             </p>
@@ -43,7 +43,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/support"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Phone and Watches
             </p>
@@ -51,7 +51,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Heaters and Fans
             </p>
@@ -59,7 +59,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Speakers
             </p>
@@ -67,7 +67,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Rice Cookers
             </p>
@@ -75,7 +75,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               HElectric Kettles
             </p>
@@ -83,7 +83,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Hair Dryers
             </p>
@@ -91,7 +91,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Drones
             </p>
@@ -99,7 +99,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/login"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Accessories
             </p>
@@ -107,7 +107,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/register"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Cameras
             </p>
@@ -115,7 +115,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/cart"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Games
             </p>
@@ -125,7 +125,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Home
             </p>
@@ -134,7 +134,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/contact"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Contact Us
             </p>
@@ -142,7 +142,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/privacy-policy"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Privacy Policy
             </p>
@@ -150,7 +150,7 @@ export default function NavMiddleOffCanvas() {
 
           <Link href={"/terms-conditions"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Terms and Conditions
             </p>

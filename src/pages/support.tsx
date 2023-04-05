@@ -37,7 +37,7 @@ export default function Support() {
 
   return (
     <div className="container mb-5">
-      <p className="h4 text-center my-4 black_text_color">Answers to Your Questions</p>
+      <p className="h4 text-center my-4 color-black">Answers to Your Questions</p>
 
       <div className="d-flex justify-content-center ">
         <div
@@ -61,7 +61,7 @@ export default function Support() {
                 <div
                   id={`collapse-${id}`}
                   className="accordion-collapse collapse border-bottom-0">
-                  <div className="accordion-body black_text_color">{data.answer} </div>
+                  <div className="accordion-body color-black">{data.answer} </div>
                 </div>
               </div>
             ))}

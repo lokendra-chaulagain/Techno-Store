@@ -87,7 +87,7 @@ export default function Bookmark() {
     <div className="container matter  d-flex align-items-center my-5 ">
       <div className="row d-flex  justify-content-center ">
         <div className="col-12 col-md-3">
-          <h4 className="text-center py-2 bg_dark color_white ">Categories</h4>
+          <h4 className="text-center py-2 bg_dark color-white ">Categories</h4>
           <hr className="my-0 mb-4 mt-2" />
           <div className="cat_bar ">
             {categories &&
@@ -103,7 +103,7 @@ export default function Bookmark() {
 
         <div className=" col">
           <div className="row ">
-            <h4 className="black_text_color py-2">Your Bookmarked Products (4)</h4>
+            <h4 className="color-black py-2">Your Bookmarked Products (4)</h4>
             {products &&
               products.map((product: any, index) => (
                 <div
@@ -111,7 +111,7 @@ export default function Bookmark() {
                   className="col-12 col-md-6">
                   <div className="  d-flex gap-4 mb-4 p-0 align-items-center  py-2 card_product_card">
                     <Image
-                      className=" no_selection cp"
+                      className=" no-selection cursor-pointer"
                       src={demo}
                       objectFit="scale-down"
                       alt="img"
@@ -120,24 +120,24 @@ export default function Bookmark() {
                     />
                     <div className="d-flex flex-column gap-1 ">
                       <small className="text-muted "> Category Name</small>
-                      <p className=" black_text_color mb-0 ">Apple iPad Mini G2356</p>
+                      <p className=" color-black mb-0 ">Apple iPad Mini G2356</p>
 
                       <p className=" ">
-                        <span className="color_orange">$600.00</span> <span className="text-muted">$400</span>
+                        <span className="color-orange">$600.00</span> <span className="text-muted">$400</span>
                       </p>
                       <div className="d-flex align-items-center text-muted gap-4 mt-2">
                         <div className="icon_bg_div p-1 rounded-circle">
                           <MdDeleteOutline
                             onClick={handleRemove}
                             size={24}
-                            className="cp"
+                            className="cursor-pointer"
                           />
                         </div>
                         <div className="icon_bg_div p-1 rounded-circle">
                           <AiOutlineShoppingCart
                             onClick={handleAddToCart}
                             size={23}
-                            className="cp"
+                            className="cursor-pointer"
                           />
                         </div>
                       </div>

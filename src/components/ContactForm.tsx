@@ -20,7 +20,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="row color_dark">
+    <div className="row color-dark">
       <h1 className="fw-bold mt-5 mb-3 text_color_blue my_custom_text_muted">
         Get In Touch With Us <span className="text_color_red">!</span>{" "}
       </h1>

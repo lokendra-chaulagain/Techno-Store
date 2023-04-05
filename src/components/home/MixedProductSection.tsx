@@ -7,17 +7,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import ProductColumn from "../mixed-product/ProductColumn";
-import HotSale from "../mixed-product/HotSale";
 import banners from "../../data/category/specialOffers.json";
 import bestSellers from "../../data/mix/bestSellings4.json";
-import features from "../../data/mix/features4.json";
-import hotSales from "../../data/mix/hotSales4.json";
 
 export default function MixedProductSection() {
   return (
-    <div className="mixed_section mt-5 p-5">
+    <div className="bg-custom-grey mt-5 py-3 ">
       <div className="row">
-        <div className="col-12 col-md-6 ">
+        <div className="col-12 col-md-7 col-lg-8 col-xl-9 mb-4 mb-md-0">
           <Swiper
             pagination={true}
             loop={true}
@@ -27,13 +24,13 @@ export default function MixedProductSection() {
               <SwiperSlide
                 key={id}
                 className="">
-                <div className="offer_carousel d-flex flex-column align-items-center justify-content-between py-5">
-                  <p className="h5 black_text_color">
-                    <span className="color_orange">Save NPR 3000</span> Special Offer
+                <div className="bg-white d-flex flex-column align-items-center justify-content-between py-5">
+                  <p className="h5 color-black">
+                    <span className="color-orange">Save NPR 3000</span> Special Offer
                   </p>
 
                   <Image
-                    className=" no_selection cp"
+                    className=" no-selection cursor-pointer"
                     src={product.image}
                     objectFit="scale-down"
                     alt="img"
@@ -42,9 +39,9 @@ export default function MixedProductSection() {
                   />
 
                   <div>
-                    <p className="my-0 h5 black_text_color">Product Name</p>
+                    <p className="my-0 h5 color-black">Product Name</p>
                     <p className="p fw-semibold mt-2">
-                      <span className="color_orange">NRP 4500</span>{" "}
+                      <span className="color-orange">NRP 4500</span>{" "}
                       <span className="text-muted">
                         <s>NRP 3450</s>
                       </span>
@@ -56,9 +53,9 @@ export default function MixedProductSection() {
           </Swiper>
         </div>
 
-        <ProductColumn products={bestSellers} />
-        <ProductColumn products={features} />
-        <HotSale products={hotSales} />
+        <div className="col">
+          <ProductColumn products={bestSellers} />
+        </div>
       </div>
     </div>
   );

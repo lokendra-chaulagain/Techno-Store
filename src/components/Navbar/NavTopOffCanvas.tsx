@@ -32,7 +32,7 @@ export default function NavTopOffCanvas() {
         <div className="offcanvas-body d-flex flex-column gap-2 h6">
           <Link href={"/"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Home
             </p>
@@ -40,7 +40,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/track-order"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Track Your Order
             </p>
@@ -48,7 +48,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/support"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Support Center
             </p>
@@ -56,7 +56,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/our-stores"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Store Locator
             </p>
@@ -64,7 +64,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/login"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Login
             </p>
@@ -72,7 +72,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/register"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Login
             </p>
@@ -80,7 +80,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/cart"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               My Cart
             </p>
@@ -88,7 +88,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/bookmark"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Bookmark
             </p>
@@ -98,7 +98,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/contact"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Contact Us
             </p>
@@ -106,7 +106,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/privacy-policy"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Privacy Policy
             </p>
@@ -114,7 +114,7 @@ export default function NavTopOffCanvas() {
 
           <Link href={"/terms-conditions"}>
             <p
-              className="cp"
+              className="cursor-pointer"
               data-bs-dismiss="offcanvas">
               Terms and Conditions
             </p>

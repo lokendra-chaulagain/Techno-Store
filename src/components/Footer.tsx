@@ -36,12 +36,12 @@ export default function Footer() {
       <div className="px-4 px-sm-5 footer_wrapper py-5">
         <div className="row ">
           <div className="col-12 col-md-6 col-lg-3 text-muted px-0 ">
-            <Image
-              className="no_selection cp"
-              src={logo}
-              objectFit="scale-down"
-              alt="img"
-            />
+            <Link href={"/"}>
+              <div className="d-flex align-items-center gap-1 cursor-pointer no-selection">
+                <p className="color-orange h2">Techno</p>
+                <p className="color-dark h3">store</p>{" "}
+              </div>
+            </Link>
             <p className="my-0 mt-3 ">Got Questions ? Call us 24/7!</p>
             <h5 className="my-0 mt-1">Call Us: 98894556426</h5>
             <p className="my-0 mt-1 ">PO Box CT16122 New Baneshwor</p>
@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="col-12 mt-5 mt-md-0 col-md-6 col-lg-3 text-muted px-0 no_selection">
+          <div className="col-12 mt-5 mt-md-0 col-md-6 col-lg-3 text-muted px-0 no-selection">
             <h5>Find By Categories</h5>
             <Link href={"/category/smart-phones"}>
               <p className="my-0 mt-2 my_link">Smart Phones</p>
@@ -104,7 +104,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="col-12  mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0 no_selection">
+          <div className="col-12  mt-5 mt-lg-0 col-md-6 col-lg-3 text-muted px-0 no-selection">
             <h5>Customer Care</h5>
             <Link href={"/contact"}>
               <p className="my-0 mt-2 my_link">Contact Us</p>
@@ -139,7 +139,7 @@ export default function Footer() {
                 {...register("email", { required: true, minLength: 6 })}
               />
               <button
-                className="btn bg_orange rounded-1 color_white fw-semibold py-2 outline-none"
+                className="btn bg-orange rounded-1 color-white fw-semibold py-2 outline-none"
                 type="submit"
                 id="button-addon2">
                 Button
@@ -148,35 +148,35 @@ export default function Footer() {
 
             <div className="d-flex align-items-center justify-content-between">
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={paypal}
                 objectFit="scale-down"
                 alt="img"
               />
 
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={discover}
                 objectFit="scale-down"
                 alt="img"
               />
 
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={visa}
                 objectFit="scale-down"
                 alt="img"
               />
 
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={master}
                 objectFit="scale-down"
                 alt="img"
               />
 
               <Image
-                className=" no_selection cp"
+                className=" no-selection cursor-pointer"
                 src={american}
                 objectFit="scale-down"
                 alt="img"
@@ -194,7 +194,7 @@ export default function Footer() {
             <div className="  footer_app_store_card rounded-2 ">
               <div className=" d-flex align-items-center gap-4">
                 <Image
-                  className=" no_selection cp"
+                  className=" no-selection cursor-pointer"
                   src={phone}
                   objectFit="scale-down"
                   alt="img"
@@ -215,7 +215,7 @@ export default function Footer() {
             <div className=" footer_app_store_card rounded-2">
               <div className="d-flex align-items-center gap-4">
                 <Image
-                  className=" no_selection cp"
+                  className=" no-selection cursor-pointer"
                   src={android}
                   objectFit="scale-down"
                   alt="img"
@@ -229,8 +229,8 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <p className="small mt-4 text-muted text-center">
-        Designed & Developed By&nbsp;
+      <p className="fz_13 mt-4 mb-1 text-muted text-center">
+        Designed & Developed By{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -238,7 +238,7 @@ export default function Footer() {
           href="https://lokendra-portfolio.vercel.app">
           Lokendra Chaulagain
         </a>
-        &nbsp;. No Right Reserved , Free To Use .
+       {" "}. No Right Reserved , Free To Use .
       </p>
     </>
   );

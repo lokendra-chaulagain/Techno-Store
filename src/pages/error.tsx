@@ -11,8 +11,8 @@ export default function Error() {
         objectFit="scale-down"
         alt="img"
       />
-      <h4 className="color_dark mt-4"> Sorry but we couldn’t find the page you are looking for.</h4>
-      <p className="color_dark text-muted">Please check to make sure you’ve typed the URL correctly. Maybe try a search?</p>
+      <h4 className="color-dark mt-4"> Sorry but we couldn’t find the page you are looking for.</h4>
+      <p className="color-dark text-muted">Please check to make sure you’ve typed the URL correctly. Maybe try a search?</p>
     </div>
   );
 }

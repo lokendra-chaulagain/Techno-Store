@@ -12,7 +12,7 @@ import { Rating } from "react-simple-star-rating";
 export default function BestSellerCarousel({ products }: any) {
   return (
     <div className="my-5 px-5">
-      {products && <h4 className="black_text_color">{products[0].title}</h4>}
+      {products && <h4 className="color-black">{products[0].title}</h4>}
       <hr className="my-0 mb-4" />
       <Swiper
         slidesPerView={4}
@@ -50,7 +50,7 @@ export default function BestSellerCarousel({ products }: any) {
               <div className=" p-3 d-flex flex-column align-items-center justify-content-center ">
                 <div className="d-flex gap-3 align-items-center ">
                   <Image
-                    className=" no_selection cp"
+                    className=" no-selection cursor-pointer"
                     src={product.image}
                     objectFit="scale-down"
                     alt="img"
@@ -63,9 +63,9 @@ export default function BestSellerCarousel({ products }: any) {
                       initialValue={product.rating}
                       size={16}
                     />
-                    <p className="p black_text_color mb-0">{product.name.substring(0, 15)}</p>
+                    <p className="p color-black mb-0">{product.name.substring(0, 15)}</p>
                     <p className="small ">
-                      <span className="color_orange">{product.priceNow}</span>{" "}
+                      <span className="color-orange">{product.priceNow}</span>{" "}
                       <span className="text-muted">
                         <s>{product.pricePrevious}</s>
                       </span>
@@ -76,15 +76,15 @@ export default function BestSellerCarousel({ products }: any) {
                 <div className="d-flex text-muted align-items-center justify-content-center gap-4 mt-3">
                   <IoIosGitCompare
                     size={20}
-                    className="cp single_product_icon"
+                    className="cursor-pointer single_product_icon"
                   />
                   <AiOutlineHeart
                     size={20}
-                    className="cp single_product_icon"
+                    className="cursor-pointer single_product_icon"
                   />
                   <AiOutlineShoppingCart
                     size={20}
-                    className="cp single_product_icon"
+                    className="cursor-pointer single_product_icon"
                   />
                 </div>
               </div>

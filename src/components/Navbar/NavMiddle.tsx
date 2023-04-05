@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import logo from "../../assets/kogo.png";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import PhoneAndWatchDrop from "./PhoneAndWatchDrop";
@@ -41,22 +39,19 @@ export default function NavMiddle() {
   const [rightItems, setRightItems] = useState(watches);
 
   return (
-    <div className="d-flex container-fluid py-3 align-items-center justify-content-between position-relative">
-      <div>
-        <Link href={"/"}>
-          <Image
-            className=" no_selection cp"
-            src={logo}
-            objectFit="scale-down"
-            alt="img"
-          />
-        </Link>
-      </div>
+    <div className="d-flex  container-fluid py-1 py-md-2 align-items-center justify-content-between position-relative">
+      <Link href={"/"}>
+        <div className="d-flex align-items-center gap-1 cursor-pointer no-selection">
+          {" "}
+          <p className="color-orange h4">Techno</p>
+          <p className="color-dark h5">store</p>{" "}
+        </div>
+      </Link>
 
-      <div className="d-none d-lg-block">
-        <div className="d-flex align-items-center  gap-3 ">
+      <div className="d-none d-lg-block ">
+        <div className="d-flex align-items-center  gap-3 fz_13 fw-semibold ">
           <Link href={"/"}>
-            <h6 className={path === "" ? "nav_active my-0 black_text_color cp no_selection" : "my-0 black_text_color cp no_selection"}>HOME</h6>
+            <p className={path === "" ? "nav_active my-0 color-black cursor-pointer no-selection" : "my-0 color-black cursor-pointer no-selection"}>HOME</p>
           </Link>
 
           <p
@@ -64,7 +59,7 @@ export default function NavMiddle() {
             data-bs-toggle="offcanvas"
             data-bs-target="#phoneOffcanvasTop"
             aria-controls="phoneOffcanvasTop"
-            className="black_text_color  no_selection cp h6">
+            className="color-black  no-selection cursor-pointer ">
             Phones & Watches^
           </p>
 
@@ -73,7 +68,7 @@ export default function NavMiddle() {
             data-bs-toggle="offcanvas"
             data-bs-target="#heaterOffcanvasTop"
             aria-controls="heaterOffcanvasTop"
-            className="black_text_color  no_selection cp h6">
+            className="color-black  no-selection cursor-pointer ">
             Heaters & Fans^
           </p>
 
@@ -82,7 +77,7 @@ export default function NavMiddle() {
             data-bs-toggle="offcanvas"
             data-bs-target="#heaterOffcanvasTop"
             aria-controls="computerOffcanvasTop"
-            className="black_text_color  no_selection cp h6">
+            className="color-black  no-selection cursor-pointer ">
             Computers & Laptops^
           </p>
 
@@ -91,7 +86,7 @@ export default function NavMiddle() {
             data-bs-toggle="offcanvas"
             data-bs-target="#heaterOffcanvasTop"
             aria-controls="accessoriesOffcanvasTop"
-            className="black_text_color no_selection cp h6">
+            className="color-black no-selection cursor-pointer ">
             Accessories^
           </p>
         </div>

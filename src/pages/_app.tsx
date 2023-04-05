@@ -13,11 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className="app_min_height">
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
+      <Navbar />
+      <Component {...pageProps} />
+      <Footer />
       <Toaster
         position="top-center"
         reverseOrder={false}

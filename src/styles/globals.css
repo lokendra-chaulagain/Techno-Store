@@ -3,7 +3,6 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   overflow-x: hidden !important;
-  overflow-y: scroll;
 }
 
 p {

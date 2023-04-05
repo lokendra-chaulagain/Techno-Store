@@ -54,29 +54,3 @@ export default function ImageSection() {
     </div>
   );
 }
-
-{
-  /* <div className="col d-flex flex-column align-items-center justify-content-center">
-<div className="align-self-start">
-  <p className="h6 p-2 bg-success rounded-5 px-4 color-white cursor-pointer">OFFER</p>
-</div>
-
-<Image
-  src={image1}
-  alt="img"
-  height={150}
-  width={500}
-  objectFit="scale-down"
-/>
-
-<p className="text-muted para_text my-0 h6 mt-2 ">Laptops</p>
-<h1 className="color-orange h1 my-0">MackBook Air 2020 </h1>
-<p className=" para_text text-muted">The MacBook Air 2020 is a sleek and powerful laptop with a stunning Retina display, fast performance, and long battery life. It's perfect for work, school, or everyday use.</p>
-
-<button
-  type="button"
-  className="btn bg-orange color-white fw-semibold mt-4 rounded-pill px-4">
-  Shop Now{" "}
-</button>
-</div> */
-}

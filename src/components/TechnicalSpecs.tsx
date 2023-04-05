@@ -2,9 +2,9 @@ import React from "react";
 
 export default function TechnicalSpecs() {
   return (
-    <div className="d-flex  justify-content-center mt-5 ">
-      <div className="col-6 ">
-        <h4 className="color-black mb-4 m">Warch 42 mm Smart Watches</h4>
+    <div className="d-flex  justify-content-center mt-4 ">
+      <div className="col-12 col-lg-6 ">
+        <h4 className="color-black mb-4 m">Watch 42 mm Smart Watches</h4>
         <p className="my-0 mb-2 d-flex align-items-center gap-5">
           <span className="h6 color-black mb-0">Height : </span> <span>38.6m</span>
         </p>

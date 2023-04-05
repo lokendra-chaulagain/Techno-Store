@@ -1,12 +1,12 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import CategoriesSection from "../../components/CategoriesSection";
 import SingleProductSection from "../../components/SingleProductSection";
 import { useRouter } from "next/router";
 import HeroCarousel from "../../components/HeroCarousel";
-import phones from "../../data/category/phones.json";
-import games from "../../data/category/games.json";
+import products from "../../data/category/features.json";
+import BestSellerCarousel from "../../components/home/BestSellerCarousel";
+import OfferItem from "../../components/OfferItem";
 
 export default function CategoryUrl() {
   const router = useRouter();
@@ -15,13 +15,14 @@ export default function CategoryUrl() {
   return (
     <>
       <HeroCarousel />
-      <div className="px-5">
-        <h5 className="color-black h5">Category : {location}</h5>
+      <div className="">
+        <h5 className="color-black h5 px-2 mt-3">Category : {location}</h5>
         <hr className="my-0 mb-4" />
-        <SingleProductSection products={location == "smart-phones" ? phones : games} />
+        <SingleProductSection products={products} />
 
         <div className="my-5">
-          <CategoriesSection products={phones} />
+          <OfferItem />
+          <BestSellerCarousel products={products} />
         </div>
       </div>
     </>

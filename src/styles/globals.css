@@ -238,7 +238,8 @@ input::placeholder {
 
 .outline_button {
   border-color: orange !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
   color: var(--color-dark) !important;
 }
 .outline_button:hover {
@@ -248,9 +249,9 @@ input::placeholder {
 }
 .outline_button_selected {
   background-color: orange !important;
-
   color: white !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
 }
 
 .register_input {

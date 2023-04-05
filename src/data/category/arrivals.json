@@ -2,7 +2,7 @@
     {
         "name": "Samsung Galaxy S21 Ultra",
         "slug": "Samsung-Galaxy-S21-Ultra",
-        "category": "smart phones",
+        "category": "Laptops and Computers",
         "priceNow": "8000",
         "pricePrevious": "999",
         "rating": 3,
@@ -11,7 +11,7 @@
     {
         "name": "Apple iPhone 13 Pro Max",
         "slug": "Apple-iPhone-13-Pro-Max",
-        "category": "Cameras",
+        "category": "Freezer",
         "priceNow": "4500",
         "pricePrevious": "1,099.00",
         "rating": 4,
@@ -20,7 +20,7 @@
     {
         "name": "Google Pixel 6 Pro",
         "slug": "Google-Pixel-6-Pro",
-        "category": "Heaters",
+        "category": "Laptops",
         "priceNow": "3400",
         "pricePrevious": "899",
         "rating": 3,
@@ -29,7 +29,7 @@
     {
         "name": "OnePlus 10 Pro",
         "slug": "OnePlus-10-Pro",
-        "category": "Hair Dryer",
+        "category": "Laptops",
         "priceNow": "2700",
         "pricePrevious": "899",
         "rating": 2,
@@ -38,7 +38,7 @@
     {
         "name": "Xiaomi Mi 12",
         "slug": "Xiaomi-Mi-12",
-        "category": "Games",
+        "category": "Headphone",
         "priceNow": "11000",
         "pricePrevious": "699",
         "rating": 5,
@@ -47,7 +47,7 @@
     {
         "name": "Sony Xperia 1 III",
         "slug": "Sony-Xperia-1-III",
-        "category": "Computers",
+        "category": "Go Pro",
         "priceNow": "4500",
         "pricePrevious": "1,199",
         "rating": 4,
@@ -56,7 +56,7 @@
     {
         "name": "Asus ROG Phone 5",
         "slug": "Asus-ROG-Phone-5",
-        "category": "Watches",
+        "category": "Headphone",
         "priceNow": "8300",
         "pricePrevious": "899",
         "rating": 4,
@@ -65,7 +65,7 @@
     {
         "name": "Samsung Galaxy Z Fold3 5G",
         "slug": "Samsung-Galaxy-Z-Fold3-5G",
-        "category": "Chargers",
+        "category": "Printer",
         "priceNow": "7250",
         "pricePrevious": "1,599",
         "rating": 3,
@@ -74,7 +74,7 @@
     {
         "name": "Apple iPhone 12 Mini",
         "slug": "Apple-iPhone-12-Mini",
-        "category": "Mobiles",
+        "category": "Earpod",
         "priceNow": "14000",
         "pricePrevious": "599.00",
         "rating": 4,
@@ -83,7 +83,7 @@
     {
         "name": "Google Pixel 5a",
         "slug": "Google-Pixel-5a",
-        "category": "Cokers",
+        "category": "Earephone",
         "priceNow": "4000",
         "pricePrevious": "449",
         "rating": 3,
@@ -92,7 +92,7 @@
     {
         "name": "OnePlus Nord 2",
         "slug": "OnePlus-Nord-2",
-        "category": "Laptops",
+        "category": "Drones",
         "priceNow": "3000",
         "pricePrevious": "399",
         "rating": 5,
@@ -101,7 +101,7 @@
     {
         "name": "Xiaomi Redmi Note 11 Pro",
         "slug": "Xiaomi-Redmi-Note-11-Pro",
-        "category": "smart phones",
+        "category": "Cameras",
         "priceNow": "6500",
         "pricePrevious": "349",
         "rating": 4,

@@ -9,8 +9,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function BestSellerCarousel({ products }: any) {
+  const addToCart = () => {
+    toast.success("Added To cart");
+  };
+
+  const itemBookmarked = () => {
+    toast.success("Added to favourite ");
+  };
+
   return (
     <div className="my-5">
       {products && <h4 className="color-black px-2">{products[0].title}</h4>}
@@ -77,15 +86,13 @@ export default function BestSellerCarousel({ products }: any) {
                   </div>
 
                   <div className="d-flex text-muted align-items-center justify-content-center gap-4 mt-3">
-                    <IoIosGitCompare
-                      size={20}
-                      className="cursor-pointer single_product_icon"
-                    />
                     <AiOutlineHeart
+                      onClick={itemBookmarked}
                       size={20}
                       className="cursor-pointer single_product_icon"
                     />
                     <AiOutlineShoppingCart
+                      onClick={addToCart}
                       size={20}
                       className="cursor-pointer single_product_icon"
                     />

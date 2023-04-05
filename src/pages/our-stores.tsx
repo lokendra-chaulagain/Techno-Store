@@ -182,83 +182,83 @@ export default function Stores() {
         <div className=" container pt-2 pt-md-4 pb-5">
           <div className="row bg-white  shadow-sm">
             <div className="col-12 col-lg-6 p-0">
-              <p className="text-center h5 bg_dark color-white py-3">Our Locations</p>
+              <p className="text-center h5 bg-dark color-white py-3">Our Locations</p>
 
               <p
                 onClick={selectNepal}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Kathmandu-Nepal
               </p>
 
               <p
                 onClick={selectIndia}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 India
               </p>
 
               <p
                 onClick={selectPakistan}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Pakistan
               </p>
 
               <p
                 onClick={selectUsa}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 USA
               </p>
 
               <p
                 onClick={selectAustralia}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Australia
               </p>
 
               <p
                 onClick={selectCanada}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Canada
               </p>
 
               <p
                 onClick={selectBangladesh}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Bangladesh
               </p>
 
               <p
                 onClick={selectUk}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 United Kingdom
               </p>
 
               <p
                 onClick={selectFrance}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 France
               </p>
 
               <p
                 onClick={selectRussia}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Russia
               </p>
 
               <p
                 onClick={selectIreland}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Ireland
               </p>
 
               <p
                 onClick={selectSingapore}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Singapore
               </p>
 
               <p
                 onClick={selectTurkey}
-                className=" cursor-pointer py-2 px-2 no-selection color-black">
+                className=" cursor-pointer py-2 px-2 no-selection store_name_hover color-black">
                 Turkey
               </p>
             </div>

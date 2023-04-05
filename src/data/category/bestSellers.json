@@ -2,7 +2,7 @@
     {
         "name": "Samsung Galaxy S21 Ultra",
         "title":"Best Sellings",
-        "category": "smart phones",
+        "category": "Computers",
         "pricePrevious": "1,199.99",
         "priceNow": "999.99",
         "rating": 3,
@@ -10,7 +10,7 @@
     },
     {
         "name": "Apple iPhone 13 Pro Max",
-        "category": "smart phones",
+        "category": "Freezer",
         "pricePrevious": "1,099.00",
         "priceNow": "1,099.00",
         "rating": 4,
@@ -18,7 +18,7 @@
     },
     {
         "name": "Google Pixel 6 Pro",
-        "category": "smart phones",
+        "category": "Laptop",
         "pricePrevious": "1,099.99",
         "priceNow": "899.99",
         "rating": 3,
@@ -26,7 +26,7 @@
     },
     {
         "name": "OnePlus 10 Pro",
-        "category": "smart phones",
+        "category": "Laptop",
         "pricePrevious": "999.99",
         "priceNow": "899.99",
         "rating": 2,
@@ -34,7 +34,7 @@
     },
     {
         "name": "Xiaomi Mi 12",
-        "category": "smart phones",
+        "category": "Headphone",
         "pricePrevious": "799.99",
         "priceNow": "699.99",
         "rating": 5,
@@ -42,7 +42,7 @@
     },
     {
         "name": "Sony Xperia 1 III",
-        "category": "smart phones",
+        "category": "Go Pro",
         "pricePrevious": "1,299.99",
         "priceNow": "1,199.99",
         "rating": 4,
@@ -50,7 +50,7 @@
     },
     {
         "name": "Asus ROG Phone 5",
-        "category": "smart phones",
+        "category": "Headphone",
         "pricePrevious": "999.99",
         "priceNow": "899.99",
         "rating": 4,
@@ -58,7 +58,7 @@
     },
     {
         "name": "Samsung Galaxy Z Fold3 5G",
-        "category": "smart phones",
+        "category": "Printer",
         "pricePrevious": "1,799.99",
         "priceNow": "1,599.99",
         "rating": 3,
@@ -66,7 +66,7 @@
     },
     {
         "name": "Apple iPhone 12 Mini",
-        "category": "smart phones",
+        "category": "Earpods",
         "pricePrevious": "699.00",
         "priceNow": "599.00",
         "rating": 4,
@@ -74,7 +74,7 @@
     },
     {
         "name": "Google Pixel 5a",
-        "category": "smart phones",
+        "category": "Earphones",
         "pricePrevious": "499.99",
         "priceNow": "449.99",
         "rating": 3,
@@ -82,7 +82,7 @@
     },
     {
         "name": "OnePlus Nord 2",
-        "category": "smart phones",
+        "category": "Drones",
         "pricePrevious": "449.99",
         "priceNow": "399.99",
         "rating": 5,
@@ -90,7 +90,7 @@
     },
     {
         "name": "Xiaomi Redmi Note 11 Pro",
-        "category": "smart phones",
+        "category": "Cameras",
         "pricePrevious": "399.99",
         "priceNow": "349.99",
         "rating": 4,

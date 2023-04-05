@@ -1,20 +1,19 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import demo2 from "../../assets/big-size.jpg";
-import { AiOutlinePlus, AiOutlineMinus, AiOutlineShoppingCart, AiOutlineGoogle, AiFillLinkedin } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineHeart, AiOutlineMinus, AiOutlineShoppingCart, AiOutlineGoogle, AiFillLinkedin } from "react-icons/ai";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import ProductDetailSection from "../../components/ProductDetailSection";
 import BestSellerCarousel from "../../components/home/BestSellerCarousel";
-import { IoIosGitCompare } from "react-icons/io";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import TechnicalSpecs from "../../components/TechnicalSpecs";
 import ProductRating from "../../components/ProductRating";
-
 import { Navigation } from "swiper";
 import { Rating } from "react-simple-star-rating";
 import products from "../../data/category/arrivals.json";
+import toast from "react-hot-toast";
 
 export default function ProductUrl() {
   const [quantity, setQuantity] = useState(1);
@@ -38,6 +37,14 @@ export default function ProductUrl() {
   };
   const selectThreeHandler = () => {
     setNumSelected(3);
+  };
+
+  const addToCart = () => {
+    toast.success("Added To cart");
+  };
+
+  const itemBookmarked = () => {
+    toast.success("Added to favourite ");
   };
 
   return (
@@ -112,16 +119,19 @@ export default function ProductUrl() {
           <div className="d-flex align-items-center text-muted gap-3 mt-4">
             <button
               type="button"
+              onClick={addToCart}
               className="btn my_button fw-semibold rounded-0">
               Add To Cart{" "}
             </button>
 
-            <IoIosGitCompare
+            <AiOutlineHeart
+              onClick={itemBookmarked}
               size={25}
               className="cursor-pointer"
             />
 
             <AiOutlineShoppingCart
+              onClick={addToCart}
               size={25}
               className="cursor-pointer"
             />

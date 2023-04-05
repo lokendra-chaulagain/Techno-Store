@@ -33,7 +33,7 @@ export default function Bookmark() {
   return (
     <div className="">
       <div className=" container mt-2">
-        <p className="text-center py-2 bg_dark color-white ">Bookmarked Items</p>
+        <p className="text-center py-2 bg-dark color-white ">Bookmarked Items</p>
         <div className="  d-flex flex-wrap">
           {carts &&
             carts.map((product: any, index) => (

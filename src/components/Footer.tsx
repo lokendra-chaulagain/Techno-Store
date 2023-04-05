@@ -11,19 +11,17 @@ import american from "../assets/american.png";
 import phone from "../assets/phone.png";
 import android from "../assets/android.png";
 import Link from "next/link";
-import styles from "../styles/Footer.module.css";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 export default function Footer() {
   const { register, handleSubmit, watch, reset } = useForm();
-  const success = () => toast.success("Subscribe Success");
   const handleAllField = watch();
 
   const handleSubscribe = async () => {
     try {
       console.log(handleAllField.email);
-      success();
+      toast.success("Subscribe Success");
       reset();
     } catch (error) {
       console.log(error);
@@ -236,8 +234,8 @@ export default function Footer() {
           className="custom_orange_link"
           href="https://lokendra-portfolio.vercel.app">
           Lokendra Chaulagain
-        </a>
-       {" "}. No Right Reserved , Free To Use .
+        </a>{" "}
+        . No Right Reserved , Free To Use .
       </p>
     </>
   );

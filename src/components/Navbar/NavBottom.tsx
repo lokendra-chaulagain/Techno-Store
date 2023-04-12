@@ -3,9 +3,11 @@ import React from "react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaStoreAlt } from "react-icons/fa";
-import categories from "../../data/categories.json";
+import { useGetAllCategoryQuery } from "../../redux/api/globalApi";
 
 export default function NavBottom() {
+  const { data: categories } = useGetAllCategoryQuery();
+
   return (
     <div className="bg-orange">
       <div className="bottom_nav gap-5 container py-3">
@@ -20,15 +22,16 @@ export default function NavBottom() {
           </button>
 
           <ul className="dropdown-menu no-selection rounded-0 ">
-            {categories.map((category, index) => (
-              <Link
-                key={index}
-                href={`/category/${category.slug}`}>
-                <li>
-                  <a className="dropdown-item cursor-pointer color-black fz_12">{category.name}</a>
-                </li>
-              </Link>
-            ))}
+            {categories &&
+              categories.map((category, index) => (
+                <Link
+                  key={index}
+                  href={`/category/${category.name}`}>
+                  <li>
+                    <a className="dropdown-item cursor-pointer color-black fz_12">{category.name}</a>
+                  </li>
+                </Link>
+              ))}
           </ul>
 
           <input

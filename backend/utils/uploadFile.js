@@ -43,12 +43,13 @@ const uploadMultipleFile = (thumbnail, image1, image2, image3, image4, image5) =
 const uploadTocloudinary = async (localpath) => {
   let config = {
     cloud_name: "dyof6o0ul",
-    api_key: "943579715357941",
-    api_secret: "fFY3ZIIZAsSKF5lJw9CDVYHmpLQ",
+    api_key: "595225111544478",
+    api_secret: "ACKHV-F_lD39r0V0ckZVe2BpPvA",
     folder: "brocade",
     use_filename: true,
     unique_filename: false,
   };
+
   await cloudinary.uploader.upload(localpath, { ...config });
   unlinkSync(localpath);
 };

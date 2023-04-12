@@ -10,6 +10,18 @@ const bannerSchema = new mongoose.Schema(
       type: String,
     },
 
+    categoryId: {
+      type: String,
+    },
+
+    pricePrevious: {
+      type: String,
+    },
+
+    priceNow: {
+      type: String,
+    },
+
     images: {
       type: [String],
     },

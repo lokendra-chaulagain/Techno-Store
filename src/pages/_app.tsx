@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Toaster } from "react-hot-toast";
+import { store } from "../redux/store/store";
+import { Provider } from "react-redux";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -12,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <Provider store={store}>
       <Navbar />
       <Component {...pageProps} />
       <Footer />
@@ -20,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         position="top-center"
         reverseOrder={false}
       />
-    </>
+    </Provider>
   );
 }
 

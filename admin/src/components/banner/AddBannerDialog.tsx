@@ -30,6 +30,10 @@ export default function AddBannerDialog() {
     const formData = new FormData();
     formData.append("title", allFields.title);
     formData.append("description", allFields.description);
+    formData.append("categoryId", allFields.categoryId);
+    formData.append("priceNow", allFields.priceNow);
+    formData.append("pricePrevious", allFields.pricePrevious);
+
     if (images) {
       for (let i = 0; i < allFields.images.length; i++) {
         formData.append("images", allFields.images[i]);
@@ -104,6 +108,48 @@ export default function AddBannerDialog() {
               placeholder="Description"
             />
             {errors.description && <p className="form_hook_error">{`${errors.description.message}`}</p>}
+          </div>
+
+          <div className="row ">
+            <label
+              htmlFor="categoryId"
+              className="form-label px-0 mt-2 h6   ">
+              Category Id
+            </label>
+            <input
+              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
+              {...register("categoryId", { required: "categoryId is required" })}
+              placeholder="Category Id"
+            />
+            {errors.categoryId && <p className="form_hook_error">{`${errors.categoryId.message}`}</p>}
+          </div>
+
+          <div className="row ">
+            <label
+              htmlFor="priceNow"
+              className="form-label px-0 mt-2 h6   ">
+              Price Now
+            </label>
+            <input
+              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
+              {...register("priceNow", { required: "priceNow is required" })}
+              placeholder="Category Id"
+            />
+            {errors.priceNow && <p className="form_hook_error">{`${errors.priceNow.message}`}</p>}
+          </div>
+
+          <div className="row">
+            <label
+              htmlFor="pricePrevious"
+              className="form-label px-0 mt-2 h6   ">
+              Price Previous
+            </label>
+            <input
+              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
+              {...register("pricePrevious", { required: "pricePrevious is required" })}
+              placeholder="Price Previous"
+            />
+            {errors.pricePrevious && <p className="form_hook_error">{`${errors.pricePrevious.message}`}</p>}
           </div>
 
           <div className="row">

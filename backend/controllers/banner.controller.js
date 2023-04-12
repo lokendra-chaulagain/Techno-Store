@@ -5,9 +5,9 @@ import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary with  credentials
 cloudinary.config({
-  cloud_name: "dfqrrgvn0",
-  api_key: "595225111544478",
-  api_secret: "ACKHV-F_lD39r0V0ckZVe2BpPvA",
+  cloud_name: "dyof6o0ul",
+  api_key: "943579715357941",
+  api_secret: "fFY3ZIIZAsSKF5lJw9CDVYHmpLQ",
 });
 
 const createBanner = async (req, res, next) => {
@@ -20,14 +20,14 @@ const createBanner = async (req, res, next) => {
       // const result = await cloudinary.uploader.upload(file.path, { folder: "brocade-uploads/banners" });
 
       const currentDateTime = new Date().toISOString().replace(/[-:.]/g, ""); // Get current date and time
-      const publicId = `techno-uploads/banners/${currentDateTime}_${file.originalname}`; // Create unique public_id
+      const originalnameWithoutExtension = file.originalname.split(".").slice(0, -1).join("."); // Remove file extension
+      const publicId = `techno-uploads/banners/${currentDateTime}_${originalnameWithoutExtension}`; // Create unique public_id without duplicate file extension
       const result = await cloudinary.uploader.upload(file.path, { public_id: publicId });
-      // images.push(result.secure_url);
       images.push(result.secure_url);
     }
 
     // save to database
-    const newService = new Banner({ title: req.body.title, description: req.body.description, images: images });
+    const newService = new Banner({ title: req.body.title, description: req.body.description, categoryId: req.body.categoryId, priceNow: req.body.priceNow, pricePrevious: req.body.pricePrevious, images: images });
     const savedService = await newService.save();
     res.status(200).json(savedService);
   } catch (error) {
@@ -64,7 +64,7 @@ const deleteBanner = async (req, res, next) => {
       return next(createError(404, "Banner not found"));
     }
 
-    console.log(banner.images)
+    console.log(banner.images);
 
     // Delete the images from Cloudinary
     // for (const eachUrl of banner.images) {
@@ -73,7 +73,7 @@ const deleteBanner = async (req, res, next) => {
     //   await cloudinary.uploader.destroy("tuapnvztwug4ywtjbwdx");
     //   // console.log(publicId)
     // }
-    
+
     // Delete the banner document from MongoDB
     await Banner.findByIdAndDelete(bannerId);
     res.status(200).json({ message: "Banner deleted successfully" });
@@ -91,29 +91,37 @@ const getBannerById = async (req, res, next) => {
   }
 };
 
+// const getAllBanner = async (req, res, next) => {
+//   const search = req.query.search || "";
+//   const sort = req.query.sort || "";
+
+//   const query = {
+//     title: { $regex: search, $options: "i" },
+//   };
+
+//   try {
+//     const page = parseInt(req.query.page) || 1;
+//     const size = parseInt(req.query.size) || 5;
+//     const skip = (page - 1) * size;
+
+//     const totalBannerCount = await Banner.countDocuments();
+//     const allBanner = await Banner.find(query)
+//       .skip(skip)
+//       .limit(size)
+//       .sort({ createdAt: sort == "latest" ? -1 : 1 });
+//     res.status(200).json({
+//       totalBannerCount,
+//       allBanner,
+//     });
+//   } catch (error) {
+//     return next(createError(500, "Something went wrong"));
+//   }
+// };
+
 const getAllBanner = async (req, res, next) => {
-  const search = req.query.search || "";
-  const sort = req.query.sort || "";
-
-  const query = {
-    title: { $regex: search, $options: "i" },
-  };
-
   try {
-    const page = parseInt(req.query.page) || 1;
-    const size = parseInt(req.query.size) || 5;
-    const skip = (page - 1) * size;
-
-    const totalBannerCount = await Banner.countDocuments();
-    const allBanner = await Banner.find(query)
-      .skip(skip)
-      .limit(size)
-      .sort({ createdAt: sort == "latest" ? -1 : 1 });
-    res.status(200).json({
-      totalBannerCount,
-      allBanner,
-    });
-    
+    const allBanner = await Banner.find();
+    res.status(200).json(allBanner);
   } catch (error) {
     return next(createError(500, "Something went wrong"));
   }

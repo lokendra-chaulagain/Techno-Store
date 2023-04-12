@@ -1,9 +1,46 @@
 import Category from "../models/Category.js";
 import createError from "../utils/error.js";
 
+import multer from "multer";
+import { v2 as cloudinary } from "cloudinary";
+
+// Configure Cloudinary with  credentials
+cloudinary.config({
+  cloud_name: "dyof6o0ul",
+  api_key: "943579715357941",
+  api_secret: "fFY3ZIIZAsSKF5lJw9CDVYHmpLQ",
+});
+
+// const createCategory = async (req, res, next) => {
+//   try {
+//     const newService = new Category(req.body);
+//     const savedService = await newService.save();
+//     res.status(200).json(savedService);
+//   } catch (error) {
+//     return next(createError(500, "Something went wrong"));
+//   }
+// };
+
 const createCategory = async (req, res, next) => {
   try {
-    const newService = new Category(req.body);
+    const images = [];
+    const files = req.files;
+
+    for (const file of files) {
+      // const result = await cloudinary.uploader.upload(file.path, { folder: "brocade-uploads/banners" });
+      // const currentDateTime = new Date().toISOString().replace(/[-:.]/g, ""); // Get current date and time
+      // const publicId = `techno-uploads/banners/${currentDateTime}_${file.originalname}`; // Create unique public_id
+      // const result = await cloudinary.uploader.upload(file.path, { public_id: publicId });
+      // images.push(result.secure_url);
+      const currentDateTime = new Date().toISOString().replace(/[-:.]/g, ""); // Get current date and time
+      const originalnameWithoutExtension = file.originalname.split(".").slice(0, -1).join("."); // Remove file extension
+      const publicId = `techno-uploads/category/${currentDateTime}_${originalnameWithoutExtension}`; // Create unique public_id without duplicate file extension
+      const result = await cloudinary.uploader.upload(file.path, { public_id: publicId });
+      images.push(result.secure_url);
+    }
+
+    // save to database
+    const newService = new Category({ name: req.body.name, images: images });
     const savedService = await newService.save();
     res.status(200).json(savedService);
   } catch (error) {

@@ -3,6 +3,7 @@ import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useCreateCategoryMutation } from "../../../redux/api/globalApi";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function AddCategoryDialog() {
   const [createCategory] = useCreateCategoryMutation();
@@ -22,16 +23,44 @@ export default function AddCategoryDialog() {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField = watch();
+  const allFields = watch();
 
-  const handleCreateCategory = async (handleAllField: any) => {
+  // const handleCreateCategory = async (handleAllField: any) => {
+  //   try {
+  //     createCategory(handleAllField);
+  //     handleClose();
+  //     reset();
+  //     toast.success("Create success");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+
+  const [images, setImages] = useState([]);
+
+  const handleCreateCategory = async (e: any) => {
+    const formData = new FormData();
+    formData.append("name", allFields.name);
+    if (images) {
+      for (let i = 0; i < allFields.images.length; i++) {
+        formData.append("images", allFields.images[i]);
+      }
+    }
+
     try {
-      createCategory(handleAllField);
-      handleClose();
+      const response = await axios.post("http://localhost:12002/api/category", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      // createCategory(formData);
+
+      // setImages(response.data.urls);
       reset();
-      toast.success("Create success")
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -69,6 +98,22 @@ export default function AddCategoryDialog() {
               placeholder="Category Name"
             />
             {errors.name && <p className="form_hook_error">{`${errors.name.message}`}</p>}
+          </div>
+
+          <div className="row mb-3 ">
+            <label
+              htmlFor="images"
+              className="form-label h6 p_zero_first_cap mt-2 ">
+              Images
+            </label>
+            <input
+              type="file"
+              multiple
+              className=" input_field_style form-control form-control-lg  px-2  border-0  rounded-0"
+              {...register("images", { required: "Required field" })}
+              placeholder="Images"
+            />
+            {errors.images && <p className="form_hook_error">{`${errors.images.message}`}</p>}
           </div>
 
           <div className="mt-3 d-flex justify-content-end  gap-2">

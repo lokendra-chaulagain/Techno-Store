@@ -34,7 +34,7 @@ export default function BannerTable({ currentCount }: any) {
           </thead>
           <tbody>
             {banners &&
-              banners.allBanner.map((banner: any, index: any) => (
+              banners.map((banner: any, index: any) => (
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">

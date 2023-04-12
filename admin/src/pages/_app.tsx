@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LeftAppBar from "../components/LeftBar";
 import Topbar from "../components/Topbar";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useState } from "react";
+import { MiscellaneousContextProvider } from "../../context/MiscellaneousContext";
 import LoginBox from "../components/LoginBox";
 import { Provider } from "react-redux";
-import { store } from "../redux/store/store";
-import { Toaster } from "react-hot-toast";
-import { GlobalContextProvider } from "../context/GlobalContext";
+import { store } from "../../redux/store/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -27,16 +27,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Provider store={store}>
-      <GlobalContextProvider>
+      <MiscellaneousContextProvider>
         {accessToken ? (
-          <div className="customBg h100">
+          <div className="customBg h100 ">
             <Topbar />
             <div className="row">
               <div className=" col-2 customLeftBar">
                 <LeftAppBar />
               </div>
 
-              <div className="col-10 right_side_bg">
+              <div className="col-10 right_side_bg pe-3">
                 <Component {...pageProps} />
               </div>
             </div>
@@ -44,14 +44,19 @@ function MyApp({ Component, pageProps }: AppProps) {
         ) : (
           <LoginBox />
         )}
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          toastOptions={{
-            className: "hot_toast_style",
-          }}
-        />
-      </GlobalContextProvider>
+      </MiscellaneousContextProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </Provider>
   );
 }

@@ -1,67 +1,25 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Link from "next/link";
-import TableHeading from "../TableHeading";
 import { MdDelete } from "react-icons/md";
-import { Button } from "@mui/material";
 import { AiTwotoneEdit } from "react-icons/ai";
 import Image from "next/image";
-import { useDeleteProductMutation, useGetProductsQuery } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
 
-export default function AllProductsTable() {
-  const { deleteSuccessToast } = useContext(GlobalContext);
-  const { data: products } = useGetProductsQuery();
-  const [deleteProduct] = useDeleteProductMutation();
-
-  const deleteHandler = async (id: number) => {
-    try {
-      deleteProduct(id);
-      deleteSuccessToast();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const [page, setPage] = useState(0);
-  const handleNext = () => {
-    setPage(page + 1);
-  };
-
-  const handlePrev = () => {
-    setPage(page - 1);
-  };
-  console.log(page);
-
+export default function AllProductsTable({ products, deleteProduct, productTotalCount,currentCount }: any) {
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between  ">
-        <TableHeading heading={"All Products"} />
-        <Link href={"/product/create"}>
-          <Button
-            size="large"
-            className="customCard px-4">
-            Add New
-          </Button>
-        </Link>
-      </div>
-
-      <div className="customCard mt-2 ">
+      <div className="customCard mt-2 mb-2">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">I.D</th>
+              <th scope="col">S.N</th>
               <th scope="col">Name</th>
               <th scope="col">Image</th>
-              <th scope="col">Description</th>
+              <th scope="col">Size</th>
+              <th scope="col">Color</th>
               <th scope="col">Category</th>
-              <th scope="col">Price Now</th>
-              <th scope="col">Price Previous</th>
-              <th scope="col">Active</th>
-              <th scope="col">Best Seller</th>
+              <th scope="col">Description</th>
               <th scope="col">Featured</th>
-              <th scope="col">HotSale</th>
-              <th scope="col">isRecent</th>
-              <th scope="col">OutOfStock</th>
+              <th scope="col">Top Selling</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
@@ -71,15 +29,26 @@ export default function AllProductsTable() {
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  <th scope="row">{product.id}</th>
+                  <th scope="row">{currentCount - 8 + index + 1}</th>
                   <td>{product.name}</td>
-                  <td>{product.image}</td>
-                  <td>{product.description}</td>
-                  <td>{product.categoryId}</td>
-                  <td>{product.priceNow}</td>
-                  <td>{product.pricePrevious}</td>
-
-                  {/* <td className="small">
+                  <td>
+                    <a
+                      className="d-flex "
+                      href={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${product.image}`}>
+                      ​
+                      <div className="banner_table_image_div">
+                        <Image
+                          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL_SECURE}${product.image}`}
+                          quality={50}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-1"
+                          alt="myimage"
+                        />
+                      </div>
+                    </a>
+                  </td>
+                  <td className="small">
                     <div className="dropdown">
                       <button
                         className="btn btn-secondary dropdown-toggle"
@@ -99,9 +68,8 @@ export default function AllProductsTable() {
                           ))}
                       </ul>
                     </div>
-                  </td> */}
-
-                  {/* <td className="small">
+                  </td>
+                  <td className="small">
                     <div className="dropdown">
                       <button
                         className="btn btn-secondary dropdown-toggle"
@@ -121,25 +89,14 @@ export default function AllProductsTable() {
                           ))}
                       </ul>
                     </div>
-                  </td> */}
+                  </td>
 
-                  {product.isActive == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isActive == 0 && <td className="active_status_red_color">No</td>}
-
-                  {product.isBestSeller == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isBestSeller == 0 && <td className="active_status_red_color">No</td>}
-
-                  {product.isFeatured == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isFeatured == 0 && <td className="active_status_red_color">No</td>}
-
-                  {product.isHotSale == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isHotSale == 0 && <td className="active_status_red_color">No</td>}
-
-                  {product.isRecent == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isRecent == 0 && <td className="active_status_red_color">No</td>}
-
-                  {product.isOutOfStock == 1 && <td className="active_status_green_color">Yes</td>}
-                  {product.isOutOfStock == 0 && <td className="active_status_red_color">No</td>}
+                  <td>{product.category}</td>
+                  <td>{product.description.substring(0,20)}</td>
+                  {product.featured == 1 && <td className="active_status_green_color">Yes</td>}
+                  {product.featured == 0 && <td className="active_status_red_color">No</td>}
+                  {product.topSelling == 1 && <td className="active_status_green_color">Yes</td>}
+                  {product.topSelling == 0 && <td className="active_status_red_color">No</td>}
 
                   <td>
                     <div className="d-flex ">
@@ -151,7 +108,7 @@ export default function AllProductsTable() {
 
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteHandler(product.id)}
+                        onClick={() => deleteProduct(product._id)}
                         aria-label="delete"
                       />
                     </div>
@@ -160,26 +117,6 @@ export default function AllProductsTable() {
               ))}
           </tbody>
         </table>
-      </div>
-      <div className="d-flex justify-content-end pe-5 mt-2">
-        <nav aria-label="Page navigation ">
-          <ul className="pagination">
-            <li className="page-item">
-              <a
-                onClick={handlePrev}
-                className="page-link rounded-0 h6 next_prev cp">
-                Previous
-              </a>
-            </li>
-            <li className="page-item">
-              <a
-                onClick={handleNext}
-                className="page-link rounded-0 h6 next_prev px-4 cp">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </>
   );

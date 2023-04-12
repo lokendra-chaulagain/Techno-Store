@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
+import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useCreateNewSizeMutation } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
+import { MiscellaneousContext } from "../../../context/MiscellaneousContext";
+import { useCreateSizeMutation } from "../../../redux/api/globalApi";
 
 export default function AddSizeDialog() {
-  const { createSuccessToast } = useContext(GlobalContext);
-  const [createNewSize] = useCreateNewSizeMutation();
+  const [createSize] = useCreateSizeMutation();
+  const { createSuccess, somethingWentWrong } = useContext(MiscellaneousContext);
 
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
@@ -23,14 +24,14 @@ export default function AddSizeDialog() {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField: any = watch();
+  const handleAllField = watch();
 
-  const createColor = async () => {
+  const handleCreateSize = async (handleAllField: any) => {
     try {
-      createNewSize(handleAllField);
-      createSuccessToast();
-      reset();
+      createSize(handleAllField);
       handleClose();
+      createSuccess();
+      reset();
     } catch (error) {
       console.log(error);
     }
@@ -53,10 +54,10 @@ export default function AddSizeDialog() {
         open={open}
         onClose={handleClickOpen}>
         <form
-          onSubmit={handleSubmit(createColor)}
+          onSubmit={handleSubmit(handleCreateSize)}
           className="customCard p-3 overflow_hidden">
           <h4>Create New Sizes Option </h4>
-          <p className="customPrimaryTxtColor">To subscribe to this website, please enter your email address here. We will send updates occasionally.</p>
+          <p className="customPrimaryTxtColor">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem facilis in distinctio nisi, animi fugiat ullam tempora aperiam repudiandae dolorum!</p>
 
           <div className="row ">
             <div className="col">

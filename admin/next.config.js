@@ -1,5 +1,5 @@
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   swcMinify: true,
   basePath: "",
 };
@@ -10,6 +10,3 @@ const nextConfig = {
   },
 }),
   nextConfig;
-
-
-  

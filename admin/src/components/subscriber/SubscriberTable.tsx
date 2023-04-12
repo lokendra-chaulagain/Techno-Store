@@ -1,41 +1,21 @@
-import React, { useContext, useState } from "react";
-import TableHeading from "../TableHeading";
+import React from "react";
 import { MdDelete } from "react-icons/md";
 import { format } from "timeago.js";
-import { useDeleteSubscriberMutation, useGetSubscribersQuery } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
+import { useDeleteSubscriberMutation, useGetAllSubscriberQuery } from "../../../redux/api/globalApi";
+import { toast } from "react-toastify";
 
-export default function SubscriberTable() {
-  const { deleteSuccessToast } = useContext(GlobalContext);
-  const { data: subscribers } = useGetSubscribersQuery();
+export default function SubscriberTable({ currentCount }: any) {
+  const { data: subscribers } = useGetAllSubscriberQuery();
   const [deleteSubscriber] = useDeleteSubscriberMutation();
 
-  const deleteSubscriberHandler = async (id: number) => {
-    try {
-      deleteSubscriber(id);
-      deleteSuccessToast();
-    } catch (error) {
-      console.log(error);
-    }
+  const handleDeleteSubscriber = (id: any) => {
+    deleteSubscriber(id);
+    toast.success("Delete success");
   };
-
-  const [page, setPage] = useState(0);
-  const handleNext = () => {
-    setPage(page + 1);
-  };
-
-  const handlePrev = () => {
-    setPage(page - 1);
-  };
-  console.log(page);
 
   return (
     <>
-      <div className="d-flex align-items-center  ">
-        <TableHeading heading={"All subscribers"} />
-      </div>
-
-      <div className="customCard mt-2 ">
+      <div className="customCard mt-2 mb-2">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
@@ -47,18 +27,18 @@ export default function SubscriberTable() {
           </thead>
           <tbody>
             {subscribers &&
-              subscribers.map((subscriber: any, index: any) => (
+              subscribers.allSubscriber.map((subscriber: any, index: any) => (
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  <th scope="row">{subscriber.id}</th>
-                  <td>{subscriber.email}</td>
+                  <th scope="row">{currentCount - 5 + index + 1}</th>
+                  <td>{subscriber.email.substring(0, 34)}</td>
                   <td>{format(subscriber.createdAt)}</td>
 
                   <td>
                     <MdDelete
                       className="delete_button_icon"
-                      onClick={() => deleteSubscriberHandler(subscriber.id)}
+                      onClick={() => handleDeleteSubscriber(subscriber._id)}
                       aria-label="delete"
                     />
                   </td>
@@ -66,26 +46,6 @@ export default function SubscriberTable() {
               ))}
           </tbody>
         </table>
-      </div>
-      <div className="d-flex justify-content-end pe-5 mt-2">
-        <nav aria-label="Page navigation ">
-          <ul className="pagination">
-            <li className="page-item">
-              <a
-                onClick={handlePrev}
-                className="page-link rounded-0 h6 next_prev cp">
-                Previous
-              </a>
-            </li>
-            <li className="page-item">
-              <a
-                onClick={handleNext}
-                className="page-link rounded-0 h6 next_prev px-4 cp">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </>
   );

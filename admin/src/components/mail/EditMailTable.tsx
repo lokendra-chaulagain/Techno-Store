@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
+import { MailContext } from "../../../context/MailContext";
 import { format } from "timeago.js";
 import Header from "../Header";
-import { useGetContactQuery } from "../../redux/api/globalApi";
 
 export default function EditMailTable() {
+  const { fetchSingleMail, singleMail } = useContext(MailContext);
   const router = useRouter();
-  const id: any = router.query.id;
-  const { data: singleMail } = useGetContactQuery(id);
+  console.log(router);
+  const id = router.query.id;
+
+  useEffect(() => {
+    fetchSingleMail(id);
+  }, [id]);
 
   return (
     <>
@@ -28,7 +33,7 @@ export default function EditMailTable() {
                 type="text"
                 className=" input_field_style form-control form-control-lg mb-2  border-0  rounded-0"
                 name="name"
-                value={singleMail.fullName}
+                value={singleMail.name}
                 placeholder="Sender Name"
               />
             </div>

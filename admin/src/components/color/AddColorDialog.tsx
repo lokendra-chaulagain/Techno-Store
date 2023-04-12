@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
+import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useCreateNewColorMutation } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
+import { MiscellaneousContext } from "../../../context/MiscellaneousContext";
+import { useCreateColorMutation, useGetAllColorQuery } from "../../../redux/api/globalApi";
 
-export default function AddColorDialog() {
-  const { createSuccessToast } = useContext(GlobalContext);
-  const [createNewColor] = useCreateNewColorMutation();
-
+export default function AddColorDialog({ setIsUpdated }: any) {
+  const [createColor] = useCreateColorMutation();
+ 
+  const { createSuccess, somethingWentWrong } = useContext(MiscellaneousContext);
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -23,14 +24,14 @@ export default function AddColorDialog() {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField: any = watch();
+  const handleAllField = watch();
 
-  const createColor = async () => {
+  const handleCreateColor = async (handleAllField: any) => {
     try {
-      createNewColor(handleAllField);
-      createSuccessToast()
-      reset();
+      createColor(handleAllField);
       handleClose();
+      createSuccess();
+      reset();
     } catch (error) {
       console.log(error);
     }
@@ -53,24 +54,24 @@ export default function AddColorDialog() {
         open={open}
         onClose={handleClose}>
         <form
-          onSubmit={handleSubmit(createColor)}
+          onSubmit={handleSubmit(handleCreateColor)}
           className="customCard p-3 overflow_hidden">
           <h4>Create New Colors </h4>
-          <p className="customPrimaryTxtColor">To subscribe to this website, please enter your email address here. We will send updates occasionally.</p>
+          <p className="customPrimaryTxtColor">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aspernatur. Modi dolores fugit iusto consectetur impedit veritatis, in error accusantium!</p>
 
           <div className="row ">
             <div className="col">
               <label
-                htmlFor="name"
+                htmlFor="color"
                 className="form-label p_zero_first_cap mt-2 h6 ">
                 Colors Name
               </label>
               <input
                 className=" input_field_style form-control form-control-lg px-2  border-0  rounded-0"
-                {...register("name", { required: "Required field" })}
-                placeholder="name"
+                {...register("color", { required: "Required field" })}
+                placeholder="Color"
               />
-              {errors.name && <p className="form_hook_error">{`${errors.name.message}`}</p>}
+              {errors.color && <p className="form_hook_error">{`${errors.color.message}`}</p>}
             </div>
           </div>
 

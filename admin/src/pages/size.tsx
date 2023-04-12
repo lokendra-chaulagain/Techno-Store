@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
 import SizeTable from "../components/size/SizeTable";
+import Header from "../components/Header";
 
-export default function Size() {
+export default function size() {
   return (
     <div>
       <Header pageTitle={"Sizes"} />

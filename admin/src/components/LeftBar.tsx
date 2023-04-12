@@ -7,13 +7,11 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useRouter } from "next/router";
-import { RiProfileLine } from "react-icons/ri";
 import { GrMail } from "react-icons/gr";
 import { FiGrid } from "react-icons/fi";
 import { GiVerticalBanner } from "react-icons/gi";
 import { MdOutlineCategory } from "react-icons/md";
 import { BiSitemap } from "react-icons/bi";
-import { GiKnightBanner } from "react-icons/gi";
 import { MdVoicemail } from "react-icons/md";
 
 const navItems = [
@@ -34,6 +32,7 @@ const navItems = [
     label: "Category",
     route: "/category",
   },
+
   {
     icon: <MdOutlineCategory />,
     label: "Color",
@@ -46,27 +45,10 @@ const navItems = [
     route: "/size",
   },
 
-
-
-
   {
     icon: <BiSitemap />,
     label: "Product",
     route: "/product",
-  },
-
-
-  {
-    icon: <GiKnightBanner />,
-    label: "Event Banner",
-    route: "/eventBanner",
-  },
-
-
-  {
-    icon: <RiProfileLine />,
-    label: "Review",
-    route: "/review",
   },
 
   {

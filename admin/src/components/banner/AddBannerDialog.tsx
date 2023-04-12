@@ -1,20 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Grid, Dialog, Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { useCreateNewBannerMutation } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
+import { MiscellaneousContext } from "../../../context/MiscellaneousContext";
+import { useCreateBannerMutation } from "../../../redux/api/globalApi";
+import { toast } from "react-toastify";
+import axios from "axios";
+import CustomSpinner from "../CustomSpinner";
 
 export default function AddBannerDialog() {
-  const [createNewBanner] = useCreateNewBannerMutation();
-  const { createSuccessToast } = useContext(GlobalContext);
+  const [createBanner, createBannerResult] = useCreateBannerMutation();
+  const { isLoading, isSuccess, isError, data, error, status } = createBannerResult;
+  console.log(createBannerResult);
+  const notify = () => toast("Wow so easy!");
 
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { handleClickOpen, handleClose, open } = useContext(MiscellaneousContext);
 
   const {
     register,
@@ -23,14 +22,34 @@ export default function AddBannerDialog() {
     formState: { errors },
     reset,
   } = useForm();
-  const handleAllField: any = watch();
-  console.log(handleAllField);
+  let allFields = watch();
 
-  const createBanner = async () => {
-    createNewBanner(handleAllField);
-    reset();
-    createSuccessToast();
-    handleClose();
+  const [images, setImages] = useState([]);
+
+  const handleImageUpload = async (e: any) => {
+    const formData = new FormData();
+    formData.append("title", allFields.title);
+    formData.append("description", allFields.description);
+    if (images) {
+      for (let i = 0; i < allFields.images.length; i++) {
+        formData.append("images", allFields.images[i]);
+      }
+    }
+
+    try {
+      // const response = await axios.post("http://localhost:12002/api/banner", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
+
+      createBanner(formData);
+
+      // setImages(response.data.urls);
+      reset();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -50,23 +69,27 @@ export default function AddBannerDialog() {
         open={open}
         onClose={handleClose}>
         <form
-          className="customCard p-3 overflow_hidden"
-          onSubmit={handleSubmit(createBanner)}>
+          onSubmit={handleSubmit(handleImageUpload)}
+          className="customCard p-3 overflow_hidden">
           <h4>Create New Banner </h4>
           <p className="customPrimaryTxtColor">To subscribe to this website, please enter your email address here. We will send updates occasionally.</p>
 
+          {isLoading && <h5 className="text-primary">Uploading...</h5>}
+          {isSuccess && <h5 className="text-success">Upload Success</h5>}
+          {isError && <h5 className="text-danger">Upload Failure</h5>}
+
           <div className="row">
             <label
-              htmlFor="name"
+              htmlFor="title"
               className="form-label px-0 mt-2 h6 ">
               Banner Title
             </label>
             <input
               className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
-              {...register("name", { required: "Name is required" })}
-              placeholder="Banner Name"
+              {...register("title", { required: "Title is required" })}
+              placeholder="Banner title"
             />
-            {errors.name && <p className="form_hook_error">{`${errors.name.message}`}</p>}
+            {errors.title && <p className="form_hook_error">{`${errors.title.message}`}</p>}
           </div>
 
           <div className="row ">
@@ -83,78 +106,22 @@ export default function AddBannerDialog() {
             {errors.description && <p className="form_hook_error">{`${errors.description.message}`}</p>}
           </div>
 
-          <div className="row ">
-            <label
-              htmlFor="categoryId"
-              className="form-label px-0 mt-2 h6   ">
-              categoryId
-            </label>
-            <input
-              type="number"
-              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
-              {...register("categoryId", { required: "categoryId is required" })}
-              placeholder="categoryId"
-            />
-            {errors.categoryId && <p className="form_hook_error">{`${errors.categoryId.message}`}</p>}
-          </div>
-
-          <div className="row ">
-            <label
-              htmlFor="priceNow"
-              className="form-label px-0 mt-2 h6   ">
-              priceNow
-            </label>
-            <input
-              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
-              {...register("priceNow", { required: "priceNow is required" })}
-              placeholder="priceNow"
-            />
-            {errors.priceNow && <p className="form_hook_error">{`${errors.priceNow.message}`}</p>}
-          </div>
-
-          <div className="row ">
-            <label
-              htmlFor="image"
-              className="form-label px-0 mt-2 h6   ">
-              image
-            </label>
-            <input
-              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
-              {...register("image", { required: "image is required" })}
-              placeholder="image"
-            />
-            {errors.image && <p className="form_hook_error">{`${errors.image.message}`}</p>}
-          </div>
-
-          <div className="row ">
-            <label
-              htmlFor="pricePrevious"
-              className="form-label px-0 mt-2 h6   ">
-              pricePrevious
-            </label>
-            <input
-              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
-              {...register("pricePrevious", { required: "pricePrevious is required" })}
-              placeholder="pricePrevious"
-            />
-            {errors.pricePrevious && <p className="form_hook_error">{`${errors.pricePrevious.message}`}</p>}
-          </div>
-
           <div className="row">
             <label
-              htmlFor="status"
+              htmlFor="formFile"
               className="form-label px-0 mt-2 h6 ">
-              Active Status
+              Banner Image
             </label>
 
-            <select
-              {...register("status", { required: "status is required" })}
-              className="form-select input_field_style form-control form-control-lg mb-0 border-0  rounded-0"
-              aria-label="Banner hide show status ">
-              <option value="0">Inactive</option>
-              <option value="1">Active</option>
-            </select>
-            {errors.status && <p className="form_hook_error">{`${errors.status.message}`}</p>}
+            <input
+              type="file"
+              multiple
+              // onChange={handleImageUpload}
+              className=" input_field_style form-control form-control-lg mb-0  border-0  rounded-0"
+              {...register("images", { required: "Images are required" })}
+              placeholder="Images"
+            />
+            {errors.images && <p className="form_hook_error">{`${errors.images.message}`}</p>}
           </div>
 
           <div className="mt-3 d-flex justify-content-end  gap-2">
@@ -163,11 +130,16 @@ export default function AddBannerDialog() {
               onClick={handleClose}>
               Cancel
             </Button>
-            <Button
-              type="submit"
-              className="customCard px-4">
-              Add
-            </Button>
+
+            {isLoading ? (
+              <CustomSpinner />
+            ) : (
+              <Button
+                type="submit"
+                className="customCard px-4">
+                Add
+              </Button>
+            )}
           </div>
         </form>
       </Dialog>

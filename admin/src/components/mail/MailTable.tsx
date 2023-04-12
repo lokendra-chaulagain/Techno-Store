@@ -1,42 +1,31 @@
-import React, { useContext, useState } from "react";
+import * as React from "react";
 import Link from "next/link";
 import { format } from "timeago.js";
 import { IoMdEye } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
-import { useDeleteContactMutation, useGetContactsQuery } from "../../redux/api/globalApi";
-import { GlobalContext } from "../../context/GlobalContext";
+import { useDeleteContactMutation, useGetAllContactQuery } from "../../../redux/api/globalApi";
+import { toast } from "react-toastify";
 
-export default function MailTable() {
-  const { deleteSuccessToast } = useContext(GlobalContext);
-  const { data: mails } = useGetContactsQuery();
+export default function MailTable({ currentCount }: any) {
+  const { data: contacts } = useGetAllContactQuery();
   const [deleteContact] = useDeleteContactMutation();
 
-  const deleteHandler = async (id: number) => {
+  const handleDeleteContact = (id: any) => {
     try {
       deleteContact(id);
-      deleteSuccessToast();
+      toast.success("Delete success");
     } catch (error) {
       console.log(error);
     }
   };
 
-  const [page, setPage] = useState(0);
-  const handleNext = () => {
-    setPage(page + 1);
-  };
-
-  const handlePrev = () => {
-    setPage(page - 1);
-  };
-  console.log(page);
-
   return (
     <>
-      <div className="customCard mt-2 ">
+      <div className="customCard mt-2 mb-2">
         <table className="table  ">
           <thead>
             <tr className="customPrimaryTxtColor">
-              <th scope="col">ID</th>
+              <th scope="col">S.N</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Message</th>
@@ -45,20 +34,20 @@ export default function MailTable() {
             </tr>
           </thead>
           <tbody>
-            {mails &&
-              mails.map((mail: any, index: any) => (
+            {contacts &&
+              contacts.allContact.map((mail: any, index: any) => (
                 <tr
                   key={index}
                   className="customPrimaryTxtColor custom_table_hover ">
-                  <th scope="row">{mail.id}</th>
-                  <td>{mail.fullName}</td>
-                  <td>{mail.email}</td>
-                  <td>{mail.message}</td>
+                  <th scope="row">{currentCount - 5 + index + 1}</th>
+                  <td>{mail.name.substring(0, 30)}</td>
+                  <td>{mail.email.substring(0, 30)}</td>
+                  <td>{mail.message.substring(0, 30)}</td>
                   <td>{format(mail.createdAt)}</td>
 
                   <td>
                     <div className="d-flex ">
-                      <Link href={`/mail/${mail.id}`}>
+                      <Link href={`/mail/${mail._id}`}>
                         <div className="d-flex align-items-center">
                           <IoMdEye className="edit_button_icon" />
                         </div>
@@ -66,7 +55,7 @@ export default function MailTable() {
 
                       <MdDelete
                         className="delete_button_icon"
-                        onClick={() => deleteHandler(mail.id)}
+                        onClick={() => handleDeleteContact(mail._id)}
                         aria-label="delete"
                       />
                     </div>
@@ -75,26 +64,6 @@ export default function MailTable() {
               ))}
           </tbody>
         </table>
-      </div>
-      <div className="d-flex justify-content-end pe-5 mt-2">
-        <nav aria-label="Page navigation ">
-          <ul className="pagination">
-            <li className="page-item">
-              <a
-                onClick={handlePrev}
-                className="page-link rounded-0 h6 next_prev cp">
-                Previous
-              </a>
-            </li>
-            <li className="page-item">
-              <a
-                onClick={handleNext}
-                className="page-link rounded-0 h6 next_prev px-4 cp">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </>
   );
